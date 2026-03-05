@@ -5,6 +5,8 @@
   color: $color-primary;
   padding: 3rem 0 1rem 0;
   margin-top: 4rem;
+  position: relative;
+  z-index: 999;
 
   .footerContainer {
     max-width: 1150px;

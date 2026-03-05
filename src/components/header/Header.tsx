@@ -6,12 +6,14 @@ import HamburgerIcon from '@/components/icons/HamburgerIcon';
 import SideNav from '@/components/system/sideNav/SideNav';
 import LoadingSpinner from '@/components/system/loader/LoadingSpinner';
 import OdinLogo from '@/components/icons/OdinLogo';
+import BookingModal from '@/components/modals/BookingModal';
 
 const ResponsiveAppBar = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
   const lastScrollY = useRef(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,8 +87,8 @@ const ResponsiveAppBar = () => {
             </li>
 
             <li className={style.navItem}>
-              <Link disabled href={'/bikes/about'}>
-                Über Odin
+              <Link disabled onClick={() => setIsModalOpen(true)}>
+                Besprechung Buchen
               </Link>
             </li>
             {/*<li className={style.navItem}>*/}
@@ -101,6 +103,11 @@ const ResponsiveAppBar = () => {
 
       <SideNav
       // isOpen={isSideNavOpen} onClose={closeSideNav}
+      />
+      <BookingModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        calLink="michael-venetz-mer2x6"
       />
     </>
   );
