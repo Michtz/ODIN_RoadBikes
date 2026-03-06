@@ -91,6 +91,9 @@
     background-color: $color-bg-primary;
   }
 
+  &[data-margin='false'] {
+    margin-top: -30px;
+  }
   &[data-max-width='1150'] {
     max-width: 1150px !important;
     margin: auto;

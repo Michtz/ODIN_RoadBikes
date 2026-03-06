@@ -59,22 +59,24 @@ const HomeContainer: FC<HomeContainerProps> = () => {
       <OverlayContainer>
         <Calculator />
       </OverlayContainer>
-      <ScrollStaggeredGrid
-        imagesArray={[
-          image1,
-          image1,
-          image1,
-          image1,
-          image1,
-          image1,
-          image1,
-          image1,
-          image1,
-          image1,
-          image1,
-          image1,
-        ]}
-      />
+      <OverlayContainer>
+        <ScrollStaggeredGrid
+          imagesArray={[
+            image1,
+            image1,
+            image1,
+            image1,
+            image1,
+            image1,
+            image1,
+            image1,
+            image1,
+            image1,
+            image1,
+            image1,
+          ]}
+        />
+      </OverlayContainer>
     </>
   );
 };
