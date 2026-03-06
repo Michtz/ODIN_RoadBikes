@@ -37,7 +37,7 @@ const HomeContainer: FC<HomeContainerProps> = () => {
       </OverlayContainer>
       <OverlayContainer>
         <ContentContainer
-          title="Schweizer Ingenieurskunst"
+          title="Schweizer Handwerk"
           text="Präzision, Langlebigkeit und Innovation. Jedes Odin-Bike ist ein Zeugnis Schweizer Handwerkskunst und unserer Leidenschaft für radfahrerische Perfektion."
           buttonText={'MEHR ERFAHREN'}
           buttonSide={'right'}
