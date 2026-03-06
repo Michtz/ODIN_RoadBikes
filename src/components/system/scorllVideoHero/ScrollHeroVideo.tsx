@@ -64,13 +64,16 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
     const video = videoRef.current;
     if (video) {
       // "Prime" the video for mobile devices to allow seeking
-      video.play().then(() => {
-        video.pause();
-        updateVideoPosition();
-      }).catch(() => {
-        // Autoplay might be blocked, but we can still try to seek
-        updateVideoPosition();
-      });
+      video
+        .play()
+        .then(() => {
+          video.pause();
+          updateVideoPosition();
+        })
+        .catch(() => {
+          // Autoplay might be blocked, but we can still try to seek
+          updateVideoPosition();
+        });
     }
 
     const handleScroll = () => {

@@ -23,22 +23,27 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({ view }) => {
   return (
     <>
       <StickyImageContainer image={image1} title={view} />
-      <OverlayContainer border={false}>
+      <OverlayContainer border={false} key={0}>
         <ContentContainer
           title={'Beste Geometry zum klettern'}
           text={PLACHOLDERTEXT}
         />
       </OverlayContainer>
       <div style={{ height: '700px' }}></div>
-      <OverlayContainer border={false}>
+      <OverlayContainer border={false} key={1}>
         <MidScrollVideoPlayer
           videoSrc={'assets/output_smooth_assembly_odin_white.mp4'}
         />
       </OverlayContainer>
-      <OverlayContainer border={false}>
+      <OverlayContainer border={false} key={2}>
         <ScrollDeepDiveBike imageSrc={'/assets/test_feska.webp'} title={view} />
       </OverlayContainer>
-      <OverlayContainer border={false}>
+
+      <OverlayContainer border={false} key={3}>
+        <ContentContainer title={'Informationen & Geometry'} />
+      </OverlayContainer>
+
+      <OverlayContainer border={false} key={4}>
         <ScrollStaggeredGrid
           imagesArray={[
             image1,

@@ -1,5 +1,13 @@
 'use client';
 
+/*
+Änderungen:
+- Typen getrennt: `CalculatorOptionsConfig` für die Auswahlmöglichkeiten und `CalculatorFormValues` für den Formular-State.
+- `email` aus `CALCULATOR_OPTIONS` entfernt, da es ein Freitextfeld und keine Select-Option ist.
+- Reducer für `currentTotal` typsicher gemacht.
+- Variablen-Fehler (`formValues[label]`) in der Zusammenfassung behoben und die ungenutzten Importe sowie auskommentierten Codeblöcke entfernt.
+*/
+
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormContainer, FormRow, FormTitle } from '../form/Form';
@@ -15,7 +23,20 @@ interface CalculatorOption {
   price: number;
 }
 
-const CALCULATOR_OPTIONS: Record<string, CalculatorOption[]> = {
+type SelectFields =
+  | 'frame'
+  | 'gruppe'
+  | 'laufrader'
+  | 'reifen'
+  | 'tretlager'
+  | 'lenkerband'
+  | 'sattel';
+
+type CalculatorOptionsConfig = Record<SelectFields, CalculatorOption[]>;
+
+type CalculatorFormValues = Record<SelectFields, string> & { email: string };
+
+const CALCULATOR_OPTIONS: CalculatorOptionsConfig = {
   frame: [
     {
       label: 'Odin Carbon Race Frame - Matte Black',
@@ -77,26 +98,16 @@ const CALCULATOR_OPTIONS: Record<string, CalculatorOption[]> = {
   ],
 };
 
-type CalculatorOptions =
-  | 'frame'
-  | 'gruppe'
-  | 'laufrader'
-  | 'reifen'
-  | 'tretlager'
-  | 'lenkerband'
-  | 'sattel'
-  | 'email';
-
-type CalculatorState = Record<CalculatorOptions, string>;
-
 export const Calculator: React.FC = () => {
-  const { register, handleSubmit, watch } = useForm<CalculatorState>();
+  const { register, handleSubmit, watch } = useForm<CalculatorFormValues>();
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const formValues: CalculatorState = watch();
+  const formValues = watch();
 
-  const currentTotal = Object.keys(CALCULATOR_OPTIONS).reduce((total, key) => {
-    const selectedValue = formValues[key as keyof CalculatorState];
+  const currentTotal = (
+    Object.keys(CALCULATOR_OPTIONS) as SelectFields[]
+  ).reduce((total, key) => {
+    const selectedValue = formValues[key];
     const option = CALCULATOR_OPTIONS[key].find(
       (o) => o.value === selectedValue,
     );
@@ -118,31 +129,31 @@ export const Calculator: React.FC = () => {
     };
   }, [isModalOpen]);
 
-  const onSubmit = async (data: CalculatorState) => {
+  const onSubmit = async (data: CalculatorFormValues) => {
     setLoading(true);
     setIsModalOpen(true);
     setLoading(false);
-  }; // Todo: fix submit and use it to open..
+  };
 
   const bookingDataString = `
 Konfiguration:
-Rahmen: ${formValues.frame}
-Gruppe: ${formValues.gruppe}
-Laufräder: ${formValues.laufrader}
-Reifen: ${formValues.reifen}
-Tretlager: ${formValues.tretlager}
-Lenkerband: ${formValues.lenkerband}
-Sattel: ${formValues.sattel}
+Rahmen: ${formValues.frame || ''}
+Gruppe: ${formValues.gruppe || ''}
+Laufräder: ${formValues.laufrader || ''}
+Reifen: ${formValues.reifen || ''}
+Tretlager: ${formValues.tretlager || ''}
+Lenkerband: ${formValues.lenkerband || ''}
+Sattel: ${formValues.sattel || ''}
 
 Gesamtpreis: ${currentTotal} €
-Kunden-Email: ${formValues.email}
+Kunden-Email: ${formValues.email || ''}
 `.trim();
 
   return (
     <div className={style.calculatorContainer}>
       <FormContainer onSubmitAction={handleSubmit(onSubmit)} className="">
         <FormTitle
-          title="ODIN Konfigurator"
+          title="Konfigurator"
           description="Konfigurieren Sie Ihr Traumrad und erhalten Sie das Angebot per E-Mail oder buchen Sie einen Termin für die Beratung."
         />
         <FormRow direction="column" gap="medium">
@@ -209,20 +220,17 @@ Kunden-Email: ${formValues.email}
         </FormRow>
         <div className={style.sectionTitle}>Zusammenfassung</div>
         <ul className={style.summaryList}>
-          {(Object.keys(formValues) as CalculatorOptions[]).map((opt) => {
+          {(Object.keys(CALCULATOR_OPTIONS) as SelectFields[]).map((opt) => {
             if (!formValues[opt]) return null;
+            const selectedOption = CALCULATOR_OPTIONS[opt].find(
+              (item) => item.value === formValues[opt],
+            );
+
             return (
               <li className={style.summaryItem} key={opt}>
-                <span>{opt}: </span>
-                <span>
-                  {formValues[opt]} &nbsp;
-                  {
-                    CALCULATOR_OPTIONS[opt]?.find(
-                      (items) => items.value === formValues[opt],
-                    )?.price
-                  }
-                  Chf.
-                </span>
+                <p>{opt}: </p>
+                <p>{selectedOption?.label} &nbsp;</p>
+                <p>{selectedOption?.price} Chf.</p>
               </li>
             );
           })}
@@ -242,14 +250,6 @@ Kunden-Email: ${formValues.email}
             {...register('email')}
           />
           <ButtonContainer side={'right'}>
-            {/*<Button*/}
-            {/*  type="submit"*/}
-            {/*  variant="secondary"*/}
-            {/*  loading={loading}*/}
-            {/*  disabled={success}*/}
-            {/*>*/}
-            {/*  {success ? 'Gesendet!' : 'Kalkulation Senden'}*/}
-            {/*</Button>*/}
             <Button type="submit" variant="primary" loading={loading}>
               Beratung Buchen
             </Button>

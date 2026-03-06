@@ -39,6 +39,7 @@ interface ContainerProps extends PropsWithChildren {
   gap?: string;
   transparent?: boolean;
   backgroundColor?: boolean | 'white';
+  marginTop?: boolean;
 }
 
 export const Container: FC<ContainerProps> = ({
@@ -51,6 +52,7 @@ export const Container: FC<ContainerProps> = ({
   gap,
   transparent,
   backgroundColor = false,
+  marginTop = false,
 }) => (
   <div
     data-flow={flow}
@@ -61,6 +63,7 @@ export const Container: FC<ContainerProps> = ({
     data-gap={gap}
     data-transparent={transparent}
     data-background-color={backgroundColor}
+    data-margin={marginTop}
     className={style.container}
   >
     {children}

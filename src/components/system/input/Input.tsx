@@ -273,12 +273,12 @@ export const Input = forwardRef<
         </div>
 
         {helperText && (
-          <div
+          <p
             id={`${props.id || 'input'}-helper`}
             className={`${style.helperText} ${error ? style.errorText : ''}`}
           >
             {helperText}
-          </div>
+          </p>
         )}
       </div>
     );
