@@ -105,20 +105,19 @@ const CategoriesContainer: FC = () => {
         videoSrc="/assets/output_smooth_odin_drive_right.mp4"
         botsOnlyText={LOREM_IPSUM_SHORT_TEXT}
       />
-      <OverlayContainer>
+      <OverlayContainer key={0}>
         <ContentContainer
           title="Bei uns bekommst du nicht einfach ein Fahrrad"
           text="Präzision, Langlebigkeit und Innovation. Jedes Odin-Bike ist ein Zeugnis Blabal Schweizer Handwerkskunst und unserer Leidenschaft für radfahrerische Perfektion."
         />
       </OverlayContainer>
+      <OverlayContainer key={1}>
+        <ImageContainer />
+      </OverlayContainer>
 
       <OverlayContainer key={1}>{content}</OverlayContainer>
-      <OverlayContainer>
-        <ImageContainer
-          key={2}
-          buttonText={'WOW zeig mer meh'}
-          buttonSide={'middle'}
-        />
+      <OverlayContainer key={2}>
+        <ImageContainer buttonText={'WOW zeig mer meh'} buttonSide={'middle'} />
       </OverlayContainer>
       <OverlayContainer key={3}>{content2}</OverlayContainer>
 

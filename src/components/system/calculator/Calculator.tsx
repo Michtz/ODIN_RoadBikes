@@ -142,7 +142,7 @@ Kunden-Email: ${formValues.email}
     <div className={style.calculatorContainer}>
       <FormContainer onSubmitAction={handleSubmit(onSubmit)} className="">
         <FormTitle
-          title="ODIN Konfigurator"
+          title="Konfigurator"
           description="Konfigurieren Sie Ihr Traumrad und erhalten Sie das Angebot per E-Mail oder buchen Sie einen Termin für die Beratung."
         />
         <FormRow direction="column" gap="medium">

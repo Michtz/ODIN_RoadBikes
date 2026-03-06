@@ -1,7 +1,6 @@
 @use '../../../app/variables' as *;
 .buttonContainer {
   border-radius: 8px;
-  font-weight: 500;
   padding: 0.75rem 1.5rem;
   transition: all 0.2s ease;
   display: inline-flex;
@@ -12,7 +11,7 @@
   border: 1px solid transparent;
   font-size: 14px;
   text-decoration: none;
-  font-family: $font-family-base;
+  font-family: $font-family-big;
 
   &[data-size='small'] {
     padding: 0.5rem 1rem;
@@ -73,8 +72,8 @@
       margin: auto 0;
     }
 
-    font-weight: bold;
-    letter-spacing: 1.2px;
+    font-weight: normal;
+    letter-spacing: 1.3px;
     color: $color-primary;
 
     &:hover {
@@ -190,7 +189,7 @@
 }
 
 .buttonOption {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: $font-family-big;
   border-radius: 6px;
   font-weight: 500;
   transition: all 0.2s ease;

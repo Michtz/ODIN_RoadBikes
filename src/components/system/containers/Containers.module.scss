@@ -221,13 +221,12 @@
 
   @media (max-width: 1068px) {
     gap: 1rem;
-    padding: 4rem 3rem 2rem;
+    padding: 3rem;
   }
   @media (max-width: 498px) {
-    div {
-      // Button
-      justify-content: center !important;
-    }
+    padding: 1.4rem 1.2rem;
+    gap: 0.6rem;
+    margin: 1.5rem 1rem;
   }
 
   h2 {
@@ -235,10 +234,11 @@
     font-weight: bold;
     color: $color-primary;
     text-align: center;
+    margin-left: -2px;
 
     @media (max-width: 1068px) {
-      font-size: 51px;
-      letter-spacing: 2.9px;
+      font-size: 50px;
+      letter-spacing: 2.6px;
       text-align: left;
     }
 
@@ -248,7 +248,7 @@
     }
 
     @media (max-width: 498px) {
-      font-size: 28px;
+      font-size: 26px;
       line-height: 33px;
     }
   }
@@ -274,6 +274,7 @@
 
     @media (max-width: 498px) {
       font-size: 12px;
+      line-height: 24px;
     }
   }
 }
