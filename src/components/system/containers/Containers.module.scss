@@ -280,13 +280,26 @@
 }
 
 .imageContentContainer {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   .imageContainer {
     display: flex;
-    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
 
     .image {
-      width: 100%;
-      height: 100%;
+      width: 50% !important;
+      height: auto !important;
+      object-fit: cover;
+      display: block;
+      flex-shrink: 0;
     }
   }
 }
