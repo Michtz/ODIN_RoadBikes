@@ -8,6 +8,16 @@
   margin-top: -75px;
   margin-bottom: -80vh;
   z-index: 1;
+
+  @media (max-width: 1068px) {
+    margin-bottom: -100vh;
+  }
+  @media (max-width: 768px) {
+    margin-bottom: -110vh;
+  }
+  @media (max-width: 568px) {
+    margin-bottom: -135vh;
+  }
 }
 
 .stickyWrapper {
@@ -21,6 +31,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1068px) {
+    height: 65vh;
+  }
+
+  @media (max-width: 768px) {
+    height: 45vh;
+  }
+
+  @media (max-width: 568px) {
+    height: 30vh;
+  }
+  @media (max-width: 468px) {
+    height: 28vh;
+  }
 }
 
 .videoElement {
@@ -51,7 +76,28 @@
 .logoFade {
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0s ease;
+  transition: opacity 0.5s ease;
+
+  @media (max-width: 1068px) {
+    svg {
+      width: 250px;
+    }
+  }
+  @media (max-width: 768px) {
+    svg {
+      width: 200px;
+    }
+  }
+  @media (max-width: 568px) {
+    svg {
+      width: 180px;
+    }
+  }
+  @media (max-width: 468px) {
+    svg {
+      width: 120px;
+    }
+  }
 
   &.visible {
     opacity: 1;

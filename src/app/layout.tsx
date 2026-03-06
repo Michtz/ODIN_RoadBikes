@@ -44,6 +44,7 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
 };
+// todo: add error page
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
