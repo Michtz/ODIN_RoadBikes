@@ -120,14 +120,14 @@ export const ImageContainer: FC<ImageContainerProps> = ({
     <div className={style.imageContainer}>
       <Image
         className={style.image}
-        src={'/assets/pantaniModified.jpg'}
+        src={'/assets/odin_edited_frame_violet.jpg'}
         alt={'test'}
         width={600}
         height={600}
       />
       <Image
         className={style.image}
-        src={'/assets/pantaniModified.jpg'}
+        src={'/assets/odin_edited_frame_violet.jpg'}
         alt={'test'}
         width={600}
         height={600}

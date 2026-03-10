@@ -19,7 +19,7 @@ interface ProductPageContainerProps {
 
 const ProductPageContainer: FC<ProductPageContainerProps> = ({ view }) => {
   // const contentTriggerRef = useRef<HTMLDivElement>(null);
-  const image1 = '/assets/pantaniModified.jpg';
+  const image1 = '/assets/odin_edited_frame_violet.jpg';
   return (
     <>
       <StickyImageContainer image={image1} title={view} />
