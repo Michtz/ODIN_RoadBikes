@@ -1,13 +1,5 @@
 'use client';
 
-/*
-Änderungen:
-- Typen getrennt: `CalculatorOptionsConfig` für die Auswahlmöglichkeiten und `CalculatorFormValues` für den Formular-State.
-- `email` aus `CALCULATOR_OPTIONS` entfernt, da es ein Freitextfeld und keine Select-Option ist.
-- Reducer für `currentTotal` typsicher gemacht.
-- Variablen-Fehler (`formValues[label]`) in der Zusammenfassung behoben und die ungenutzten Importe sowie auskommentierten Codeblöcke entfernt.
-*/
-
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FormContainer, FormRow, FormTitle } from '../form/Form';
@@ -41,59 +33,59 @@ const CALCULATOR_OPTIONS: CalculatorOptionsConfig = {
     {
       label: 'Odin Carbon Race Frame - Matte Black',
       value: 'frame_carbon_black',
-      price: 100,
+      price: 10000,
     },
     {
       label: 'Odin Carbon Race Frame - Glossy White',
       value: 'frame_carbon_white',
-      price: 100,
+      price: 10000,
     },
     {
       label: 'Odin Titanium Endurance Frame',
       value: 'frame_titanium',
-      price: 100,
+      price: 10000,
     },
   ],
   gruppe: [
-    { label: 'Shimano Dura-Ace Di2', value: 'shimano_dura_ace', price: 100 },
-    { label: 'SRAM Red eTap AXS', value: 'sram_red_etap', price: 100 },
+    { label: 'Shimano Dura-Ace Di2', value: 'shimano_dura_ace', price: 10000 },
+    { label: 'SRAM Red eTap AXS', value: 'sram_red_etap', price: 10000 },
     {
       label: 'Campagnolo Super Record EPS',
       value: 'campagnolo_super_record',
-      price: 100,
+      price: 10000,
     },
   ],
   laufrader: [
-    { label: 'DT Swiss ARC 1100 Dicut', value: 'dt_swiss_arc', price: 100 },
-    { label: 'Zipp 404 Firecrest', value: 'zipp_404', price: 100 },
-    { label: 'Enve SES 5.6', value: 'enve_ses', price: 100 },
+    { label: 'DT Swiss ARC 1100 Dicut', value: 'dt_swiss_arc', price: 10000 },
+    { label: 'Zipp 404 Firecrest', value: 'zipp_404', price: 10000 },
+    { label: 'Enve SES 5.6', value: 'enve_ses', price: 10000 },
   ],
   reifen: [
     {
       label: 'Continental Grand Prix 5000 S TR',
       value: 'conti_gp5000',
-      price: 100,
+      price: 10000,
     },
-    { label: 'Vittoria Corsa Pro', value: 'vittoria_corsa', price: 100 },
-    { label: 'Schwalbe Pro One', value: 'schwalbe_pro_one', price: 100 },
+    { label: 'Vittoria Corsa Pro', value: 'vittoria_corsa', price: 10000 },
+    { label: 'Schwalbe Pro One', value: 'schwalbe_pro_one', price: 10000 },
   ],
   tretlager: [
-    { label: 'CeramicSpeed Coated', value: 'ceramicspeed', price: 100 },
-    { label: 'Shimano Dura-Ace', value: 'shimano_bb', price: 100 },
-    { label: 'Chris King ThreadFit', value: 'chris_king', price: 100 },
+    { label: 'CeramicSpeed Coated', value: 'ceramicspeed', price: 10000 },
+    { label: 'Shimano Dura-Ace', value: 'shimano_bb', price: 10000 },
+    { label: 'Chris King ThreadFit', value: 'chris_king', price: 10000 },
   ],
   lenkerband: [
-    { label: 'Supacaz Super Sticky Kush', value: 'supacaz', price: 100 },
-    { label: 'Lizard Skins DSP 2.5', value: 'lizard_skins', price: 100 },
-    { label: 'Fizik Vento Solocush', value: 'fizik_vento', price: 100 },
+    { label: 'Supacaz Super Sticky Kush', value: 'supacaz', price: 10000 },
+    { label: 'Lizard Skins DSP 2.5', value: 'lizard_skins', price: 10000 },
+    { label: 'Fizik Vento Solocush', value: 'fizik_vento', price: 10000 },
   ],
   sattel: [
-    { label: 'Selle Italia SLR Boost', value: 'selle_italia', price: 100 },
-    { label: 'Fizik Antares Versus Evo', value: 'fizik_antares', price: 100 },
+    { label: 'Selle Italia SLR Boost', value: 'selle_italia', price: 10000 },
+    { label: 'Fizik Antares Versus Evo', value: 'fizik_antares', price: 10000 },
     {
       label: 'Specialized S-Works Power',
       value: 'specialized_power',
-      price: 100,
+      price: 10000,
     },
   ],
 };

@@ -16,7 +16,7 @@ export const LOREM_IPSUM_SHORT_TEXT: string =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ';
 
 const HomeContainer: FC<HomeContainerProps> = () => {
-  const image1 = '/assets/pantaniModified.jpg';
+  const image1 = '/assets/odin_edited_frame_violet.jpg';
   return (
     <>
       <ScrollHeroVideo

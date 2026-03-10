@@ -12,9 +12,9 @@ const ImpressumContainer: FC<ImpressumContainerProps> = () => {
       <div className={style.section}>
         <h2>Kontaktadresse</h2>
         <p>
-          Bikeschmide
+          BIKESCHMIEDE GmbH
           <br />
-          Gemeindehauspl. 13,
+          Gemeindehausplatz 13
           <br /> 6048 Horw
           <br /> Schweiz
         </p>
@@ -22,22 +22,30 @@ const ImpressumContainer: FC<ImpressumContainerProps> = () => {
 
       <div className={style.section}>
         <h2>Vertretungsberechtigte Personen</h2>
-        <p>Maikel nochefrog öb är oder angela !!, Geschäftsführer</p>
-        {/*  // Todo: abklären wer berechtigt*/}
+        <p>Angela Ackermann, Geschäftsführung</p>
       </div>
 
       <div className={style.section}>
         <h2>Kontakt</h2>
         <p>
-          Telefon:&nbsp; <a href="tel:+0413407044">+041 340 70 44</a>
+          Telefon:&nbsp; <a href="tel:+413407044">+41 340 70 44</a>
           <br />
           E-Mail:&nbsp; <a href="mailto:info@odinbikes.ch">info@odinbikes.ch</a>
         </p>
       </div>
 
       <div className={style.section}>
-        <h2>Webdesign & Entwicklung</h2>
-        <p>Michael Venetz</p>
+        <h2>Handelsregistereintrag</h2>
+        <p>
+          Eingetragener Firmenname: BIKESCHMIEDE GmbH
+          <br />
+          Unternehmens-Identifikationsnummer (UID): CHE-243.626.541
+        </p>
+      </div>
+
+      <div className={style.section}>
+        <h2>Entwicklung & Design</h2>
+        <p>Michael Venetz, Webdesign & Marketing</p>
       </div>
     </Container>
   );
