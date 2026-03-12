@@ -117,7 +117,7 @@ const CategoriesContainer: FC = () => {
 
       <OverlayContainer key={1}>{content}</OverlayContainer>
       <OverlayContainer key={2}>
-        <ImageContainer buttonText={'WOW zeig mer meh'} buttonSide={'middle'} />
+        <ImageContainer buttonText={'WOW zeig mer meh'} buttonSide={'center'} />
       </OverlayContainer>
       <OverlayContainer key={3}>{content2}</OverlayContainer>
 

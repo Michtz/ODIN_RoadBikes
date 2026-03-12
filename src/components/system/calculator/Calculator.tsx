@@ -91,7 +91,9 @@ const CALCULATOR_OPTIONS: CalculatorOptionsConfig = {
 };
 
 export const Calculator: React.FC = () => {
-  const { register, handleSubmit, watch } = useForm<CalculatorFormValues>();
+  const { register, handleSubmit, watch, formState } =
+    useForm<CalculatorFormValues>();
+  const { defaultValues } = formState;
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const formValues = watch();
@@ -217,7 +219,8 @@ Kunden-Email: ${formValues.email || ''}
             const selectedOption = CALCULATOR_OPTIONS[opt].find(
               (item) => item.value === formValues[opt],
             );
-
+            // todo befülle die select mit dem günstigsten artikel als default
+            // todo ziel ist es nicht den preis pro artikel anzuzeigen sondern vie viel teurer das teil ist anst de basis auführung
             return (
               <li className={style.summaryItem} key={opt}>
                 <p>{opt}: </p>
