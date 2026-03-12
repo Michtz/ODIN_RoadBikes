@@ -19,8 +19,6 @@ const StickyImageContainer: FC<ScrollHeroProps> = ({ image, title }) => {
           alt="Hero Background"
           fill
           priority
-          sizes="100vw"
-          style={{ objectFit: 'cover' }}
         />
         <div className={style.overlayContent}>
           <h1 className={`${style.logoFade} ${style.visible}`}>{title}</h1>

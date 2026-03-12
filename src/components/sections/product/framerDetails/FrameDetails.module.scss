@@ -1,0 +1,130 @@
+/*
+- Styling für die FrameDetails Component.
+- Tabellen sind durch den Wrapper auf kleinen Bildschirmen horizontal scrollbar.
+- Das Design ist responsiv und verwendet ein Grid für die Detail-Liste.
+*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  //background-color: #ffffff;
+  font-size: 0.95rem;
+
+  th,
+  td {
+    padding: 12px 16px;
+    text-align: center;
+    //border: 1px solid #e2e8f0;
+  }
+
+  th {
+    //background-color: #f8fafc;
+    font-weight: 600;
+    color: #334155;
+  }
+
+  tr:nth-child(even) {
+    //background-color: #f9fafb;
+  }
+
+  tr:hover {
+    //background-color: #f1f5f9;
+  }
+}
+
+.statusPass {
+  //color: #16a34a;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.detailsList {
+  //background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  //border: 1px solid #e2e8f0;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  li {
+    font-size: 0.95rem;
+    //color: #475569;
+
+    strong {
+      //color: #1e293b;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  p {
+    line-height: 1.6;
+    //color: #334155;
+    margin: 0;
+    text-align: justify;
+  }
+}
+
+.keywords {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+
+  strong {
+    //color: #1e293b;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  //background-color: #e2e8f0;
+  //color: #475569;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    //color: #0f172a;
+    cursor: pointer;
+  }
+}

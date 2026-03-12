@@ -26,35 +26,41 @@ const HomeContainer: FC<HomeContainerProps> = () => {
       <OverlayContainer border={false}>
         <ContentContainer
           title="Mehr als ein Rennrad"
-          text="Entdecken Sie die perfekte Synergie aus Leistung und Design. Unsere handgefertigten Carbonrahmen sind für diejenigen gebaut, die auf jeder Straße Exzellenz verlangen."
-          buttonText={'MEHR ERFAHREN'}
+          text="Unbegrenzte Möglichkeiten – dafür stehen wir: Ihr Design, Ihre Komponenten und auf Ihren Körperbau zugeschnitten! Ein Komplettpaket zu einem normalen Preis. Wir stellen Ihr Traumfahrrad zusammen für beste Ergonomie, Aerodynamik und maximalen Fahrspass."
+          buttonText={'Unsere Bikes'}
           buttonSide={'right'}
+          containerPlacement={'fullWith'}
           href={'/bikes/roadbikes'}
         />
       </OverlayContainer>
       <OverlayContainer>
-        <ImageContainer buttonText={'WOW zeig mer meh'} buttonSide={'middle'} />
+        <ImageContainer buttonText={'Mehr Rahmen'} buttonSide={'center'} />
       </OverlayContainer>
       <OverlayContainer>
         <ContentContainer
-          title="Schweizer Handwerk"
-          text="Präzision, Langlebigkeit und Innovation. Jedes Odin-Bike ist ein Zeugnis Schweizer Handwerkskunst und unserer Leidenschaft für radfahrerische Perfektion."
-          buttonText={'MEHR ERFAHREN'}
+          title="Gravity"
+          text="Das echte Bergziegen-Modell in unserer Kollektion. Ein leichter Rahmen in Ihren Wunschfarben mit steifem Tretlagerbereich – jeder Pedaltritt sitzt. Dank der kletterfreundlichen Geometrie der perfekte Rahmen, um die Berge zu bezwingen."
+          buttonText={'ZUM GRAVITY'}
           buttonSide={'right'}
+          containerPlacement={'fullWith'}
+          href={'/bikes/roadbikes/gravity'}
+        />
+      </OverlayContainer>
+      <OverlayContainer>
+        <ImageContainer buttonText={'Zum Gravity'} buttonSide={'center'} />
+      </OverlayContainer>
+      <OverlayContainer>
+        <ContentContainer
+          title="Drift"
+          text="Die Rennmaschine. Eine fahrerfreundlichere Geometrie als bei vielen anderen Marken sorgt für ein schönes Rennrad, das sich hervorragend klettern lässt. Entwickelt mit all unserer Erfahrung aus dem Bikefitting."
+          buttonText={'Zum Drft'}
+          buttonSide={'right'}
+          containerPlacement={'fullWith'}
           href={'/bikes/roadbikes'}
         />
       </OverlayContainer>
       <OverlayContainer>
         <ImageContainer />
-      </OverlayContainer>
-      <OverlayContainer>
-        <ContentContainer
-          title="Bauen Sie Ihr Traumrad"
-          text="Vom Rahmen bis zum Finish – passen Sie jede Komponente an Ihren Fahrstil an. Erleben Sie das ultimative Fahrerlebnis, das speziell für Sie maßgeschneidert wurde."
-          buttonText={'MEHR ERFAHREN'}
-          buttonSide={'right'}
-          href={'/bikes/roadbikes'}
-        />
       </OverlayContainer>
       <OverlayContainer>
         <Calculator />

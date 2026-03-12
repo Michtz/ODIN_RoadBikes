@@ -1,3 +1,9 @@
+/*
+- Die Option-Labels in den Dropdowns zeigen jetzt immer den Aufpreis an, auch bei Basis-Artikeln (+ 0 Chf.).
+- Die Zusammenfassungsliste zeigt für jedes ausgewählte Teil nur den berechneten Aufpreis zur Basis-Ausführung (+ X Chf.) an.
+- Der "Aktuelle Preis" (Gesamtpreis) berechnet sich weiterhin aus der absoluten Summe aller ausgewählten Bauteile.
+*/
+
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -33,7 +39,7 @@ const CALCULATOR_OPTIONS: CalculatorOptionsConfig = {
     {
       label: 'Odin Carbon Race Frame - Matte Black',
       value: 'frame_carbon_black',
-      price: 10000,
+      price: 1000,
     },
     {
       label: 'Odin Carbon Race Frame - Glossy White',
@@ -47,7 +53,7 @@ const CALCULATOR_OPTIONS: CalculatorOptionsConfig = {
     },
   ],
   gruppe: [
-    { label: 'Shimano Dura-Ace Di2', value: 'shimano_dura_ace', price: 10000 },
+    { label: 'Shimano Dura-Ace Di2', value: 'shimano_dura_ace', price: 1000 },
     { label: 'SRAM Red eTap AXS', value: 'sram_red_etap', price: 10000 },
     {
       label: 'Campagnolo Super Record EPS',
@@ -57,7 +63,7 @@ const CALCULATOR_OPTIONS: CalculatorOptionsConfig = {
   ],
   laufrader: [
     { label: 'DT Swiss ARC 1100 Dicut', value: 'dt_swiss_arc', price: 10000 },
-    { label: 'Zipp 404 Firecrest', value: 'zipp_404', price: 10000 },
+    { label: 'Zipp 404 Firecrest', value: 'zipp_404', price: 1000 },
     { label: 'Enve SES 5.6', value: 'enve_ses', price: 10000 },
   ],
   reifen: [
@@ -67,20 +73,20 @@ const CALCULATOR_OPTIONS: CalculatorOptionsConfig = {
       price: 10000,
     },
     { label: 'Vittoria Corsa Pro', value: 'vittoria_corsa', price: 10000 },
-    { label: 'Schwalbe Pro One', value: 'schwalbe_pro_one', price: 10000 },
+    { label: 'Schwalbe Pro One', value: 'schwalbe_pro_one', price: 1000 },
   ],
   tretlager: [
-    { label: 'CeramicSpeed Coated', value: 'ceramicspeed', price: 10000 },
+    { label: 'CeramicSpeed Coated', value: 'ceramicspeed', price: 1000 },
     { label: 'Shimano Dura-Ace', value: 'shimano_bb', price: 10000 },
-    { label: 'Chris King ThreadFit', value: 'chris_king', price: 10000 },
+    { label: 'Chris King ThreadFit', value: 'chris_king', price: 1000 },
   ],
   lenkerband: [
     { label: 'Supacaz Super Sticky Kush', value: 'supacaz', price: 10000 },
-    { label: 'Lizard Skins DSP 2.5', value: 'lizard_skins', price: 10000 },
+    { label: 'Lizard Skins DSP 2.5', value: 'lizard_skins', price: 1000 },
     { label: 'Fizik Vento Solocush', value: 'fizik_vento', price: 10000 },
   ],
   sattel: [
-    { label: 'Selle Italia SLR Boost', value: 'selle_italia', price: 10000 },
+    { label: 'Selle Italia SLR Boost', value: 'selle_italia', price: 1000 },
     { label: 'Fizik Antares Versus Evo', value: 'fizik_antares', price: 10000 },
     {
       label: 'Specialized S-Works Power',
@@ -90,8 +96,35 @@ const CALCULATOR_OPTIONS: CalculatorOptionsConfig = {
   ],
 };
 
+const getDefaultValues = (): Partial<CalculatorFormValues> => {
+  const defaults: Partial<CalculatorFormValues> = {};
+  (Object.keys(CALCULATOR_OPTIONS) as SelectFields[]).forEach((key) => {
+    const options = CALCULATOR_OPTIONS[key];
+    const cheapest = options.reduce((min, current) =>
+      current.price < min.price ? current : min,
+    );
+    defaults[key] = cheapest.value;
+  });
+  return defaults;
+};
+
+const getRelativeOptions = (key: SelectFields): CalculatorOption[] => {
+  const options = CALCULATOR_OPTIONS[key];
+  const minPrice = Math.min(...options.map((o) => o.price));
+
+  return options.map((opt) => {
+    const diff = opt.price - minPrice;
+    return {
+      ...opt,
+      label: `${opt.label} ${diff > 0 && `+${diff} Chf.`}`,
+    };
+  });
+};
+
 export const Calculator: React.FC = () => {
-  const { register, handleSubmit, watch } = useForm<CalculatorFormValues>();
+  const { register, handleSubmit, watch } = useForm<CalculatorFormValues>({
+    defaultValues: getDefaultValues(),
+  });
   const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const formValues = watch();
@@ -100,6 +133,8 @@ export const Calculator: React.FC = () => {
     Object.keys(CALCULATOR_OPTIONS) as SelectFields[]
   ).reduce((total, key) => {
     const selectedValue = formValues[key];
+    if (!selectedValue) return total;
+
     const option = CALCULATOR_OPTIONS[key].find(
       (o) => o.value === selectedValue,
     );
@@ -151,7 +186,7 @@ Kunden-Email: ${formValues.email || ''}
         <FormRow direction="column" gap="medium">
           <Select
             label="Rahmen-Type:"
-            options={CALCULATOR_OPTIONS.frame}
+            options={getRelativeOptions('frame')}
             placeholder="Bitte wählen..."
             fullWidth
             required
@@ -159,7 +194,7 @@ Kunden-Email: ${formValues.email || ''}
           />
           <Select
             label="Schalt-Gruppe:"
-            options={CALCULATOR_OPTIONS.gruppe}
+            options={getRelativeOptions('gruppe')}
             placeholder="Bitte wählen..."
             fullWidth
             required
@@ -167,7 +202,7 @@ Kunden-Email: ${formValues.email || ''}
           />
           <Select
             label="Laufräder:"
-            options={CALCULATOR_OPTIONS.laufrader}
+            options={getRelativeOptions('laufrader')}
             placeholder="Bitte wählen..."
             fullWidth
             required
@@ -177,7 +212,7 @@ Kunden-Email: ${formValues.email || ''}
         <FormRow direction="column" gap="medium">
           <Select
             label="Reifen:"
-            options={CALCULATOR_OPTIONS.reifen}
+            options={getRelativeOptions('reifen')}
             placeholder="Bitte wählen..."
             fullWidth
             required
@@ -185,7 +220,7 @@ Kunden-Email: ${formValues.email || ''}
           />
           <Select
             label="Tretlager:"
-            options={CALCULATOR_OPTIONS.tretlager}
+            options={getRelativeOptions('tretlager')}
             placeholder="Bitte wählen..."
             fullWidth
             required
@@ -195,7 +230,7 @@ Kunden-Email: ${formValues.email || ''}
         <FormRow direction="column" gap="medium">
           <Select
             label="Lenkerband:"
-            options={CALCULATOR_OPTIONS.lenkerband}
+            options={getRelativeOptions('lenkerband')}
             placeholder="Bitte wählen..."
             fullWidth
             required
@@ -203,7 +238,7 @@ Kunden-Email: ${formValues.email || ''}
           />
           <Select
             label="Sattel"
-            options={CALCULATOR_OPTIONS.sattel}
+            options={getRelativeOptions('sattel')}
             placeholder="Bitte wählen..."
             fullWidth
             required
@@ -217,12 +252,16 @@ Kunden-Email: ${formValues.email || ''}
             const selectedOption = CALCULATOR_OPTIONS[opt].find(
               (item) => item.value === formValues[opt],
             );
+            const minPrice = Math.min(
+              ...CALCULATOR_OPTIONS[opt].map((o) => o.price),
+            );
+            const diffPrice = (selectedOption?.price || 0) - minPrice;
 
             return (
               <li className={style.summaryItem} key={opt}>
                 <p>{opt}: </p>
                 <p>{selectedOption?.label} &nbsp;</p>
-                <p>{selectedOption?.price} Chf.</p>
+                <p>+ {diffPrice} Chf.</p>
               </li>
             );
           })}

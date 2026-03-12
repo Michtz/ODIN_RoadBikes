@@ -79,6 +79,7 @@ interface ContentContainerProps {
   text?: string;
   buttonText?: string;
   buttonSide?: 'left' | 'right';
+  containerPlacement?: 'left' | 'right' | 'fullWith' | 'center';
   href?: string;
   border?: 'bottom' | false;
 }
@@ -87,9 +88,10 @@ export const ContentContainer: FC<ContentContainerProps> = ({
   text,
   buttonText,
   buttonSide = 'left',
+  containerPlacement = 'left',
   href,
 }) => (
-  <div className={style.contentContainer}>
+  <div className={style.contentContainer} data-side={containerPlacement}>
     <h2>{title}</h2>
     <p>{text}</p>
     {buttonText && (
