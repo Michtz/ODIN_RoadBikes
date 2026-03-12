@@ -16,16 +16,16 @@ const CategoriesContainer: FC = () => {
   const items: any[] = [
     {
       id: 1,
-      imageA: '/assets/odin_frame_black.png',
-      alt: 'Schmolke Bike',
+      imageA: '/assets/slide_frame_Black.png',
+      alt: 'Odin Bike',
       title: 'Gravity',
       text: PLACHOLDERTEXT,
       url: '/bikes/roadbikes/gravity',
     },
     {
       id: 2,
-      imageA: '/assets/odin_frame_black.png',
-      alt: 'Schmolke Bike',
+      imageA: '/assets/slide_frame_Black.png',
+      alt: 'Odin Bike',
       title: 'Reaction',
       text: PLACHOLDERTEXT,
 
@@ -33,8 +33,8 @@ const CategoriesContainer: FC = () => {
     },
     {
       id: 3,
-      imageA: '/assets/odin_frame_black.png',
-      alt: 'Schmolke Bike',
+      imageA: '/assets/slide_frame_Black.png',
+      alt: 'Odin Bike',
       title: 'Flow',
       text: PLACHOLDERTEXT,
 
@@ -42,8 +42,8 @@ const CategoriesContainer: FC = () => {
     },
     {
       id: 4,
-      imageA: '/assets/odin_frame_black.png',
-      alt: 'Schmolke Bike',
+      imageA: '/assets/slide_frame_Black.png',
+      alt: 'Odin Bike',
       title: 'Slide',
       text: PLACHOLDERTEXT,
       url: '/bikes/roadbikes/slide',
@@ -52,16 +52,16 @@ const CategoriesContainer: FC = () => {
   const items2: any[] = [
     {
       id: 1,
-      imageA: '/assets/odin_frame_black.png',
-      alt: 'Schmolke Bike',
+      imageA: '/assets/odin_edited_frame_violet.jpg',
+      alt: 'Odin Bike',
       title: 'Gravity',
       text: PLACHOLDERTEXT,
       url: '/bikes/roadbikes/gravity',
     },
     {
       id: 2,
-      imageA: '/assets/odin_frame_black.png',
-      alt: 'Schmolke Bike',
+      imageA: '/assets/odin_edited_frame_violet.jpg',
+      alt: 'Odin Bike',
       title: 'Reaction',
       text: PLACHOLDERTEXT,
 
@@ -69,8 +69,8 @@ const CategoriesContainer: FC = () => {
     },
     {
       id: 3,
-      imageA: '/assets/odin_frame_black.png',
-      alt: 'Schmolke Bike',
+      imageA: '/assets/odin_edited_frame_violet.jpg',
+      alt: 'Odin Bike',
       title: 'Flow',
       text: PLACHOLDERTEXT,
 
@@ -78,8 +78,8 @@ const CategoriesContainer: FC = () => {
     },
     {
       id: 4,
-      imageA: '/assets/odin_frame_black.png',
-      alt: 'Schmolke Bike',
+      imageA: '/assets/odin_edited_frame_violet.jpg',
+      alt: 'Odin Bike',
       title: 'Slide',
       text: PLACHOLDERTEXT,
       url: '/bikes/roadbikes/slide',
@@ -107,8 +107,12 @@ const CategoriesContainer: FC = () => {
       />
       <OverlayContainer key={0}>
         <ContentContainer
-          title="Bei uns bekommst du nicht einfach ein Fahrrad"
-          text="Präzision, Langlebigkeit und Innovation. Jedes Odin-Bike ist ein Zeugnis Blabal Schweizer Handwerkskunst und unserer Leidenschaft für radfahrerische Perfektion."
+          title="Dein nächstes Fahrrad"
+          text="Individualität, Präzision & Langlebigkeit. Jedes Odin-Bike ist ein Zeugnis individueller Schweizer Handwerkskunst und unserer Leidenschaft für Perfektion."
+          buttonText={'Unsere Bikes'}
+          buttonSide={'right'}
+          containerPlacement={'fullWith'}
+          href={'/bikes/roadbikes'}
         />
       </OverlayContainer>
       <OverlayContainer key={1}>
@@ -119,6 +123,7 @@ const CategoriesContainer: FC = () => {
       <OverlayContainer key={2}>
         <ImageContainer buttonText={'WOW zeig mer meh'} buttonSide={'center'} />
       </OverlayContainer>
+
       <OverlayContainer key={3}>{content2}</OverlayContainer>
 
       <OverlayContainer key={4} border={false}>

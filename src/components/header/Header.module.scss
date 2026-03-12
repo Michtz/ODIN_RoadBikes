@@ -65,12 +65,8 @@
 
       .navItem {
         padding-right: 20px;
-        cursor: pointer;
         transition: all 0.2s ease-in-out;
-        color: $color-primary;
-        font-family: $font-family-base;
         text-transform: uppercase;
-        font-weight: bold;
 
         &:hover {
           transform: translateY(-1px);
