@@ -34,7 +34,12 @@ const HomeContainer: FC<HomeContainerProps> = () => {
         />
       </OverlayContainer>
       <OverlayContainer>
-        <ImageContainer buttonText={'Mehr Rahmen'} buttonSide={'center'} />
+        <ImageContainer
+          imageRight={'/assets/bike_frames/001_DSCF5347_edit.jpg'}
+          imageLeft={'/assets/bike_frames/ai/odin_frame_orange_ai.png'}
+          buttonText={'Mehr Rahmen'}
+          buttonSide={'center'}
+        />
       </OverlayContainer>
       <OverlayContainer>
         <ContentContainer
@@ -47,7 +52,12 @@ const HomeContainer: FC<HomeContainerProps> = () => {
         />
       </OverlayContainer>
       <OverlayContainer>
-        <ImageContainer buttonText={'Zum Gravity'} buttonSide={'center'} />
+        <ImageContainer
+          imageRight={'/assets/bike_frames/ai/odin_frame_blue_gravity_ai.png'}
+          imageLeft={'/assets/bike_frames/ai/odin_frame_yellow_gravity_ai.png'}
+          buttonText={'Zum Gravity'}
+          buttonSide={'center'}
+        />
       </OverlayContainer>
       <OverlayContainer>
         <ContentContainer
@@ -60,7 +70,10 @@ const HomeContainer: FC<HomeContainerProps> = () => {
         />
       </OverlayContainer>
       <OverlayContainer>
-        <ImageContainer />
+        <ImageContainer
+          imageRight={'/assets/bike_frames/007_DSCF5350_edit.jpg'}
+          imageLeft={'/assets/bike_frames/ai/odin_frame_holand_ai.png'}
+        />
       </OverlayContainer>
       <OverlayContainer>
         <Calculator />
@@ -68,18 +81,20 @@ const HomeContainer: FC<HomeContainerProps> = () => {
       <OverlayContainer>
         <ScrollStaggeredGrid
           imagesArray={[
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
+            '/assets/bike_frames/014_DSCF5378_edit.jpg',
+            '/assets/bike_frames/008_DSCF5371_edit.jpg',
+            '/assets/bike_frames/002_DSCF5367_edit.jpg',
+            '/assets/bike_frames/019_DSCF5360_edit.jpg',
+
+            '/assets/bike_frames/015_DSCF5391_edit.jpg',
+            '/assets/bike_frames/009_DSCF5395_edit.jpg',
+            '/assets/bike_frames/003_DSCF5402_edit.jpg',
+            '/assets/bike_frames/020_DSCF5364_edit.jpg',
+
+            '/assets/bike_frames/013_DSCF5356_edit.jpg',
+            '/assets/bike_frames/007_DSCF5350_edit.jpg',
+            '/assets/bike_frames/001_DSCF5347_edit.jpg',
+            '/assets/bike_frames/021_DSCF5398_edit.jpg',
           ]}
         />
       </OverlayContainer>

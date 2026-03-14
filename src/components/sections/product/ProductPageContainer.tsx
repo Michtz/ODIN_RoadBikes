@@ -21,7 +21,7 @@ interface ProductPageContainerProps {
 
 const ProductPageContainer: FC<ProductPageContainerProps> = ({ view }) => {
   // const contentTriggerRef = useRef<HTMLDivElement>(null);
-  const image1 = '/assets/slide_frame_Black.png';
+  const image1 = '/assets/bike_frames/transparent/DSCF5378.png';
 
   const data = {
     versions: [
@@ -266,7 +266,7 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({ view }) => {
         />
       </OverlayContainer>
       <OverlayContainer border={false} key={2}>
-        <ScrollDeepDiveBike imageSrc={'/assets/test_feska.webp'} title={view} />
+        <ScrollDeepDiveBike imageSrc={image1} title={view} />
       </OverlayContainer>
 
       <OverlayContainer border={false} key={3}>
@@ -283,18 +283,20 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({ view }) => {
       <OverlayContainer border={false} key={4}>
         <ScrollStaggeredGrid
           imagesArray={[
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
-            image1,
+            '/assets/bike_frames/014_DSCF5378_edit.jpg',
+            '/assets/bike_frames/002_DSCF5367_edit.jpg',
+            '/assets/bike_frames/008_DSCF5371_edit.jpg',
+            '/assets/bike_frames/019_DSCF5360_edit.jpg',
+
+            '/assets/bike_frames/015_DSCF5391_edit.jpg',
+            '/assets/bike_frames/003_DSCF5402_edit.jpg',
+            '/assets/bike_frames/009_DSCF5395_edit.jpg',
+            '/assets/bike_frames/020_DSCF5364_edit.jpg',
+
+            '/assets/bike_frames/013_DSCF5356_edit.jpg',
+            '/assets/bike_frames/001_DSCF5347_edit.jpg',
+            '/assets/bike_frames/007_DSCF5350_edit.jpg',
+            '/assets/bike_frames/021_DSCF5398_edit.jpg',
           ]}
         />
       </OverlayContainer>

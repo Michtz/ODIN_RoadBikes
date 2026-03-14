@@ -11,6 +11,7 @@ import ImageHoverTextContainer from '@/components/system/imageHoverTextContainer
 import ScrollHeroVideo from '@/components/system/scorllVideoHero/ScrollHeroVideo';
 import { LOREM_IPSUM_SHORT_TEXT } from '@/components/containers/HomeContainer';
 import Calculator from '@/components/system/calculator/Calculator';
+import Button from '@/components/system/button/Button';
 
 const CategoriesContainer: FC = () => {
   const items: any[] = [
@@ -26,33 +27,16 @@ const CategoriesContainer: FC = () => {
       id: 2,
       imageA: '/assets/slide_frame_Black.png',
       alt: 'Odin Bike',
-      title: 'Reaction',
+      title: 'Slide',
       text: PLACHOLDERTEXT,
 
       url: '/bikes/roadbikes/reaction',
-    },
-    {
-      id: 3,
-      imageA: '/assets/slide_frame_Black.png',
-      alt: 'Odin Bike',
-      title: 'Flow',
-      text: PLACHOLDERTEXT,
-
-      url: '/bikes/roadbikes/flow',
-    },
-    {
-      id: 4,
-      imageA: '/assets/slide_frame_Black.png',
-      alt: 'Odin Bike',
-      title: 'Slide',
-      text: PLACHOLDERTEXT,
-      url: '/bikes/roadbikes/slide',
     },
   ];
   const items2: any[] = [
     {
       id: 1,
-      imageA: '/assets/odin_edited_frame_violet.jpg',
+      imageA: '/assets/bike_frames/ai/odin_frame_yellow_gravity_ai.png',
       alt: 'Odin Bike',
       title: 'Gravity',
       text: PLACHOLDERTEXT,
@@ -62,27 +46,10 @@ const CategoriesContainer: FC = () => {
       id: 2,
       imageA: '/assets/odin_edited_frame_violet.jpg',
       alt: 'Odin Bike',
-      title: 'Reaction',
+      title: 'Slide',
       text: PLACHOLDERTEXT,
 
       url: '/bikes/roadbikes/reaction',
-    },
-    {
-      id: 3,
-      imageA: '/assets/odin_edited_frame_violet.jpg',
-      alt: 'Odin Bike',
-      title: 'Flow',
-      text: PLACHOLDERTEXT,
-
-      url: '/bikes/roadbikes/flow',
-    },
-    {
-      id: 4,
-      imageA: '/assets/odin_edited_frame_violet.jpg',
-      alt: 'Odin Bike',
-      title: 'Slide',
-      text: PLACHOLDERTEXT,
-      url: '/bikes/roadbikes/slide',
     },
   ];
 
@@ -90,6 +57,8 @@ const CategoriesContainer: FC = () => {
     <>
       <Title>Rahmen Typen</Title>
       <ImageHoverTextContainer items={items} />
+      <Title>Mehr kommen schon Bald...</Title>
+      <Button>Benachrichtige mich</Button>
     </>
   );
   const content2 = (
@@ -116,13 +85,15 @@ const CategoriesContainer: FC = () => {
         />
       </OverlayContainer>
       <OverlayContainer key={1}>
-        <ImageContainer />
+        <ImageContainer
+          imageRight={'/assets/bike_frames/001_DSCF5347_edit.jpg'}
+          imageLeft={'/assets/bike_frames/ai/odin_frame_holand_ai.png'}
+          buttonText={'Mehr Rahmen'}
+          buttonSide={'center'}
+        />
       </OverlayContainer>
 
-      <OverlayContainer key={1}>{content}</OverlayContainer>
-      <OverlayContainer key={2}>
-        <ImageContainer buttonText={'WOW zeig mer meh'} buttonSide={'center'} />
-      </OverlayContainer>
+      <OverlayContainer key={2}>{content}</OverlayContainer>
 
       <OverlayContainer key={3}>{content2}</OverlayContainer>
 
