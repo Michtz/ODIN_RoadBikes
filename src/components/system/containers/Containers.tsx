@@ -109,6 +109,8 @@ interface ImageContainerProps {
   buttonSide?: ButtonPositions;
   href?: string;
   border?: 'bottom' | false;
+  imageRight: string;
+  imageLeft: string;
 }
 export const ImageContainer: FC<ImageContainerProps> = ({
   title,
@@ -116,20 +118,23 @@ export const ImageContainer: FC<ImageContainerProps> = ({
   buttonText,
   buttonSide = 'left',
   href,
+  imageRight,
+  imageLeft,
+
   border = 'bottom',
 }) => (
   <div className={style.imageContentContainer}>
     <div className={style.imageContainer}>
       <Image
         className={style.image}
-        src={'/assets/odin_edited_frame_violet.jpg'}
+        src={imageLeft}
         alt={'test'}
         width={600}
         height={600}
       />
       <Image
         className={style.image}
-        src={'/assets/odin_edited_frame_violet.jpg'}
+        src={imageRight}
         alt={'test'}
         width={600}
         height={600}

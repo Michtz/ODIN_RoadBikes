@@ -22,7 +22,10 @@
 //  }
 //}
 
-.cardItem:nth-child(1) {
+.cardItem:nth-child(2) {
+  .image {
+    transform: scaleX(-1);
+  }
 }
 
 .cardItem {
