@@ -11,12 +11,10 @@ import ScrollStaggeredGrid from '@/components/system/imageGridContainer/ScrollSt
 
 interface HomeContainerProps {}
 
-export const LOREM_IPSUM_TITLE: string = 'Lorem Ipsum ';
 export const LOREM_IPSUM_SHORT_TEXT: string =
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ';
 
 const HomeContainer: FC<HomeContainerProps> = () => {
-  const image1 = '/assets/odin_edited_frame_violet.jpg';
   return (
     <>
       <ScrollHeroVideo
@@ -59,22 +57,7 @@ const HomeContainer: FC<HomeContainerProps> = () => {
           buttonSide={'center'}
         />
       </OverlayContainer>
-      <OverlayContainer>
-        <ContentContainer
-          title="Drift"
-          text="Die Rennmaschine. Eine fahrerfreundlichere Geometrie als bei vielen anderen Marken sorgt für ein schönes Rennrad, das sich hervorragend klettern lässt. Entwickelt mit all unserer Erfahrung aus dem Bikefitting."
-          buttonText={'Zum Drft'}
-          buttonSide={'right'}
-          containerPlacement={'fullWith'}
-          href={'/bikes/roadbikes'}
-        />
-      </OverlayContainer>
-      <OverlayContainer>
-        <ImageContainer
-          imageRight={'/assets/bike_frames/007_DSCF5350_edit.jpg'}
-          imageLeft={'/assets/bike_frames/ai/odin_frame_holand_ai.png'}
-        />
-      </OverlayContainer>
+
       <OverlayContainer>
         <Calculator />
       </OverlayContainer>

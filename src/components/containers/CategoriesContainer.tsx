@@ -30,7 +30,7 @@ const CategoriesContainer: FC = () => {
       title: 'Slide',
       text: PLACHOLDERTEXT,
 
-      url: '/bikes/roadbikes/reaction',
+      url: '/bikes/roadbikes/slide',
     },
   ];
   const items2: any[] = [
@@ -49,7 +49,7 @@ const CategoriesContainer: FC = () => {
       title: 'Slide',
       text: PLACHOLDERTEXT,
 
-      url: '/bikes/roadbikes/reaction',
+      url: '/bikes/roadbikes/slide',
     },
   ];
 
