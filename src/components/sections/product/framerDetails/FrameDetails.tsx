@@ -7,32 +7,8 @@
 'use client';
 
 import React from 'react';
-import style from './FrameDetails.module.scss'; // Passe den Pfad ggf. an
-
-export interface FrameData {
-  versions: {
-    name: string;
-    model: string;
-    size: string;
-    weight: string;
-    rigidity: {
-      headtube: string;
-      bottomBracket: string;
-      dropout: string;
-    };
-  }[];
-  testItems: {
-    name: string;
-    status: string;
-    standard: string;
-  }[];
-  details: {
-    label: string;
-    value: string;
-  }[];
-  description: string[];
-  keywords: string[];
-}
+import style from './FrameDetails.module.scss';
+import { FrameData } from '@/data/gravity_data';
 
 interface FrameDetailsProps {
   data: FrameData;

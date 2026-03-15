@@ -2,6 +2,8 @@
 import React, { FC } from 'react';
 import ProductPageContainer from '@/components/sections/product/ProductPageContainer';
 import { Container } from '@/components/system/containers/Containers';
+import { gravityGeometry } from '@/data/gravity_data';
+import { slideGeometry } from '@/data/slide_data';
 
 type View = 'gravity' | 'flow' | 'reaction' | 'slide';
 
@@ -22,11 +24,15 @@ const ProductContent: React.FC<ProductContainerProps> = ({
 }): React.ReactElement => {
   const getCurrentView = (): React.ReactElement => {
     switch (view) {
-      case 'gravity':
-      case 'flow':
-      case 'reaction':
       case 'slide':
-        return <ProductPageContainer view={view} />;
+        return (
+          <ProductPageContainer view={view} gravityGeometry={slideGeometry} />
+        );
+
+      case 'gravity':
+        return (
+          <ProductPageContainer view={view} gravityGeometry={gravityGeometry} />
+        );
       default:
         return <></>;
     }

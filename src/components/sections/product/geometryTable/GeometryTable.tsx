@@ -7,13 +7,7 @@
 
 import React from 'react';
 import style from './GeometryTable.module.scss';
-
-export interface GeometryData {
-  imageUrl?: string;
-  imageAlt?: string;
-  headers: string[];
-  rows: string[][];
-}
+import { GeometryData } from '@/data/gravity_data';
 
 interface GeometryTableProps {
   data: GeometryData;
