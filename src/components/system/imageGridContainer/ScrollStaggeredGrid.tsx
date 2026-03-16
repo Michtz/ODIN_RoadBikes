@@ -38,11 +38,13 @@ const ScrollStaggeredGrid: FC<ScrollStaggeredGridProps> = ({ imagesArray }) => {
   const multipliers = [-100, 0, -100];
 
   const splitIntoParts = (arr: any[], parts: number) => {
+    const processableArr =
+      parts === 2 ? arr.slice(0, Math.ceil(arr.length * (2 / 3))) : arr;
     const result = [];
-    const size = Math.ceil(arr.length / parts);
+    const size = Math.ceil(processableArr.length / parts);
 
-    for (let i = 0; i < arr.length; i += size) {
-      result.push(arr.slice(i, i + size));
+    for (let i = 0; i < processableArr.length; i += size) {
+      result.push(processableArr.slice(i, i + size));
     }
 
     return result;
@@ -51,24 +53,33 @@ const ScrollStaggeredGrid: FC<ScrollStaggeredGridProps> = ({ imagesArray }) => {
   return (
     <>
       <div className={style.container} ref={containerRef}>
-        {splitIntoParts(imagesArray, 3).map((images, index) => (
-          <Row
-            images={images}
-            key={index}
-            transform={{
-              transform: `translate3d(0, ${progress * multipliers[index]}px, 0)`,
-            }}
-          />
-        ))}
+        {splitIntoParts(imagesArray, window.innerWidth < 500 ? 2 : 3).map(
+          (images, index) => (
+            <Row
+              images={images}
+              key={index}
+              transform={{
+                transform: `translate3d(0, ${progress * multipliers[index]}px, 0)`,
+              }}
+            />
+          ),
+        )}
       </div>
-      <div className={style.overlay}></div>
+      <div
+        className={style.overlay}
+        data-row-count={window.innerWidth < 500 ? '2' : '3'}
+      ></div>
     </>
   );
 };
 
 const Row: FC<RowProps> = ({ images, transform }) => {
   return (
-    <div className={style.row} style={transform}>
+    <div
+      className={style.row}
+      style={transform}
+      data-row-count={window.innerWidth < 500 ? '2' : '3'}
+    >
       {images.map((src, i) => (
         <Image
           key={`${src}-${i}`}

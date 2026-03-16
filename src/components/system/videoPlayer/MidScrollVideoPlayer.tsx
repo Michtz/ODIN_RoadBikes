@@ -49,9 +49,9 @@ const MidScrollVideoPlayer: FC<MidScrollVideoPlayerProps> = ({
       ref={containerRef}
       style={{ height: `calc(100vh + ${playbackConst}px)` }}
     >
-      {' '}
       <div className={style.stickyWrapper}>
         <div className={style.videoContainer}>
+          <div className={style.placeholder}></div>
           <video
             className={style.videoElement}
             ref={videoRef}
@@ -59,7 +59,6 @@ const MidScrollVideoPlayer: FC<MidScrollVideoPlayerProps> = ({
             playsInline
             preload="auto"
           >
-            {/* Achte darauf, dass der Pfad mit / beginnt, wenn er in 'public' liegt */}
             <source
               src={videoSrc.startsWith('/') ? videoSrc : `/${videoSrc}`}
               type="video/mp4"
@@ -69,27 +68,27 @@ const MidScrollVideoPlayer: FC<MidScrollVideoPlayerProps> = ({
         </div>
       </div>
       <div className={style.textContainer}>
-        <h2>Wähle dein Rahmen</h2>
+        <h2>Rahmen</h2>
         <p>{PLACHOLDERTEXT}</p>
       </div>{' '}
-      <div style={{ height: '300px' }}></div>
+      <div className={style.distanceHolder}></div>
       <div className={style.textContainer}>
-        <h2>Wähle dein Farbe</h2>
+        <h2>Farbe</h2>
         <p>{PLACHOLDERTEXT}</p>
       </div>{' '}
-      <div style={{ height: '300px' }}></div>
+      <div className={style.distanceHolder}></div>
       <div className={style.textContainer}>
-        <h2>Wähle dein Komponenten</h2>
+        <h2>Teile</h2>
         <p>{PLACHOLDERTEXT}</p>
       </div>{' '}
-      <div style={{ height: '300px' }}></div>
+      <div className={style.distanceHolder}></div>
       <div className={style.textContainer}>
-        <h2>Wähle dein BikeFitting</h2>
+        <h2>Fitting</h2>
         <p>{PLACHOLDERTEXT}</p>
       </div>
-      <div style={{ height: '300px' }}></div>
+      <div className={style.distanceHolder}></div>
       <div className={style.textContainer}>
-        <h2>Garantie garantiert</h2>
+        <h2>Service</h2>
         <p>{PLACHOLDERTEXT}</p>
       </div>
     </div>

@@ -40,6 +40,7 @@ interface ContainerProps extends PropsWithChildren {
   transparent?: boolean;
   backgroundColor?: boolean | 'white';
   marginTop?: boolean;
+  size?: 'small' | 'normal';
 }
 
 export const Container: FC<ContainerProps> = ({
@@ -70,8 +71,10 @@ export const Container: FC<ContainerProps> = ({
   </div>
 );
 
-export const Title: FC<ContainerProps> = ({ children }) => (
-  <h2 className={style.title}>{children}</h2>
+export const Title: FC<ContainerProps> = ({ size = 'normal', children }) => (
+  <h2 className={style.title} data-size={size}>
+    {children}
+  </h2>
 );
 
 interface ContentContainerProps {

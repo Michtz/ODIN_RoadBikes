@@ -14,6 +14,7 @@ const ResponsiveAppBar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const lastScrollY = useRef(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,15 +61,6 @@ const ResponsiveAppBar = () => {
         <div
           className={`${style.NavContainer} ${!isLoading ? style.fadeIn : style.fadeOut}`}
         >
-          <div className={style.hamburgerMenu}>
-            <HamburgerIcon
-              // isOpen={isSideNavOpen}
-              // onClick={toggleSideNav}
-              width={24}
-              height={24}
-            />
-          </div>
-
           {/*<ul className={style.navItemContainer}>*/}
           {/*  /!*<li className={style.navItem}>*!/*/}
           {/*  /!*  <Link href={'/bikes/gravelbikes'}>Gravelbikes</Link>*!/*/}
@@ -81,13 +73,11 @@ const ResponsiveAppBar = () => {
           </span>
           <ul className={style.navItemContainer}>
             <li className={style.navItem}>
-              <Link disabled href={'/bikes/roadbikes'}>
-                Rennräder
-              </Link>
+              <Link href={'/bikes/roadbikes'}>Rennräder</Link>
             </li>
 
             <li className={style.navItem}>
-              <Link disabled onClick={() => setIsModalOpen(true)}>
+              <Link onClick={() => setIsModalOpen(true)}>
                 Besprechung Buchen
               </Link>
             </li>
@@ -98,12 +88,18 @@ const ResponsiveAppBar = () => {
             {/*  <Link href={'/parts'}>Parts</Link>*/}
             {/*</li>*/}
           </ul>
+          <div className={style.hamburgerMenu}>
+            <HamburgerIcon
+              isOpen={isSideNavOpen}
+              onClick={() => setIsSideNavOpen(!isSideNavOpen)}
+              width={24}
+              height={24}
+            />
+          </div>
         </div>
       </header>
 
-      <SideNav
-      // isOpen={isSideNavOpen} onClose={closeSideNav}
-      />
+      <SideNav isOpen={isSideNavOpen} onClose={() => setIsSideNavOpen(false)} />
       <BookingModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}

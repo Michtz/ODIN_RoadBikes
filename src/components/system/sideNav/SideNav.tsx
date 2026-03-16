@@ -29,7 +29,7 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen = false, onClose }) => {
                 <Link href="/about">Über uns</Link>
               </li>
               <li className={style.navItem}>
-                <Link href="/blog">Blog</Link>
+                <Link href="/bikes">Rennräder</Link>
               </li>
             </ul>
           </div>
@@ -38,12 +38,10 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen = false, onClose }) => {
             <h3 className={style.sectionTitle}>Service</h3>
             <ul className={style.navList}>
               <li className={style.navItem}>
-                <Link href="/service/contact">Kontakt</Link>
+                <Link href={'/contact'}>Kontakt</Link>
               </li>
               <li className={style.navItem}>
-                <Link href="/service/customer-service">
-                  Kundenservice
-                </Link>
+                <Link href="/service/customer-service">Kundenservice</Link>
               </li>
               <li className={style.navItem}>
                 <Link href="/service/faq">FAQ</Link>
