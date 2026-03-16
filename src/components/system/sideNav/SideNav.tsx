@@ -23,49 +23,34 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen = false, onClose }) => {
             <OdinLogo width={250} height={30} />
             <ul className={style.navList}>
               <li className={style.navItem}>
-                <Link href="/">Home</Link>
+                <Link additionalAction={onClose} noDecoration href="/">
+                  Home
+                </Link>
               </li>
               <li className={style.navItem}>
-                <Link href="/about">Über uns</Link>
+                <Link additionalAction={onClose} noDecoration href="/about">
+                  Über uns
+                </Link>
+              </li>{' '}
+              <li className={style.navItem}>
+                <Link additionalAction={onClose} noDecoration href="/bikes">
+                  Rennräder
+                </Link>
               </li>
               <li className={style.navItem}>
-                <Link href="/bikes">Rennräder</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className={style.navSection}>
-            <h3 className={style.sectionTitle}>Service</h3>
-            <ul className={style.navList}>
-              <li className={style.navItem}>
-                <Link href={'/contact'}>Kontakt</Link>
+                <Link additionalAction={onClose} noDecoration href="/impressum">
+                  Impressum
+                </Link>
               </li>
               <li className={style.navItem}>
-                <Link href="/service/customer-service">Kundenservice</Link>
+                <Link additionalAction={onClose} noDecoration href="/legal">
+                  Datenschutz
+                </Link>
               </li>
               <li className={style.navItem}>
-                <Link href="/service/faq">FAQ</Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className={style.navSection}>
-            <h3 className={style.sectionTitle}>Rechtliches</h3>
-            <ul className={style.navList}>
-              <li className={style.navItem}>
-                <Link href="/legal/imprint">Impressum</Link>
-              </li>
-              <li className={style.navItem}>
-                <Link href="/legal/privacy">Datenschutz</Link>
-              </li>
-              <li className={style.navItem}>
-                <Link href="/legal/terms">AGB</Link>
-              </li>
-              <li className={style.navItem}>
-                <Link href="/legal/shipping">Versand</Link>
-              </li>
-              <li className={style.navItem}>
-                <Link href="/legal/returns">Rückgabe</Link>
+                <Link noDecoration href="/contact" additionalAction={onClose}>
+                  Kontakt
+                </Link>
               </li>
             </ul>
           </div>

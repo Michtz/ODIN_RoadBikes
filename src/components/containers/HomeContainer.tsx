@@ -43,7 +43,7 @@ const HomeContainer: FC<HomeContainerProps> = () => {
         <ContentContainer
           title="Gravity"
           text="Das echte Bergziegen-Modell in unserer Kollektion. Ein leichter Rahmen in Ihren Wunschfarben mit steifem Tretlagerbereich – jeder Pedaltritt sitzt. Dank der kletterfreundlichen Geometrie der perfekte Rahmen, um die Berge zu bezwingen."
-          buttonText={'ZUM GRAVITY'}
+          buttonText={'Zum Gravity'}
           buttonSide={'right'}
           containerPlacement={'fullWith'}
           href={'/bikes/roadbikes/gravity'}
@@ -53,11 +53,30 @@ const HomeContainer: FC<HomeContainerProps> = () => {
         <ImageContainer
           imageRight={'/assets/bike_frames/ai/odin_frame_blue_gravity_ai.png'}
           imageLeft={'/assets/bike_frames/ai/odin_frame_yellow_gravity_ai.png'}
-          buttonText={'Zum Gravity'}
+          buttonText={'Mehr zum Gravity'}
           buttonSide={'center'}
+          href={'/bikes/roadbikes/gravity'}
         />
       </OverlayContainer>
-
+      <OverlayContainer>
+        <ContentContainer
+          title="Slide"
+          text="Die Rennmaschine, so sieht sie in jedem Fall aus. Der Vorteil dieses Rahmens gegenüber vielen anderen Marken von Rennrädern ist, dass die Geometrie freundlicher ist als bei anderen. Der Vorteil ist, dass Sie ein schönes Rennrad haben, das sich auch gut klettern lässt. Aus unserer Erfahrung mit Bikefitting wissen wir, dass die meisten"
+          buttonText={'Zum Slide'}
+          buttonSide={'right'}
+          containerPlacement={'fullWith'}
+          href={'/bikes/roadbikes/slide'}
+        />
+      </OverlayContainer>
+      <OverlayContainer>
+        <ImageContainer
+          imageRight={'/assets/bike_frames/013_DSCF5356_edit.jpg'}
+          imageLeft={'/assets/bike_frames/ai/odin_frame_jamaika_ai.png'}
+          buttonText={'Mehr zum Slide'}
+          buttonSide={'center'}
+          href={'/bikes/roadbikes/slide'}
+        />
+      </OverlayContainer>
       <OverlayContainer>
         <Calculator />
       </OverlayContainer>
