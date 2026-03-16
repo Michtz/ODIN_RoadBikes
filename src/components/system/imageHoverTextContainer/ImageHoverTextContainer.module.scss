@@ -10,17 +10,11 @@
   max-width: 1200px;
 
   align-items: start;
-  //padding-bottom: 10rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
-//
-//.cardItem {
-//  &:nth-child(even) {
-//    margin-top: 40%;
-//  }
-//  &:nth-child(odd) {
-//    margin-top: -12%;
-//  }
-//}
 
 .cardItem:nth-child(2) {
   .image {
@@ -69,6 +63,10 @@
     font-weight: bold;
     transition: opacity 0.3s ease;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+
+    @media (max-width: 498px) {
+      font-size: 2rem;
+    }
   }
 }
 

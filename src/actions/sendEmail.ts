@@ -84,3 +84,40 @@ export async function sendBikeConfiguration(data: any, total: number) {
     return { success: false };
   }
 }
+
+export async function sendContactEmail(data: { name: string; email: string; message: string }) {
+  if (!data.email || !data.message || !data.name) {
+    console.error('Email sending failed: Missing required fields.');
+    return { success: false };
+  }
+
+  const emailHtml = `
+    <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 20px; border-radius: 8px;">
+      <h1 style="color: #333;">Neue Nachricht von ${data.name}</h1>
+      <p>Du hast eine neue Kontaktanfrage erhalten:</p>
+      <div style="background-color: #f9f9f9; padding: 15px; border-radius: 4px; margin: 20px 0;">
+        <p><strong>Name:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Nachricht:</strong></p>
+        <p style="white-space: pre-wrap;">${data.message}</p>
+      </div>
+      <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;" />
+      <p style="font-size: 12px; color: #999;">ODIN Bikes | <a href="https://odinbikes.ch" style="color: #999;">odinbikes.ch</a></p>
+    </div>
+  `;
+
+  try {
+    await resend.emails.send({
+      from: 'ODIN Bikes <info@odinbikes.ch>',
+      to: ['info@odinbikes.ch'],
+      replyTo: data.email,
+      subject: `Kontaktanfrage: ${data.name}`,
+      html: emailHtml,
+    });
+
+    return { success: true };
+  } catch (error) {
+    console.error('Contact Email send error:', error);
+    return { success: false };
+  }
+}

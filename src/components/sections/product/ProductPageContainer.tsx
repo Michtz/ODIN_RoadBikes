@@ -6,7 +6,6 @@ import OverlayContainer, {
   Title,
 } from '@/components/system/containers/Containers';
 import MidScrollVideoPlayer from '@/components/system/videoPlayer/MidScrollVideoPlayer';
-import ScrollDeepDiveBike from '@/components/system/scrollDeepDive/ScrollDeepDive';
 import StickyImageContainer from '@/components/system/stickyImage/StickyImageContainer';
 import ScrollStaggeredGrid from '@/components/system/imageGridContainer/ScrollStaggeredGrid';
 import Calculator from '@/components/system/calculator/Calculator';
@@ -18,12 +17,12 @@ export const PLACHOLDERTEXT: string = `Lorem ipsum dolor sit amet, consectetur a
 
 interface ProductPageContainerProps {
   view: string;
-  gravityGeometry: GeometryData;
+  geometry: GeometryData;
 }
 
 const ProductPageContainer: FC<ProductPageContainerProps> = ({
   view,
-  gravityGeometry,
+  geometry,
 }) => {
   // const contentTriggerRef = useRef<HTMLDivElement>(null);
   const slideCarbonFrame = '/assets/bike_frames/transparent/DSCF5378.png';
@@ -47,16 +46,13 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({
           videoSrc={'assets/output_smooth_assembly_odin_white.mp4'}
         />
       </OverlayContainer>
-      <OverlayContainer border={false} key={2}>
-        <ScrollDeepDiveBike imageSrc={slideCarbonFrame} title={view} />
-      </OverlayContainer>
 
       <OverlayContainer border={false} key={3}>
         <Title> Geometry </Title>
       </OverlayContainer>
 
       <OverlayContainer border={false} key={4}>
-        <GeometryTable data={gravityGeometry} />
+        <GeometryTable data={geometry} />
       </OverlayContainer>
 
       <OverlayContainer border={false} key={4}>

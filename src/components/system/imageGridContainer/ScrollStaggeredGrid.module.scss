@@ -32,6 +32,10 @@
   width: 100%;
   background: linear-gradient(to bottom, transparent, #000);
   z-index: 999;
+
+  &[data-row-count='2'] {
+    top: 16px;
+  }
 }
 .row {
   display: flex;
@@ -42,6 +46,11 @@
   gap: 1rem;
 
   width: 30vw;
+
+  &[data-row-count='2'] {
+    width: 50vw;
+    margin-top: 10rem;
+  }
 
   .image {
     width: 100%;

@@ -11,7 +11,6 @@ import ImageHoverTextContainer from '@/components/system/imageHoverTextContainer
 import ScrollHeroVideo from '@/components/system/scorllVideoHero/ScrollHeroVideo';
 import { LOREM_IPSUM_SHORT_TEXT } from '@/components/containers/HomeContainer';
 import Calculator from '@/components/system/calculator/Calculator';
-import Button from '@/components/system/button/Button';
 
 const CategoriesContainer: FC = () => {
   const items: any[] = [
@@ -57,8 +56,7 @@ const CategoriesContainer: FC = () => {
     <>
       <Title>Rahmen Typen</Title>
       <ImageHoverTextContainer items={items} />
-      <Title>Mehr kommen schon Bald...</Title>
-      <Button>Benachrichtige mich</Button>
+      <Title size={'small'}>Mehr kommen schon Bald...</Title>
     </>
   );
   const content2 = (

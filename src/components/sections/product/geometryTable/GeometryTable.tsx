@@ -1,8 +1,3 @@
-/*
-- Die Component iteriert dynamisch über die Header und Rows, sodass sich Änderungen im JSON direkt anpassen.
-- Das Bild wird (sofern übergeben) zentriert über der Tabelle angezeigt.
-*/
-
 'use client';
 
 import React from 'react';

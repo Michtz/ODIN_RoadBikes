@@ -145,7 +145,7 @@ export const gravityData: FrameData = {
   ],
 };
 
-export const gravityGeometry = {
+export const gravityGeometry: GeometryData = {
   imageUrl: '/assets/gravity_frame_geometry.png',
   imageAlt: 'Bicycle Geometry Diagram',
   headers: [
