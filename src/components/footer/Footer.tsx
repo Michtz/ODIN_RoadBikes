@@ -41,13 +41,14 @@ const Footer: FC = () => {
           </div>
         </div>
 
-        <div className={`${style.footerColumn} ${style.additionalInfo}`}>
-          {/*Todo: remove disabled when golive*/}
-          <Link disabled href="/impressum" aria-label="Das Rechtliche">
+        <div
+          id={'contact'}
+          className={`${style.footerColumn} ${style.additionalInfo}`}
+        >
+          <Link href="/impressum" aria-label="Das Rechtliche">
             Impressum
           </Link>
-          {/*Todo: remove disabled when golive*/}
-          <Link disabled href="/legal" aria-label="Datenschutz">
+          <Link href="/legal" aria-label="Datenschutz">
             Datenschutz
           </Link>
         </div>

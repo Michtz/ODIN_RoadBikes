@@ -49,7 +49,7 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
       }
     }
 
-    const shouldShowLogo = progress > 0.25;
+    const shouldShowLogo = progress > 0.5;
     if (showLogo !== shouldShowLogo) {
       setShowLogo(shouldShowLogo);
     }
