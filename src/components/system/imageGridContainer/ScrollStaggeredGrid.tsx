@@ -16,8 +16,15 @@ interface RowProps {
 const ScrollStaggeredGrid: FC<ScrollStaggeredGridProps> = ({ imagesArray }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
     const handleScroll = () => {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
@@ -31,11 +38,16 @@ const ScrollStaggeredGrid: FC<ScrollStaggeredGridProps> = ({ imagesArray }) => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize);
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const multipliers = [-100, 0, -100];
+  const isMobile = windowWidth > 0 && windowWidth < 500;
 
   const splitIntoParts = (arr: any[], parts: number) => {
     const processableArr =
@@ -53,32 +65,37 @@ const ScrollStaggeredGrid: FC<ScrollStaggeredGridProps> = ({ imagesArray }) => {
   return (
     <>
       <div className={style.container} ref={containerRef}>
-        {splitIntoParts(imagesArray, window.innerWidth < 500 ? 2 : 3).map(
-          (images, index) => (
-            <Row
-              images={images}
-              key={index}
-              transform={{
-                transform: `translate3d(0, ${progress * multipliers[index]}px, 0)`,
-              }}
-            />
-          ),
-        )}
+        {splitIntoParts(imagesArray, isMobile ? 2 : 3).map((images, index) => (
+          <Row
+            images={images}
+            key={index}
+            isMobile={isMobile}
+            transform={{
+              transform: `translate3d(0, ${progress * multipliers[index]}px, 0)`,
+            }}
+          />
+        ))}
       </div>
       <div
         className={style.overlay}
-        data-row-count={window.innerWidth < 500 ? '2' : '3'}
+        data-row-count={isMobile ? '2' : '3'}
       ></div>
     </>
   );
 };
 
-const Row: FC<RowProps> = ({ images, transform }) => {
+interface RowProps {
+  images: string[] | StaticImageData[];
+  transform?: any;
+  isMobile: boolean;
+}
+
+const Row: FC<RowProps> = ({ images, transform, isMobile }) => {
   return (
     <div
       className={style.row}
       style={transform}
-      data-row-count={window.innerWidth < 500 ? '2' : '3'}
+      data-row-count={isMobile ? '2' : '3'}
     >
       {images.map((src, i) => (
         <Image
