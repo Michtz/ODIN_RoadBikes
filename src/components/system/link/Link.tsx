@@ -18,6 +18,7 @@ interface LinkProps {
   weight?: 'normal' | 'bold';
   active?: boolean;
   noDecoration?: boolean;
+  additionalAction?: (() => void) | undefined;
 }
 
 const Link: React.FC<LinkProps> = ({
@@ -34,6 +35,7 @@ const Link: React.FC<LinkProps> = ({
   weight = 'normal',
   active = false,
   noDecoration = false,
+  additionalAction,
 }) => {
   const router = useRouter();
   const prefetched = useRef<boolean>(false);
@@ -110,7 +112,7 @@ const Link: React.FC<LinkProps> = ({
 
   // Internal link
   return (
-    <a {...sharedProps} href={disabled ? '' : href}>
+    <a {...sharedProps} href={disabled ? '' : href} onClick={additionalAction}>
       {content}
     </a>
   );

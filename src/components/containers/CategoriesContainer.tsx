@@ -16,7 +16,7 @@ const CategoriesContainer: FC = () => {
   const items: any[] = [
     {
       id: 1,
-      imageA: '/assets/slide_frame_Black.png',
+      imageA: '/assets/bike_frames/ai/slide_frame_Black.png',
       alt: 'Odin Bike',
       title: 'Gravity',
       text: PLACHOLDERTEXT,
@@ -24,7 +24,7 @@ const CategoriesContainer: FC = () => {
     },
     {
       id: 2,
-      imageA: '/assets/slide_frame_Black.png',
+      imageA: '/assets/bike_frames/ai/slide_frame_Black.png',
       alt: 'Odin Bike',
       title: 'Slide',
       text: PLACHOLDERTEXT,
