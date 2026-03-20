@@ -30,9 +30,6 @@ export interface GeometryData {
   rows: string[][];
 }
 
-export const gravityCarbonFrame: string =
-  '/assets/bike_frames/transparent/odin_frame_gravity_carbin_cutout_ai.png';
-
 export const gravityData: FrameData = {
   versions: [
     {
@@ -146,7 +143,7 @@ export const gravityData: FrameData = {
 };
 
 export const gravityGeometry: GeometryData = {
-  imageUrl: '/assets/gravity_frame_geometry.png',
+  imageUrl: 'gravity_frame_geometry',
   imageAlt: 'Bicycle Geometry Diagram',
   headers: [
     'SIZE',

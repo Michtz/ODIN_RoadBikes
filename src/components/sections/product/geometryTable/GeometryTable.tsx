@@ -3,6 +3,8 @@
 import React from 'react';
 import style from './GeometryTable.module.scss';
 import { GeometryData } from '@/data/gravity_data';
+import Image from 'next/image';
+import { customImageLoaderAI } from '@/components/system/containers/Containers';
 
 interface GeometryTableProps {
   data: GeometryData;
@@ -13,10 +15,14 @@ export const GeometryTable: React.FC<GeometryTableProps> = ({ data }) => {
     <div className={style.container}>
       {data.imageUrl && (
         <div className={style.imageWrapper}>
-          <img
+          <Image
+            loader={customImageLoaderAI}
             src={data.imageUrl}
-            alt={data.imageAlt || 'Geometry Diagram'}
             className={style.geometryImage}
+            alt={data.imageAlt || 'Geometry Diagram'}
+            fill
+            priority
+            sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
           />
         </div>
       )}

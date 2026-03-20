@@ -3,6 +3,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import style from '@/components/system/imageGridContainer/ScrollStaggeredGrid.module.scss';
+import { customImageLoader } from '@/components/system/containers/Containers';
 
 interface ScrollStaggeredGridProps {
   imagesArray: (StaticImageData | string)[];
@@ -65,16 +66,18 @@ const ScrollStaggeredGrid: FC<ScrollStaggeredGridProps> = ({ imagesArray }) => {
   return (
     <>
       <div className={style.container} ref={containerRef}>
-        {splitIntoParts(imagesArray, isMobile ? 2 : 3).map((images, index) => (
-          <Row
-            images={images}
-            key={index}
-            isMobile={isMobile}
-            transform={{
-              transform: `translate3d(0, ${progress * multipliers[index]}px, 0)`,
-            }}
-          />
-        ))}
+        {splitIntoParts(imagesArray, isMobile ? 2 : 3).map((images, index) => {
+          return (
+            <Row
+              images={images}
+              key={index}
+              isMobile={isMobile}
+              transform={{
+                transform: `translate3d(0, ${progress * multipliers[index]}px, 0)`,
+              }}
+            />
+          );
+        })}
       </div>
       <div
         className={style.overlay}
@@ -97,17 +100,21 @@ const Row: FC<RowProps> = ({ images, transform, isMobile }) => {
       style={transform}
       data-row-count={isMobile ? '2' : '3'}
     >
-      {images.map((src, i) => (
-        <Image
-          key={`${src}-${i}`}
-          src={src}
-          alt={`Gallery image ${i}`}
-          className={style.image}
-          width={400}
-          height={600}
-          style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-        />
-      ))}
+      {images.map((src, i) => {
+        return (
+          <Image
+            key={`${src}-${i}`}
+            loader={customImageLoader}
+            className={style.image}
+            src={src}
+            alt={`${src}`}
+            width={400}
+            height={600}
+            sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
+            style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+          />
+        );
+      })}
     </div>
   );
 };

@@ -16,7 +16,7 @@ const CategoriesContainer: FC = () => {
   const items: any[] = [
     {
       id: 1,
-      imageA: '/assets/bike_frames/ai/slide_frame_Black.png',
+      image: 'slide_frame_Black',
       alt: 'Odin Bike',
       title: 'Gravity',
       text: PLACHOLDERTEXT,
@@ -24,7 +24,7 @@ const CategoriesContainer: FC = () => {
     },
     {
       id: 2,
-      imageA: '/assets/bike_frames/ai/slide_frame_Black.png',
+      image: 'slide_frame_Black',
       alt: 'Odin Bike',
       title: 'Slide',
       text: PLACHOLDERTEXT,
@@ -35,7 +35,7 @@ const CategoriesContainer: FC = () => {
   const items2: any[] = [
     {
       id: 1,
-      imageA: '/assets/bike_frames/ai/odin_frame_yellow_gravity_ai.png',
+      image: 'odin_frame_yellow_gravity_ai',
       alt: 'Odin Bike',
       title: 'Gravity',
       text: PLACHOLDERTEXT,
@@ -43,7 +43,7 @@ const CategoriesContainer: FC = () => {
     },
     {
       id: 2,
-      imageA: '/assets/odin_edited_frame_violet.jpg',
+      image: 'odin_edited_frame_violet',
       alt: 'Odin Bike',
       title: 'Slide',
       text: PLACHOLDERTEXT,
@@ -84,8 +84,9 @@ const CategoriesContainer: FC = () => {
       </OverlayContainer>
       <OverlayContainer key={1}>
         <ImageContainer
-          imageRight={'/assets/bike_frames/001_DSCF5347_edit.jpg'}
-          imageLeft={'/assets/bike_frames/ai/odin_frame_holand_ai.png'}
+          imageRight={'001_bike_frame_green_sdr'}
+          imageLeft={'odin_frame_holand_ai'}
+          leftAI
           buttonText={'Mehr Rahmen'}
           buttonSide={'center'}
         />
