@@ -25,7 +25,7 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({
   geometry,
 }) => {
   // const contentTriggerRef = useRef<HTMLDivElement>(null);
-  const slideCarbonFrame = '/assets/bike_frames/transparent/DSCF5378.png';
+  const slideCarbonFrame = 'DSCF5378';
 
   return (
     <>
@@ -58,20 +58,20 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({
       <OverlayContainer border={false} key={4}>
         <ScrollStaggeredGrid
           imagesArray={[
-            '/assets/bike_frames/014_DSCF5378_edit.jpg',
-            '/assets/bike_frames/002_DSCF5367_edit.jpg',
-            '/assets/bike_frames/008_DSCF5371_edit.jpg',
-            '/assets/bike_frames/019_DSCF5360_edit.jpg',
+            '007_bike_frame_blue_sdr',
+            '003_bike_frame_green_sdr',
+            '001_bike_frame_green_sdr',
+            '029_full_bike_grey_sdr',
 
-            '/assets/bike_frames/015_DSCF5391_edit.jpg',
-            '/assets/bike_frames/003_DSCF5402_edit.jpg',
-            '/assets/bike_frames/009_DSCF5395_edit.jpg',
-            '/assets/bike_frames/020_DSCF5364_edit.jpg',
+            '014_bike_frame_grey_sdr',
+            '009_bike_frame_blue_sdr',
+            '027_full_bike_white_side_sdr',
+            '009_bike_frame_blue_sdr',
 
-            '/assets/bike_frames/013_DSCF5356_edit.jpg',
-            '/assets/bike_frames/001_DSCF5347_edit.jpg',
-            '/assets/bike_frames/007_DSCF5350_edit.jpg',
-            '/assets/bike_frames/021_DSCF5398_edit.jpg',
+            '013_bike_frame_grey_sdr',
+            '008_bike_frame_blue_sdr',
+            '025_full_bike_white_sdr',
+            '003_bike_frame_green_sdr',
           ]}
         />
       </OverlayContainer>

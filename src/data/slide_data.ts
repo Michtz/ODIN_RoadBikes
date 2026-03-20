@@ -34,7 +34,7 @@ export const slideData: FrameData = {
 };
 
 export const slideGeometry: GeometryData = {
-  imageUrl: '/assets/bike_frames/ai/geometry_slide.png',
+  imageUrl: 'geometry_slide',
   imageAlt: 'R068D',
   headers: [
     'SIZE',
