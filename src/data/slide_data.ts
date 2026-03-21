@@ -34,6 +34,8 @@ export const slideData: FrameData = {
 };
 
 export const slideGeometry: GeometryData = {
+  firstText:
+    'Das Slide ist ein Allrounder mit einem Preis ab 2950 Franken – ein echt preisgünstiges Fahrrad! Ein bisschen Aero, aber mit einer Geometrie, die dennoch komfortabel ist. Mit diesem Fahrrad lassen sich perfekt lange Touren unternehmen! Und mit einer maximalen Reifenbreite von 32 mm ist es ein komfortables Rennrad!',
   imageUrlGeometry:
     'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096126/geometry_slide_1600px_zxqnne.png',
   imageUrlFrame:

@@ -97,10 +97,16 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
   const isVisible = showLogo && !showImageOverlay;
 
   const getSource = (src: string, type: 'webm' | 'mp4') => {
-    if (type === 'webm') {
-      return src.endsWith('.webm') ? src : src.replace('.mp4', '.webm');
+    const isAbsolute = src.startsWith('http');
+    let base = src;
+    if (!isAbsolute) {
+      base = src.startsWith('/') ? src : `/${src}`;
     }
-    return src.endsWith('.mp4') ? src : src.replace('.webm', '.mp4');
+
+    if (type === 'webm') {
+      return base.endsWith('.webm') ? base : base.replace('.mp4', '.webm');
+    }
+    return base.endsWith('.mp4') ? base : base.replace('.webm', '.mp4');
   };
 
   return (

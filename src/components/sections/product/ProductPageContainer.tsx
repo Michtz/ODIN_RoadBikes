@@ -30,7 +30,7 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({
       <OverlayContainer border={false} key={0}>
         <ContentContainer
           title={'Beste Geometry zum klettern'}
-          text={PLACHOLDERTEXT}
+          text={data.firstText}
           buttonText={'Unsere Bikes'}
           buttonSide={'right'}
           containerPlacement={'fullWith'}

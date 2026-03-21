@@ -24,6 +24,7 @@ export interface FrameData {
 }
 
 export interface GeometryData {
+  firstText: string;
   imageUrlGeometry: string;
   imageUrlFrame: string;
   imageAlt: string;
@@ -144,6 +145,8 @@ export const gravityData: FrameData = {
 };
 
 export const gravityGeometry: GeometryData = {
+  firstText:
+    'Das Wort „Gravity“ sagt es schon: Schwerkraft! Dieser Rahmen zeichnet sich besonders durch sein geringes Gewicht und seine Steifigkeit im Tretlagerbereich aus, wodurch du mit diesem Fahrrad bestens für Bergauffahrten gerüstet bist. Mit diesem Rahmen ist es möglich, ein Fahrrad mit einem Gewicht von unter 6 kg zu bauen! Diese Fahrräder werden ausschließlich in Kombination mit einer Lackierung deiner Wahl verkauft! Alles ist möglich!',
   imageUrlGeometry:
     'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096124/gravity_frame_geometry_1600px_qviwsv.png',
   imageUrlFrame:
