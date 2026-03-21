@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import ContactContainer from '@/components/containers/ContactContainer';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'Kontakt - ODIN Roadbikes',
   description: 'OdinBikes Kontakt - Individuelle Rennräder aus der Schweiz.',
 };
 

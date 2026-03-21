@@ -78,6 +78,9 @@ const ResponsiveAppBar = () => {
             <li className={style.navItem}>
               <Link href={'/bikes/roadbikes'}>Rennräder</Link>
             </li>
+            <li className={style.navItem}>
+              <Link href={'/bikes/about'}>Über Odin</Link>
+            </li>
 
             <li className={style.navItem}>
               <Link onClick={() => setIsModalOpen(true)}>

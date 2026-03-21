@@ -1,6 +1,5 @@
 'use client';
 import React, { FC } from 'react';
-import { PLACHOLDERTEXT } from '@/components/sections/product/ProductPageContainer';
 import OverlayContainer, {
   Container,
   ContentContainer,
