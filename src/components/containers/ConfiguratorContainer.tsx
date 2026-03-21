@@ -7,7 +7,10 @@ import Button from '@/components/system/button/Button';
 import { dummyBikeData } from '@/data/ConfiguratorData';
 import { Accordion } from '@/components/system/accordion/Accordion';
 import BikeConfigurator from '@/components/sections/configurator/BikeConfigurator';
-import { Container } from '@/components/system/containers/Containers';
+import {
+  cloudinaryLoader,
+  Container,
+} from '@/components/system/containers/Containers';
 
 interface ConfiguratorOption {
   id: string;
@@ -149,11 +152,14 @@ const PictureContainer: FC<{ image: string }> = ({ image }) => {
     <div className={style.pictureContainer}>
       <div className={style.imageWrapper}>
         <Image
+          loader={cloudinaryLoader}
           src={image}
           alt="Bike Configuration"
           fill
           style={{ objectFit: 'contain' }}
           priority
+          quality={90}
+          sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
         />
       </div>
     </div>

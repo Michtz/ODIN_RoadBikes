@@ -24,8 +24,9 @@ export interface FrameData {
 }
 
 export interface GeometryData {
-  imageUrl?: string;
-  imageAlt?: string;
+  imageUrlGeometry: string;
+  imageUrlFrame: string;
+  imageAlt: string;
   headers: string[];
   rows: string[][];
 }
@@ -143,8 +144,11 @@ export const gravityData: FrameData = {
 };
 
 export const gravityGeometry: GeometryData = {
-  imageUrl: 'gravity_frame_geometry',
-  imageAlt: 'Bicycle Geometry Diagram',
+  imageUrlGeometry:
+    'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096124/gravity_frame_geometry_1600px_qviwsv.png',
+  imageUrlFrame:
+    'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774102582/odin_frame_yellow_gravity_ai_transparent_u5fvyw.png',
+  imageAlt: 'Gravity OdinBike',
   headers: [
     'SIZE',
     'ST',

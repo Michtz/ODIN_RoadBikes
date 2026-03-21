@@ -117,32 +117,14 @@ interface ImageContainerProps {
   border?: 'bottom' | false;
   imageRight: string;
   imageLeft: string;
-  leftAI?: boolean;
-  rightAI?: boolean;
 }
 
-export const customImageLoader = ({ src, width }: ImageLoaderProps) => {
-  if (width <= 450) return `/assets/450px/${src}_450.avif`;
-  if (width <= 700) return `/assets/700px/${src}_700.avif`;
-  if (width <= 1000) return `/assets/1000px/${src}_1000.avif`;
-  return `/assets/1600px/${src}_1600.avif`;
-};
+export const cloudinaryLoader = ({ src, width, quality }: ImageLoaderProps) => {
+  const urlParts = src.split('/image/upload/');
+  if (urlParts.length !== 2) return src;
 
-export const customImageLoaderAI = ({ src, width }: ImageLoaderProps) => {
-  if (width <= 450) return `/assets/450px/ai/${src}_450px.png`;
-  if (width <= 700) return `/assets/700px/ai/${src}_700px.png`;
-  if (width <= 1000) return `/assets/1000px/ai/${src}_1000px.png`;
-  return `/assets/1600px/ai/${src}_1600px.png`;
-};
-
-export const customImageLoaderTransparent = ({
-  src,
-  width,
-}: ImageLoaderProps) => {
-  if (width <= 450) return `/assets/450px/transparent/${src}_450px.png`;
-  if (width <= 700) return `/assets/700px/transparent/${src}_700px.png`;
-  if (width <= 1000) return `/assets/1000px/transparent/${src}_1000px.png`;
-  return `/assets/1600px/transparent/${src}_1600px.png`;
+  const params = ['f_auto', 'c_limit', `w_${width}`, `q_${quality || 'auto'}`];
+  return `${urlParts[0]}/image/upload/${params.join(',')}/${urlParts[1]}`;
 };
 
 export const ImageContainer: FC<ImageContainerProps> = ({
@@ -154,28 +136,29 @@ export const ImageContainer: FC<ImageContainerProps> = ({
   imageRight,
   imageLeft,
   border = 'bottom',
-  rightAI = false,
-  leftAI = false,
 }) => {
   return (
     <div className={style.imageContentContainer}>
       <div className={style.imageContainer}>
         <Image
-          loader={leftAI ? customImageLoaderAI : customImageLoader}
+          loader={cloudinaryLoader}
           className={style.image}
           src={imageLeft}
           alt={title || 'image left'}
-          width={600}
-          height={600}
+          width={1600}
+          height={1600}
+          quality={90}
           sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
         />
+
         <Image
-          loader={rightAI ? customImageLoaderAI : customImageLoader}
+          loader={cloudinaryLoader}
           className={style.image}
           src={imageRight}
           alt={title || 'image right'}
-          width={600}
-          height={600}
+          width={1600}
+          height={1600}
+          quality={90}
           sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
         />
       </div>

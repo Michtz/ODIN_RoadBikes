@@ -1,15 +1,13 @@
 @use '../../../app/variables' as *;
+
 .scrollContainer {
-  height: 100vh;
+  height: 110vh;
   position: sticky;
   top: 0;
   z-index: 1;
-  //background-color: #000;
   width: 100%;
   margin-top: -75px;
-
   overflow: hidden;
-  //box-shadow: inset 0 -500px 100px rgba(255, 255, 255, 0.1);
   background: linear-gradient(180deg, #000 60%, rgba(47, 47, 47, 0.35) 100%);
 
   @media (max-width: 768px) {

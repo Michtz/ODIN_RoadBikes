@@ -34,8 +34,11 @@ export const slideData: FrameData = {
 };
 
 export const slideGeometry: GeometryData = {
-  imageUrl: 'geometry_slide',
-  imageAlt: 'R068D',
+  imageUrlGeometry:
+    'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096126/geometry_slide_1600px_zxqnne.png',
+  imageUrlFrame:
+    'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774102409/Odin_slide_gray_transparant_pipnxm.png',
+  imageAlt: 'Slide OdinBike',
   headers: [
     'SIZE',
     'CF',

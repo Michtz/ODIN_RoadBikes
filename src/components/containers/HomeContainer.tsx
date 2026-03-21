@@ -19,7 +19,7 @@ const HomeContainer: FC<HomeContainerProps> = () => {
     <>
       <ScrollHeroVideo
         botsOnlyText={LOREM_IPSUM_SHORT_TEXT}
-        videoSrc="/assets/output_smooth.mp4"
+        videoSrc="https://res.cloudinary.com/de2rhuwpw/video/upload/v1774099738/output_smooth_sfxlio.mp4"
       />
       <OverlayContainer border={false}>
         <ContentContainer
@@ -33,9 +33,12 @@ const HomeContainer: FC<HomeContainerProps> = () => {
       </OverlayContainer>
       <OverlayContainer>
         <ImageContainer
-          imageRight={'001_bike_frame_green_sdr'}
-          imageLeft={'odin_frame_holand_ai'}
-          leftAI
+          imageRight={
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097141/001_bike_frame_green_sdr_original_nnpybn.avif'
+          }
+          imageLeft={
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096125/odin_frame_holand_ai_1600px_xtlma8.png'
+          }
           buttonText={'Mehr Rahmen'}
           buttonSide={'center'}
         />
@@ -52,12 +55,14 @@ const HomeContainer: FC<HomeContainerProps> = () => {
       </OverlayContainer>
       <OverlayContainer>
         <ImageContainer
-          imageRight={'007_bike_frame_blue_sdr'}
-          imageLeft={'odin_frame_yellow_gravity_ai'}
-          leftAI
-          buttonText={'Mehr zum Gravity'}
+          imageRight={
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096124/odin_frame_blue_gravity_ai_1600px_wxklsm.png'
+          }
+          imageLeft={
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096125/odin_frame_yellow_gravity_ai_1600px_v48h61.png'
+          }
+          buttonText={'Mehr Rahmen'}
           buttonSide={'center'}
-          href={'/bikes/roadbikes/gravity'}
         />
       </OverlayContainer>
       <OverlayContainer>
@@ -72,12 +77,14 @@ const HomeContainer: FC<HomeContainerProps> = () => {
       </OverlayContainer>
       <OverlayContainer>
         <ImageContainer
-          imageRight={'013_bike_frame_grey_sdr'}
-          imageLeft={'odin_frame_jamaika_ai'}
-          leftAI
-          buttonText={'Mehr zum Slide'}
+          imageRight={
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097122/013_bike_frame_grey_sdr_original_riympp.avif'
+          }
+          imageLeft={
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096125/odin_frame_jamaika_ai_1600px_yi8ylq.png'
+          }
+          buttonText={'Mehr Rahmen'}
           buttonSide={'center'}
-          href={'/bikes/roadbikes/slide'}
         />
       </OverlayContainer>
       <OverlayContainer>
@@ -86,20 +93,20 @@ const HomeContainer: FC<HomeContainerProps> = () => {
       <OverlayContainer>
         <ScrollStaggeredGrid
           imagesArray={[
-            '014_bike_frame_grey_sdr',
-            '009_bike_frame_blue_sdr',
-            '027_full_bike_white_side_sdr',
-            '009_bike_frame_blue_sdr',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097119/014_bike_frame_grey_sdr_original_xu99rb.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097128/009_bike_frame_blue_sdr_original_ansqre.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097109/021_bike_frame_white_sdr_original_s3mfxv.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097128/009_bike_frame_blue_sdr_original_ansqre.avif',
 
-            '007_bike_frame_blue_sdr',
-            '003_bike_frame_green_sdr',
-            '001_bike_frame_green_sdr',
-            '029_full_bike_grey_sdr',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097131/007_bike_frame_blue_sdr_original_yhp5tu.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097138/003_bike_frame_green_sdr_original_ajv1po.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097141/001_bike_frame_green_sdr_original_nnpybn.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097096/029_full_bike_grey_sdr_original_wvw0ev.avif',
 
-            '013_bike_frame_grey_sdr',
-            '008_bike_frame_blue_sdr',
-            '025_full_bike_white_sdr',
-            '003_bike_frame_green_sdr',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097122/013_bike_frame_grey_sdr_original_riympp.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097129/008_bike_frame_blue_sdr_original_dr628j.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097102/025_full_bike_white_sdr_original_ztglp5.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097138/003_bike_frame_green_sdr_original_ajv1po.avif',
           ]}
         />
       </OverlayContainer>
