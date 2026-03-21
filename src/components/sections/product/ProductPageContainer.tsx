@@ -17,19 +17,16 @@ export const PLACHOLDERTEXT: string = `Lorem ipsum dolor sit amet, consectetur a
 
 interface ProductPageContainerProps {
   view: string;
-  geometry: GeometryData;
+  data: GeometryData;
 }
 
 const ProductPageContainer: FC<ProductPageContainerProps> = ({
   view,
-  geometry,
+  data,
 }) => {
-  // const contentTriggerRef = useRef<HTMLDivElement>(null);
-  const slideCarbonFrame = 'DSCF5378';
-
   return (
     <>
-      <StickyImageContainer image={slideCarbonFrame} title={view} />
+      <StickyImageContainer image={data.imageUrlFrame} title={view} />
       <OverlayContainer border={false} key={0}>
         <ContentContainer
           title={'Beste Geometry zum klettern'}
@@ -52,26 +49,26 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({
       </OverlayContainer>
 
       <OverlayContainer border={false} key={4}>
-        <GeometryTable data={geometry} />
+        <GeometryTable data={data} />
       </OverlayContainer>
 
       <OverlayContainer border={false} key={4}>
         <ScrollStaggeredGrid
           imagesArray={[
-            '007_bike_frame_blue_sdr',
-            '003_bike_frame_green_sdr',
-            '001_bike_frame_green_sdr',
-            '029_full_bike_grey_sdr',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097119/014_bike_frame_grey_sdr_original_xu99rb.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097128/009_bike_frame_blue_sdr_original_ansqre.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097109/021_bike_frame_white_sdr_original_s3mfxv.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097128/009_bike_frame_blue_sdr_original_ansqre.avif',
 
-            '014_bike_frame_grey_sdr',
-            '009_bike_frame_blue_sdr',
-            '027_full_bike_white_side_sdr',
-            '009_bike_frame_blue_sdr',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097131/007_bike_frame_blue_sdr_original_yhp5tu.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097138/003_bike_frame_green_sdr_original_ajv1po.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097141/001_bike_frame_green_sdr_original_nnpybn.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097096/029_full_bike_grey_sdr_original_wvw0ev.avif',
 
-            '013_bike_frame_grey_sdr',
-            '008_bike_frame_blue_sdr',
-            '025_full_bike_white_sdr',
-            '003_bike_frame_green_sdr',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097122/013_bike_frame_grey_sdr_original_riympp.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097129/008_bike_frame_blue_sdr_original_dr628j.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097102/025_full_bike_white_sdr_original_ztglp5.avif',
+            'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097138/003_bike_frame_green_sdr_original_ajv1po.avif',
           ]}
         />
       </OverlayContainer>

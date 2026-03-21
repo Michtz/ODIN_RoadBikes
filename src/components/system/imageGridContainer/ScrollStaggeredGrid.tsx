@@ -3,7 +3,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import style from '@/components/system/imageGridContainer/ScrollStaggeredGrid.module.scss';
-import { customImageLoader } from '@/components/system/containers/Containers';
+import { cloudinaryLoader } from '@/components/system/containers/Containers';
 
 interface ScrollStaggeredGridProps {
   imagesArray: (StaticImageData | string)[];
@@ -104,12 +104,14 @@ const Row: FC<RowProps> = ({ images, transform, isMobile }) => {
         return (
           <Image
             key={`${src}-${i}`}
-            loader={customImageLoader}
+            loader={cloudinaryLoader}
             className={style.image}
             src={src}
             alt={`${src}`}
-            width={400}
-            height={600}
+            width={800}
+            height={1200}
+            quality={90}
+            loading="eager"
             sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
             style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
           />

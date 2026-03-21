@@ -6,6 +6,7 @@ import style from '@/components/system/scrollDeepDive/ScrollDeepDive.module.scss
 import Button from '@/components/system/button/Button';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import { useRouter } from 'next/navigation';
+import { cloudinaryLoader } from '@/components/system/containers/Containers';
 
 interface ScrollDeepDiveBikeProps {
   imageSrc: StaticImageData | string;
@@ -83,14 +84,17 @@ const ScrollDeepDiveBike: FC<ScrollDeepDiveBikeProps> = ({
             }}
           >
             <Image
+              loader={cloudinaryLoader}
               src={imageSrc}
               alt={title}
               className={style.image}
               priority
-              width={100}
-              height={100}
+              sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
+              width={1600}
+              height={1600}
+              quality={90}
               style={{
-                transform: `scale(${buttonScale * 1.2})`,
+                transform: `scale(${buttonScale * 1.1})`,
               }}
             />
           </div>

@@ -4,7 +4,7 @@ import React, { FC, useState } from 'react';
 import style from './ImageHoverTextContainer.module.scss';
 import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
-import { customImageLoaderAI } from '@/components/system/containers/Containers';
+import { cloudinaryLoader } from '@/components/system/containers/Containers';
 
 export type ImageHoverTextContainerItem = {
   id: number;
@@ -18,7 +18,6 @@ export type ImageHoverTextContainerItem = {
 interface ImageHoverTextContainerProps {
   items: ImageHoverTextContainerItem[];
 }
-
 const ImageHoverTextContainer: FC<ImageHoverTextContainerProps> = ({
   items,
 }) => {
@@ -38,12 +37,13 @@ const ImageHoverTextContainer: FC<ImageHoverTextContainerProps> = ({
           <div className={style.imageWrapper}>
             <Image
               key={`${item.image}`}
-              loader={customImageLoaderAI}
+              loader={cloudinaryLoader}
               className={style.image}
               src={item.image}
               alt={item.alt}
-              width={400}
-              height={600}
+              width={800}
+              height={1200}
+              quality={90}
               sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
             />
 

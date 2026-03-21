@@ -35,7 +35,6 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
 
     const containerTop = container.getBoundingClientRect().top;
 
-    // Die Animation soll über eine Strecke von z.B. 100vh gehen
     const animationDistance = window.innerHeight / 3;
     let progress = -containerTop / animationDistance;
 
@@ -71,7 +70,6 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
           updateVideoPosition();
         })
         .catch(() => {
-          // Autoplay might be blocked, but we can still try to seek
           updateVideoPosition();
         });
     }
@@ -97,6 +95,7 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
   }, [showLogo, showImageOverlay, showImageOverlayProp]);
 
   const isVisible = showLogo && !showImageOverlay;
+
   return (
     <div className={style.scrollContainer} ref={containerRef}>
       <div className={style.stickyWrapper}>

@@ -1,4 +1,5 @@
 'use client';
+
 import React, { FC } from 'react';
 import ProductPageContainer from '@/components/sections/product/ProductPageContainer';
 import { Container } from '@/components/system/containers/Containers';
@@ -25,10 +26,10 @@ const ProductContent: React.FC<ProductContainerProps> = ({
   const getCurrentView = (): React.ReactElement => {
     switch (view) {
       case 'slide':
-        return <ProductPageContainer view={view} geometry={slideGeometry} />;
+        return <ProductPageContainer view={view} data={slideGeometry} />;
 
       case 'gravity':
-        return <ProductPageContainer view={view} geometry={gravityGeometry} />;
+        return <ProductPageContainer view={view} data={gravityGeometry} />;
       default:
         return <></>;
     }
