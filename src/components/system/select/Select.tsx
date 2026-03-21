@@ -1,5 +1,5 @@
 'use client';
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useState, useEffect, useRef } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 import style from './Select.module.scss';
 import MaterialIcon from '@/components/system/materialIcon/MaterialIcon';
@@ -15,8 +15,10 @@ export interface SelectOption {
   disabled?: boolean;
 }
 
-interface SelectProps
-  extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, 'size'> {
+interface SelectProps extends Omit<
+  React.SelectHTMLAttributes<HTMLSelectElement>,
+  'size'
+> {
   label?: string;
   tooltip?: TooltipProps;
   helperText?: string;
@@ -54,6 +56,31 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     ref,
   ) => {
     const [isFocused, setIsFocused] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [isApple, setIsApple] = useState(true); // Default to true to avoid hydration mismatch
+    const containerRef = useRef<HTMLDivElement>(null);
+    const selectRef = useRef<HTMLSelectElement | null>(null);
+
+    useEffect(() => {
+      // Detection for Apple devices (iOS, macOS, iPadOS)
+      const platform = navigator.userAgent.toLowerCase();
+      const isApplePlatform = /iphone|ipad|ipod|macintosh/.test(platform);
+      setIsApple(isApplePlatform);
+
+      // Close dropdown on outside click
+      const handleClickOutside = (event: MouseEvent) => {
+        if (
+          containerRef.current &&
+          !containerRef.current.contains(event.target as Node)
+        ) {
+          setIsOpen(false);
+        }
+      };
+
+      document.addEventListener('mousedown', handleClickOutside);
+      return () =>
+        document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
 
     const handleFocus = (e: React.FocusEvent<HTMLSelectElement>) => {
       setIsFocused(true);
@@ -63,6 +90,22 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     const handleBlur = (e: React.FocusEvent<HTMLSelectElement>) => {
       setIsFocused(false);
       props.onBlur?.(e);
+    };
+
+    const toggleDropdown = (e: React.MouseEvent) => {
+      if (isApple || props.disabled || readOnly) return;
+      e.preventDefault();
+      setIsOpen(!isOpen);
+    };
+
+    const handleOptionClick = (val: string | number) => {
+      if (selectRef.current) {
+        // Trigger native change for react-hook-form
+        selectRef.current.value = String(val);
+        const event = new Event('change', { bubbles: true });
+        selectRef.current.dispatchEvent(event);
+      }
+      setIsOpen(false);
     };
 
     const selectClasses = [
@@ -83,12 +126,23 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       error && style.error,
       isFocused && style.focused,
       readOnly && style.readOnly,
+      isOpen && style.isOpen,
     ]
       .filter(Boolean)
       .join(' ');
 
+    const currentValue = props.value || props.defaultValue || '';
+    const selectedOption = options.find(
+      (opt) => String(opt.value) === String(currentValue),
+    );
+    const displayLabel = selectedOption ? selectedOption.label : placeholder;
+
     return (
-      <div className={containerClasses} style={containerStyle}>
+      <div
+        className={containerClasses}
+        style={containerStyle}
+        ref={containerRef}
+      >
         {label && (
           <div className={style.labelContainer}>
             <label className={style.label}>
@@ -115,7 +169,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           </div>
         )}
 
-        <div className={style.selectWrapper}>
+        <div className={style.selectWrapper} onClick={toggleDropdown}>
           {startIcon && (
             <MaterialIcon
               icon={startIcon}
@@ -124,8 +178,13 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             />
           )}
 
+          {/* Hidden/Native Select */}
           <select
-            ref={ref}
+            ref={(node) => {
+              selectRef.current = node;
+              if (typeof ref === 'function') ref(node);
+              else if (ref) (ref as any).current = node;
+            }}
             className={selectClasses}
             onFocus={handleFocus}
             onBlur={handleBlur}
@@ -134,15 +193,16 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             aria-describedby={
               helperText ? `${props.id || 'select'}-helper` : undefined
             }
+            style={
+              !isApple
+                ? { opacity: 0, position: 'absolute', pointerEvents: 'none' }
+                : {}
+            }
             {...inputProps}
             {...props}
           >
             {placeholder && (
-              <option
-                value=""
-                disabled
-                selected={!props.value && !props.defaultValue}
-              >
+              <option value="" disabled>
                 {placeholder}
               </option>
             )}
@@ -157,15 +217,45 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             ))}
           </select>
 
+          {/* Custom Label UI for Non-Apple */}
+          {!isApple && (
+            <div className={style.customSelectLabel}>{displayLabel}</div>
+          )}
+
           <div className={style.endIcons}>
             {endIcon && (
               <MaterialIcon
                 icon={endIcon}
-                className={style.endIcon}
+                className={`${style.endIcon} ${isOpen ? style.rotated : ''}`}
                 iconSize="small"
               />
             )}
           </div>
+
+          {/* Custom Dropdown Menu */}
+          {!isApple && isOpen && (
+            <div className={style.customDropdown}>
+              {placeholder && (
+                <div
+                  className={`${style.customOption} ${style.placeholder}`}
+                  onClick={() => handleOptionClick('')}
+                >
+                  {placeholder}
+                </div>
+              )}
+              {options.map((option) => (
+                <div
+                  key={option.value}
+                  className={`${style.customOption} ${String(currentValue) === String(option.value) ? style.isSelected : ''} ${option.disabled ? style.isDisabled : ''}`}
+                  onClick={() =>
+                    !option.disabled && handleOptionClick(option.value)
+                  }
+                >
+                  {option.label}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {helperText && (

@@ -25,6 +25,7 @@ const MaterialIcon: React.FC<MaterialIconProps> = ({
 }): React.ReactElement => {
   return (
     <span
+      aria-hidden="true"
       className={`${outlined ? 'material-icons-outlined' : 'material-icons'} ${style['icon-container']} ${className || ''}`}
       data-size={iconSize}
       data-color={color}

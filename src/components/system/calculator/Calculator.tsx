@@ -1,9 +1,3 @@
-/*
-- Die Option-Labels in den Dropdowns zeigen jetzt immer den Aufpreis an, auch bei Basis-Artikeln (+ 0 Chf.).
-- Die Zusammenfassungsliste zeigt für jedes ausgewählte Teil nur den berechneten Aufpreis zur Basis-Ausführung (+ X Chf.) an.
-- Der "Aktuelle Preis" (Gesamtpreis) berechnet sich weiterhin aus der absoluten Summe aller ausgewählten Bauteile.
-*/
-
 'use client';
 
 import React, { useEffect, useState } from 'react';
@@ -13,7 +7,11 @@ import Input from '../input/Input';
 import Select from '../select/Select';
 import Button, { ButtonContainer } from '../button/Button';
 import style from './Calculator.module.scss';
-import BookingModal from '@/components/modals/BookingModal';
+import dynamic from 'next/dynamic';
+
+const BookingModal = dynamic(() => import('@/components/modals/BookingModal'), {
+  ssr: false,
+});
 
 interface CalculatorOption {
   label: string;

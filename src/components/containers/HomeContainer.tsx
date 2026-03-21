@@ -19,8 +19,9 @@ const HomeContainer: FC<HomeContainerProps> = () => {
     <>
       <ScrollHeroVideo
         botsOnlyText={LOREM_IPSUM_SHORT_TEXT}
-        videoSrc="https://res.cloudinary.com/de2rhuwpw/video/upload/v1774099738/output_smooth_sfxlio.mp4"
+        videoSrc="assets/output_smooth.mp4"
       />
+
       <OverlayContainer border={false}>
         <ContentContainer
           title="Mehr als ein Rennrad"

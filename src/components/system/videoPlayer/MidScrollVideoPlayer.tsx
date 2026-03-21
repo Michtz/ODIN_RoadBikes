@@ -43,6 +43,14 @@ const MidScrollVideoPlayer: FC<MidScrollVideoPlayerProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, [playbackConst]);
 
+  const getSource = (src: string, type: 'webm' | 'mp4') => {
+    const base = src.startsWith('/') ? src : `/${src}`;
+    if (type === 'webm') {
+      return base.endsWith('.webm') ? base : base.replace('.mp4', '.webm');
+    }
+    return base.endsWith('.mp4') ? base : base.replace('.webm', '.mp4');
+  };
+
   return (
     <div
       className={style.mainContainer}
@@ -59,10 +67,8 @@ const MidScrollVideoPlayer: FC<MidScrollVideoPlayerProps> = ({
             playsInline
             preload="auto"
           >
-            <source
-              src={videoSrc.startsWith('/') ? videoSrc : `/${videoSrc}`}
-              type="video/mp4"
-            />
+            <source src={getSource(videoSrc, 'webm')} type="video/webm" />
+            <source src={getSource(videoSrc, 'mp4')} type="video/mp4" />
           </video>
           <div className={style.contentOverlay}></div>
         </div>

@@ -22,7 +22,7 @@ export const StickyImageContainer: FC<ScrollHeroProps> = ({ image, title }) => {
           fill
           priority
           quality={90}
-          sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
+          sizes="100vw"
         />
         <div className={style.overlayContent}>
           <h1 className={`${style.logoFade} ${style.visible}`}>{title}</h1>

@@ -14,10 +14,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   className?: string;
   flex?: boolean;
-  visability?: boolean;
+  visibility?: boolean;
+  button?: boolean;
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   (
     {
       variant = 'primary',
@@ -31,7 +32,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className = '',
       onClick,
       flex = false,
-      visability = true,
+      visibility = true,
+      button = false,
       ...props
     },
     ref,
@@ -44,34 +46,36 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       </>
     );
 
-    const buttonElement = (
+    const commonProps = {
+      className: `${style.buttonContainer} ${className}`,
+      'data-variant': variant,
+      'data-size': size,
+      'data-appearance': appearance,
+      'data-flex': flex,
+      'data-loading': loading,
+      'data-visibility': visibility,
+    };
+
+    // If href is provided and not disabled, render as Link
+    if (href && !disabled && !button) {
+      return (
+        <Link noDecoration href={href} {...commonProps}>
+          {buttonContent}
+        </Link>
+      );
+    }
+
+    return (
       <button
-        ref={ref}
-        disabled={disabled || loading || !visability}
+        ref={ref as React.Ref<HTMLButtonElement>}
+        disabled={disabled || loading || !visibility}
         onClick={onClick}
-        className={`${style.buttonContainer} ${className}`}
-        data-variant={variant}
-        data-size={size}
-        data-appearance={appearance}
-        data-flex={flex}
-        data-loading={loading}
-        data-visability={visability}
+        {...commonProps}
         {...props}
       >
         {buttonContent}
       </button>
     );
-
-    // If href is provided and not disabled, wrap in Link
-    if (href && !disabled) {
-      return (
-        <Link noDecoration href={href}>
-          {buttonElement}
-        </Link>
-      );
-    }
-
-    return buttonElement;
   },
 );
 
