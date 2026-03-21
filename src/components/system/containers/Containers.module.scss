@@ -344,6 +344,7 @@
     &[data-single='true'] {
       justify-content: center;
     }
+
     .image {
       width: 50% !important;
       height: auto !important;
@@ -364,6 +365,15 @@
         justify-content: center;
         .image {
           width: 100% !important;
+        }
+
+        @media (max-width: 768px) {
+          &:last-child {
+            width: 100% !important;
+          }
+          &:first-child {
+            display: block;
+          }
         }
       }
     }

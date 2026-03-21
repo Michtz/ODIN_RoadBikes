@@ -14,6 +14,7 @@ import ScrollStaggeredGrid from '@/components/system/imageGridContainer/ScrollSt
 const AboutUsContainer: FC = () => {
   return (
     <>
+      <div style={{ height: '200px' }}></div>
       <OverlayContainer border={false}>
         <ContentContainer
           title="Über uns"
@@ -23,7 +24,7 @@ const AboutUsContainer: FC = () => {
       </OverlayContainer>
 
       <OverlayContainer>
-        <ImageContainer imageLeft="https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097089/035_detail_odin_green_sdr_original_sdcvwk.avif" />
+        <ImageContainer imageRight="https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097089/035_detail_odin_green_sdr_original_sdcvwk.avif" />
       </OverlayContainer>
 
       <OverlayContainer>
@@ -33,7 +34,7 @@ const AboutUsContainer: FC = () => {
           containerPlacement="fullWith"
         />
       </OverlayContainer>
-      <ImageContainer imageLeft="https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097088/036_detail_odin_blue_sdr_original_yhdvlg.avif" />
+      <ImageContainer imageRight="https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097088/036_detail_odin_blue_sdr_original_yhdvlg.avif" />
       <OverlayContainer>
         <ContentContainer
           title="Unser Ziel"
