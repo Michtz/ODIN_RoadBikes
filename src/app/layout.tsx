@@ -27,7 +27,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: {
     template: '%s | OdinBikes',
-    default: 'OdinBikes.ch | Custom High-End Rennräder & Gravelbikes',
+    default: 'OdinBikes.ch | Individuelle Custom Rennräder & Gravelbikes',
   },
   description:
     'Entdecke die Welt von OdinBikes. Custom High-Performance Rennräder und Gravelbikes, individuell konfigurierbar für dein perfektes Fahrerlebnis.',

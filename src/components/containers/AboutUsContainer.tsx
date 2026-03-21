@@ -1,9 +1,3 @@
-/*
-  This component represents the "About Us" page container, following the established design pattern
-  seen in the HomeContainer. It utilizes OverlayContainer, ContentContainer, and ImageContainer
-  to present the company history, philosophy, and mission statement.
-*/
-
 import React, { FC } from 'react';
 import OverlayContainer, {
   ContentContainer,

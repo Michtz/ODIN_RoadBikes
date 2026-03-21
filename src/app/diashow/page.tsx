@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import DiaShowContainer from '@/components/system/diashowContainer/DiaShowContainer';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'Gallery - OdinBikes',
   description:
     'OdinBikes - Individuelle Rennräder und Gravelbikes aus der Schweiz.',
 };
