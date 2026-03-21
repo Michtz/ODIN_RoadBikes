@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import ConfiguratorContainer from '@/components/containers/ConfiguratorContainer';
 
 export const metadata: Metadata = {
   title: 'Bike Konfigurator',
@@ -9,5 +8,5 @@ export const metadata: Metadata = {
 
 export default function ConfiguratorPage() {
   return <></>;
-  return <ConfiguratorContainer />;
+  // return <ConfiguratorContainer />;
 }
