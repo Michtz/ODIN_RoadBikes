@@ -41,6 +41,7 @@ const HomeContainer: FC<HomeContainerProps> = () => {
           }
           buttonText={'Mehr Rahmen'}
           buttonSide={'center'}
+          priority
         />
       </OverlayContainer>
       <OverlayContainer>
@@ -61,6 +62,7 @@ const HomeContainer: FC<HomeContainerProps> = () => {
           imageLeft={
             'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096125/odin_frame_yellow_gravity_ai_1600px_v48h61.png'
           }
+          href={'/bikes/roadbikes'}
           buttonText={'Mehr Rahmen'}
           buttonSide={'center'}
         />
@@ -84,6 +86,7 @@ const HomeContainer: FC<HomeContainerProps> = () => {
             'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096125/odin_frame_jamaika_ai_1600px_yi8ylq.png'
           }
           buttonText={'Mehr Rahmen'}
+          href={'/bikes/roadbikes'}
           buttonSide={'center'}
         />
       </OverlayContainer>

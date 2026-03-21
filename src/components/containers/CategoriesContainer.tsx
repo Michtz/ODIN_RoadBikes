@@ -97,6 +97,7 @@ const CategoriesContainer: FC = () => {
           }
           buttonText={'Mehr Rahmen'}
           buttonSide={'center'}
+          priority={true}
         />
       </OverlayContainer>
 

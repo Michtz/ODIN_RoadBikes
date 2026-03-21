@@ -1,8 +1,6 @@
-$font-family-base: 'Archivo Black', sans-serif;
-$font-family-big: 'Syncopate', sans-serif;
-$font-family-second: 'Montserrat', sans-serif;
+$font-family-big: var(--font-syncopate), sans-serif;
+$font-family-second: var(--font-montserrat), sans-serif;
 
-/* Color definitions with opacity scales */
 $color-bg-primary: #000;
 $color-primary: #eaeaea;
 $color-secondary: rgba(104, 104, 104, 0.22);
