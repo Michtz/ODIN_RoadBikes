@@ -163,17 +163,19 @@ export const ImageContainer: FC<ImageContainerProps> = ({
           />
         )}
 
-        <Image
-          loader={cloudinaryLoader}
-          className={style.image}
-          src={imageRight}
-          alt={title || 'image right'}
-          width={1600}
-          height={1600}
-          quality={90}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-          priority={priority}
-        />
+        {imageRight && (
+          <Image
+            loader={cloudinaryLoader}
+            className={style.image}
+            src={imageRight}
+            alt={title || 'image right'}
+            width={1600}
+            height={1600}
+            quality={90}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+            priority={priority}
+          />
+        )}
       </div>
       {buttonText && (
         <ButtonContainer buttonStyle side={buttonSide}>
