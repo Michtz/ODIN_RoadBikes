@@ -57,9 +57,9 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
     };
 
     // If href is provided and not disabled, render as Link
-    if (href && !disabled && !button) {
+    if (href && !disabled) {
       return (
-        <Link noDecoration href={href} {...commonProps}>
+        <Link noDecoration href={href} styling={button} {...commonProps}>
           {buttonContent}
         </Link>
       );
@@ -87,6 +87,7 @@ interface ButtonContainerProps {
   className?: string;
   styles?: React.CSSProperties;
   side?: ButtonPositions;
+  buttonStyle?: boolean;
 }
 
 export const ButtonContainer: React.FC<ButtonContainerProps> = ({
@@ -95,12 +96,14 @@ export const ButtonContainer: React.FC<ButtonContainerProps> = ({
   className = '',
   styles,
   side,
+  buttonStyle = false,
 }) => (
   <div
     onClick={(e) => e.stopPropagation()}
     className={`${style.buttonContainerContainer} ${className}`}
     data-spread={spread}
     data-side={side}
+    data-styling={buttonStyle}
     style={styles}
   >
     {children}

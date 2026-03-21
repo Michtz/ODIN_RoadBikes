@@ -101,7 +101,7 @@ export const ContentContainer: FC<ContentContainerProps> = ({
     <h2>{title}</h2>
     <p>{text}</p>
     {buttonText && (
-      <ButtonContainer side={buttonSide}>
+      <ButtonContainer buttonStyle side={buttonSide}>
         <Button button href={href}>
           {buttonText}
         </Button>
@@ -174,7 +174,7 @@ export const ImageContainer: FC<ImageContainerProps> = ({
         />
       </div>
       {buttonText && (
-        <ButtonContainer side={buttonSide}>
+        <ButtonContainer buttonStyle side={buttonSide}>
           <Button button href={href}>
             {buttonText}
           </Button>

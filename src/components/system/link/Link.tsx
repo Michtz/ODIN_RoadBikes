@@ -19,6 +19,7 @@ interface LinkProps {
   active?: boolean;
   noDecoration?: boolean;
   additionalAction?: (() => void) | undefined;
+  styling?: boolean;
 }
 
 const Link: React.FC<LinkProps> = ({
@@ -36,6 +37,7 @@ const Link: React.FC<LinkProps> = ({
   active = false,
   noDecoration = false,
   additionalAction,
+  styling = false,
 }) => {
   const router = useRouter();
   const prefetched = useRef<boolean>(false);
@@ -112,7 +114,12 @@ const Link: React.FC<LinkProps> = ({
 
   // Internal link
   return (
-    <a {...sharedProps} href={disabled ? '' : href} onClick={additionalAction}>
+    <a
+      {...sharedProps}
+      href={disabled ? '' : href}
+      data-styling={styling}
+      onClick={additionalAction}
+    >
       {content}
     </a>
   );

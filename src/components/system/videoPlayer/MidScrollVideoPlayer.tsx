@@ -44,7 +44,9 @@ const MidScrollVideoPlayer: FC<MidScrollVideoPlayerProps> = ({
   }, [playbackConst]);
 
   const getSource = (src: string, type: 'webm' | 'mp4') => {
-    const base = src.startsWith('/') ? src : `/${src}`;
+    const isAbsolute = src.startsWith('http');
+    const base = isAbsolute ? src : (src.startsWith('/') ? src : `/${src}`);
+    
     if (type === 'webm') {
       return base.endsWith('.webm') ? base : base.replace('.mp4', '.webm');
     }
