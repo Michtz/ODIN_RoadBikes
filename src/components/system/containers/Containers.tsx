@@ -23,7 +23,7 @@ const OverlayContainer = forwardRef<HTMLDivElement, BrandIntroProps>(
   },
 );
 
-OverlayContainer.displayName = 'Overlay....';
+OverlayContainer.displayName = 'OverlayContainer';
 
 interface ContainerProps extends PropsWithChildren {
   children?: ReactNode;
@@ -102,7 +102,9 @@ export const ContentContainer: FC<ContentContainerProps> = ({
     <p>{text}</p>
     {buttonText && (
       <ButtonContainer side={buttonSide}>
-        <Button href={href}>{buttonText}</Button>
+        <Button button href={href}>
+          {buttonText}
+        </Button>
       </ButtonContainer>
     )}
   </div>
@@ -124,7 +126,12 @@ export const cloudinaryLoader = ({ src, width, quality }: ImageLoaderProps) => {
   const urlParts = src.split('/image/upload/');
   if (urlParts.length !== 2) return src;
 
-  const params = ['f_auto', 'c_limit', `w_${width}`, `q_${quality || 'auto'}`];
+  const params = [
+    'f_auto',
+    'c_limit',
+    `w_${width}`,
+    `q_${quality || 'auto:best'}`,
+  ];
   return `${urlParts[0]}/image/upload/${params.join(',')}/${urlParts[1]}`;
 };
 
@@ -150,7 +157,7 @@ export const ImageContainer: FC<ImageContainerProps> = ({
           width={1600}
           height={1600}
           quality={90}
-          sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
           priority={priority}
         />
 
@@ -162,13 +169,15 @@ export const ImageContainer: FC<ImageContainerProps> = ({
           width={1600}
           height={1600}
           quality={90}
-          sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
           priority={priority}
         />
       </div>
       {buttonText && (
         <ButtonContainer side={buttonSide}>
-          <Button href={href}>{buttonText}</Button>
+          <Button button href={href}>
+            {buttonText}
+          </Button>
         </ButtonContainer>
       )}
     </div>

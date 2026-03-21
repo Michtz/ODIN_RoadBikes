@@ -1,9 +1,20 @@
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
-export function proxy() {
+export function proxy(request: NextRequest) {
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico).*)'],
+  matcher: [
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - assets (public assets)
+     * - favicon.ico (favicon file)
+     */
+    '/((?!api|_next/static|_next/image|assets|favicon.ico).*)',
+  ],
 };

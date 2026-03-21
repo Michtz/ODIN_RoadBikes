@@ -5,8 +5,11 @@ import Link from '@/components/system/link/Link';
 import HamburgerIcon from '@/components/icons/HamburgerIcon';
 import SideNav from '@/components/system/sideNav/SideNav';
 import LoadingSpinner from '@/components/system/loader/LoadingSpinner';
+import dynamic from 'next/dynamic';
 import OdinLogo from '@/components/icons/OdinLogo';
-import BookingModal from '@/components/modals/BookingModal';
+const BookingModal = dynamic(() => import('@/components/modals/BookingModal'), {
+  ssr: false,
+});
 
 const ResponsiveAppBar = () => {
   const [isLoading, setIsLoading] = useState(false);

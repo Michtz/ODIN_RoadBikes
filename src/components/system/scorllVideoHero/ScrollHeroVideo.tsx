@@ -96,6 +96,13 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
 
   const isVisible = showLogo && !showImageOverlay;
 
+  const getSource = (src: string, type: 'webm' | 'mp4') => {
+    if (type === 'webm') {
+      return src.endsWith('.webm') ? src : src.replace('.mp4', '.webm');
+    }
+    return src.endsWith('.mp4') ? src : src.replace('.webm', '.mp4');
+  };
+
   return (
     <div className={style.scrollContainer} ref={containerRef}>
       <div className={style.stickyWrapper}>
@@ -106,9 +113,11 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
           playsInline
           autoPlay
           preload="auto"
-          src={videoSrc}
           onLoadedMetadata={updateVideoPosition}
-        />
+        >
+          <source src={getSource(videoSrc, 'webm')} type="video/webm" />
+          <source src={getSource(videoSrc, 'mp4')} type="video/mp4" />
+        </video>
 
         <div className={style.overlayContent}>
           <h1 className={`${style.logoFade} ${isVisible ? style.visible : ''}`}>

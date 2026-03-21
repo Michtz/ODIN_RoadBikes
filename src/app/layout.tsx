@@ -11,13 +11,14 @@ import './globals.scss';
 import './_variables.scss';
 
 const syncopate = Syncopate({
-  weight: '400',
+  weight: ['400', '700'],
   subsets: ['latin'],
   variable: '--font-syncopate',
   display: 'swap',
 });
 
 const montserrat = Montserrat({
+  weight: '400',
   subsets: ['latin'],
   variable: '--font-montserrat',
   display: 'swap',
