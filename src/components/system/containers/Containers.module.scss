@@ -341,6 +341,9 @@
     flex-wrap: nowrap;
     align-items: stretch;
 
+    &[data-single='true'] {
+      justify-content: center;
+    }
     .image {
       width: 50% !important;
       height: auto !important;
@@ -354,6 +357,13 @@
         }
         &:first-child {
           display: none;
+        }
+      }
+
+      &[data-single='true'] {
+        justify-content: center;
+        .image {
+          width: 100% !important;
         }
       }
     }
