@@ -1,8 +1,5 @@
 import { FrameData, GeometryData } from '@/data/gravity_data';
 
-export const slideCarbonFrame: string =
-  'https://www.yishunbike.com/wp-content/uploads/R068D.jpg';
-
 export const slideData: FrameData = {
   versions: [],
   testItems: [],
@@ -36,6 +33,18 @@ export const slideData: FrameData = {
 export const slideGeometry: GeometryData = {
   firstText:
     'Das Slide ist ein Allrounder mit einem Preis ab 2950 Franken – ein echt preisgünstiges Fahrrad! Ein bisschen Aero, aber mit einer Geometrie, die dennoch komfortabel ist. Mit diesem Fahrrad lassen sich perfekt lange Touren unternehmen! Und mit einer maximalen Reifenbreite von 32 mm ist es ein komfortables Rennrad!',
+  details: {
+    frame:
+      'Dies ist das Allround-Talent mit einem Augenzwinkern in Richtung Aerodynamik und einer Geometrie, die es ermöglicht, Berge bequem zu erklimmen! Das perfekte Aero-Bike für Touren in den Alpen!',
+    color:
+      'Diese Fahrräder sind bereits in verschiedenen Farben lackiert! Dadurch ist der Preis günstiger als bei unseren speziell lackierten Fahrrädern! Mit den modernsten Farben und einem schlanken Design fahren Sie dennoch ein einzigartiges Fahrrad. Alle Farben werden maximal 20 Mal produziert, um Platz für eine neue Farbe zu schaffen!',
+    components:
+      'Shimano oder Sram – kein Problem. Sie wählen gemeinsam mit uns die Komponenten aus, die am besten zu Ihnen passen. Wir sind da, um Sie bei der besten Wahl zu unterstützen! Auch beim Thema Laufräder ist alles möglich! Für das beste Preis-Leistungs-Verhältnis bauen wir die Laufräder selbst für Sie, mit Naben, Speichen und Felgen Ihrer Wahl!',
+    settings:
+      'Vielleicht das Wichtigste von allem: die Fahrradanpassung! Jedes von uns gebaute Fahrrad wird nach Maß gefertigt und anschließend in unserem Fahrradanpassungsraum millimetergenau eingestellt. Mit der Technik von Gebiomized können wir Ihr Fahrrad perfekt auf Sie abstimmen.',
+    service:
+      'Jedes Fahrrad ist uns ein Herzensanliegen. Deshalb ist es uns wichtig, dass die Fahrräder in Topzustand bleiben. In unserer modernen Werkstatt tun wir daher alles, um Ihr Fahrrad in Topzustand zu halten! Ihr Fahrrad ist auch für uns wichtig!',
+  },
   imageUrlGeometry:
     'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096126/geometry_slide_1600px_zxqnne.png',
   imageUrlFrame:
