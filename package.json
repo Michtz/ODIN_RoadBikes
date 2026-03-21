@@ -23,7 +23,6 @@
     "axios": "^1.11.0",
     "bootstrap": "^5.3.8",
     "dotenv": "^17.2.1",
-    "framer-motion": "^12.23.12",
     "js-cookie": "^3.0.5",
     "material-icons": "^1.13.14",
     "minimatch": "^10.2.2",
@@ -45,7 +44,7 @@
     "socket.io-client": "^4.8.1",
     "stripe": "^18.5.0",
     "swr": "^2.3.6",
-    "undici": "^7.22.0",
+    "undici": "^7.24.5",
     "uuid": "^11.1.0"
   },
   "devDependencies": {

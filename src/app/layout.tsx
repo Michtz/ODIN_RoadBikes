@@ -3,12 +3,25 @@ import React, { ReactNode } from 'react';
 import { ClientProviders } from '@/providers/ClientProviders';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
+import { Syncopate, Montserrat } from 'next/font/google';
 
 import 'material-icons/iconfont/material-icons.css';
 import 'material-icons/iconfont/outlined.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.scss';
 import './_variables.scss';
+
+const syncopate = Syncopate({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-syncopate',
+  display: 'swap',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -44,11 +57,10 @@ export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
 };
-// todo: add error page
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="de">
+    <html lang="de" className={` ${syncopate.variable} ${montserrat.variable}`}>
       <body>
         <ClientProviders>
           <Header />

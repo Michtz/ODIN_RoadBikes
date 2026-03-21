@@ -117,6 +117,7 @@ interface ImageContainerProps {
   border?: 'bottom' | false;
   imageRight: string;
   imageLeft: string;
+  priority?: boolean;
 }
 
 export const cloudinaryLoader = ({ src, width, quality }: ImageLoaderProps) => {
@@ -136,6 +137,7 @@ export const ImageContainer: FC<ImageContainerProps> = ({
   imageRight,
   imageLeft,
   border = 'bottom',
+  priority = false,
 }) => {
   return (
     <div className={style.imageContentContainer}>
@@ -149,6 +151,7 @@ export const ImageContainer: FC<ImageContainerProps> = ({
           height={1600}
           quality={90}
           sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
+          priority={priority}
         />
 
         <Image
@@ -160,6 +163,7 @@ export const ImageContainer: FC<ImageContainerProps> = ({
           height={1600}
           quality={90}
           sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
+          priority={priority}
         />
       </div>
       {buttonText && (
