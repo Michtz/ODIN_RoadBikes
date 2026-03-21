@@ -81,10 +81,7 @@ const CategoriesContainer: FC = () => {
         <ContentContainer
           title="Dein nächstes Fahrrad"
           text="Individualität, Präzision & Langlebigkeit. Jedes Odin-Bike ist ein Zeugnis individueller Schweizer Handwerkskunst und unserer Leidenschaft für Perfektion."
-          buttonText={'Unsere Bikes'}
-          buttonSide={'right'}
           containerPlacement={'fullWith'}
-          href={'/bikes/roadbikes'}
         />
       </OverlayContainer>
       <OverlayContainer key={1}>
@@ -95,8 +92,6 @@ const CategoriesContainer: FC = () => {
           imageLeft={
             'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096124/odin_frame_red_ai_1600px_kpegs6.png'
           }
-          buttonText={'Mehr Rahmen'}
-          buttonSide={'center'}
           priority={true}
         />
       </OverlayContainer>

@@ -31,10 +31,7 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({
         <ContentContainer
           title={'Beste Geometry zum klettern'}
           text={data.firstText}
-          buttonText={'Unsere Bikes'}
-          buttonSide={'right'}
           containerPlacement={'fullWith'}
-          href={'/bikes/roadbikes'}
         />
       </OverlayContainer>
       <div style={{ height: '700px' }}></div>

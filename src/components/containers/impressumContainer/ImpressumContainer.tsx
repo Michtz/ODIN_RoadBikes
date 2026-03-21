@@ -1,13 +1,14 @@
 import React, { FC } from 'react';
 import style from './ImpressumContainer.module.scss';
-import { Container } from '@/components/system/containers/Containers';
+import { Container, Title } from '@/components/system/containers/Containers';
 
 interface ImpressumContainerProps {}
 
 const ImpressumContainer: FC<ImpressumContainerProps> = () => {
   return (
     <Container flow={'column'}>
-      <h1 className={style.title}>Impressum</h1>
+      <div style={{ height: '200px' }}></div>
+      <Title>Impressum</Title>
 
       <div className={style.section}>
         <h2>Kontaktadresse</h2>
