@@ -23,8 +23,16 @@ export interface FrameData {
   keywords: string[];
 }
 
+export interface Details {
+  frame: string;
+  color: string;
+  settings: string;
+  components: string;
+  service: string;
+}
 export interface GeometryData {
   firstText: string;
+  details: Details;
   imageUrlGeometry: string;
   imageUrlFrame: string;
   imageAlt: string;
@@ -147,6 +155,18 @@ export const gravityData: FrameData = {
 export const gravityGeometry: GeometryData = {
   firstText:
     'Das Wort „Gravity“ sagt es schon: Schwerkraft! Dieser Rahmen zeichnet sich besonders durch sein geringes Gewicht und seine Steifigkeit im Tretlagerbereich aus, wodurch du mit diesem Fahrrad bestens für Bergauffahrten gerüstet bist. Mit diesem Rahmen ist es möglich, ein Fahrrad mit einem Gewicht von unter 6 kg zu bauen! Diese Fahrräder werden ausschließlich in Kombination mit einer Lackierung deiner Wahl verkauft! Alles ist möglich!',
+  details: {
+    frame:
+      'Der Rahmen aus dem hochwertigsten Taroy-Carbon, das auf dem Markt erhältlich ist, ermöglicht es, diesen Rahmen steif und leicht zu gestalten! Mit einer Geometrie, die perfekt dafür geeignet ist, die Berge hinaufzufahren.',
+    color:
+      'Jede Farbe ist möglich! Entwerfen Sie Ihren eigenen Rahmen und lassen Sie sich von allem inspirieren, was auf dem Markt ist. Von diesem Fahrrad wird es weltweit nur ein einziges Exemplar geben!',
+    components:
+      'Shimano oder Sram – kein Problem. Sie wählen gemeinsam mit uns die Komponenten aus, die am besten zu Ihnen passen. Wir sind da, um Sie bei der besten Wahl zu unterstützen! Auch beim Thema Laufräder ist alles möglich! Für das beste Preis-Leistungs-Verhältnis bauen wir die Laufräder selbst für Sie, mit Naben, Speichen und Felgen Ihrer Wahl!',
+    settings:
+      'Vielleicht das Wichtigste von allem: das Bikefitting! Jedes Fahrrad, das von uns gebaut wird, wird nach Mass gefertigt und anschließend in unserem Bikefitting-Räumlichkeiten millimetergenau eingestellt. Mit der Technik von Gebiomized können wir Ihr Fahrrad perfekt auf Sie abstimmen.',
+    service:
+      'Jedes Fahrrad ist uns ein Herzensanliegen. Deshalb ist es uns wichtig, dass die Fahrräder in Topzustand bleiben. In unserer modernen Werkstatt tun wir daher alles, um Ihr Fahrrad in Topzustand zu halten! Ihr Fahrrad ist auch für uns wichtig!',
+  },
   imageUrlGeometry:
     'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096124/gravity_frame_geometry_1600px_qviwsv.png',
   imageUrlFrame:

@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   width: 40%;
-  height: 80vh;
+  height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,10 +50,22 @@
   }
 }
 
+.videoContainer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15%;
+  height: 10%;
+  pointer-events: none;
+  box-shadow: inset 0 0 30px 15px $color-bg-primary;
+}
+
 .videoElement {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .contentOverlay {
@@ -65,7 +77,7 @@
 }
 
 .distanceHolder {
-  height: 150px;
+  height: 200px;
 }
 .textContainer {
   width: 50%;

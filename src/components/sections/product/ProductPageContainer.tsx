@@ -37,6 +37,7 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({
       <div style={{ height: '700px' }}></div>
       <OverlayContainer border={false} key={1}>
         <MidScrollVideoPlayer
+          data={data.details}
           videoSrc={
             'https://res.cloudinary.com/de2rhuwpw/video/upload/v1774111520/output_smooth_assembly_odin_white_jtojti.webm'
           }

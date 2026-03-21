@@ -21,7 +21,7 @@ const CategoriesContainer: FC = () => {
         'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096126/slide_frame_Black_1600px_k7dktj.png',
       alt: 'Odin Bike',
       title: 'Gravity',
-      text: PLACHOLDERTEXT,
+      text: 'Der Name ist Programm: Geringes Gewicht und hohe Tretlagersteifigkeit machen diesen Rahmen perfekt für Bergauffahrten. Aufbauten unter 6 kg sind möglich. Verkauf ausschließlich mit individueller Wunschlackierung!',
       url: '/bikes/roadbikes/gravity',
     },
     {
@@ -30,11 +30,11 @@ const CategoriesContainer: FC = () => {
         'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096126/slide_frame_Black_1600px_k7dktj.png',
       alt: 'Odin Bike',
       title: 'Slide',
-      text: PLACHOLDERTEXT,
-
+      text: 'Das Slide ist ein preisgünstiger Allrounder ab 2950 Franken. Etwas Aero, gepaart mit komfortabler Geometrie und 32 mm Reifenfreiheit, macht es zum perfekten Rennrad für lange Touren.',
       url: '/bikes/roadbikes/slide',
     },
   ];
+
   const items2: any[] = [
     {
       id: 1,
@@ -42,7 +42,7 @@ const CategoriesContainer: FC = () => {
         'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774101514/odin_gravity_full_bike_ik76zq.png',
       alt: 'Odin Bike',
       title: 'Gravity',
-      text: PLACHOLDERTEXT,
+      text: 'Der Name ist Programm: Geringes Gewicht und hohe Tretlagersteifigkeit machen diesen Rahmen perfekt für Bergauffahrten. Aufbauten unter 6 kg sind möglich. Verkauf ausschließlich mit individueller Wunschlackierung!',
       url: '/bikes/roadbikes/gravity',
     },
     {
@@ -51,8 +51,7 @@ const CategoriesContainer: FC = () => {
         'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774101848/odin_bike_full_red_slide_ie1zpo.png',
       alt: 'Odin Bike',
       title: 'Slide',
-      text: PLACHOLDERTEXT,
-
+      text: 'Das Slide ist ein preisgünstiger Allrounder ab 2950 Franken. Etwas Aero, gepaart mit komfortabler Geometrie und 32 mm Reifenfreiheit, macht es zum perfekten Rennrad für lange Touren.',
       url: '/bikes/roadbikes/slide',
     },
   ];

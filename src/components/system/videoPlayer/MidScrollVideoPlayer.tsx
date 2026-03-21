@@ -2,16 +2,18 @@
 
 import React, { FC, useEffect, useRef } from 'react';
 import style from '@/components/system/videoPlayer/MidScrollVideoPlayer.module.scss';
-import { PLACHOLDERTEXT } from '@/components/sections/product/ProductPageContainer';
+import { Details } from '@/data/gravity_data';
 
 interface MidScrollVideoPlayerProps {
   videoSrc: string;
   playbackConst?: number; // 600px Scroll-Weg
+  data: Details;
 }
 
 const MidScrollVideoPlayer: FC<MidScrollVideoPlayerProps> = ({
   videoSrc,
   playbackConst = 2200,
+  data,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -45,8 +47,8 @@ const MidScrollVideoPlayer: FC<MidScrollVideoPlayerProps> = ({
 
   const getSource = (src: string, type: 'webm' | 'mp4') => {
     const isAbsolute = src.startsWith('http');
-    const base = isAbsolute ? src : (src.startsWith('/') ? src : `/${src}`);
-    
+    const base = isAbsolute ? src : src.startsWith('/') ? src : `/${src}`;
+
     if (type === 'webm') {
       return base.endsWith('.webm') ? base : base.replace('.mp4', '.webm');
     }
@@ -57,7 +59,7 @@ const MidScrollVideoPlayer: FC<MidScrollVideoPlayerProps> = ({
     <div
       className={style.mainContainer}
       ref={containerRef}
-      style={{ height: `calc(100vh + ${playbackConst}px)` }}
+      style={{ height: `calc(60vh + ${playbackConst}px)` }}
     >
       <div className={style.stickyWrapper}>
         <div className={style.videoContainer}>
@@ -77,27 +79,27 @@ const MidScrollVideoPlayer: FC<MidScrollVideoPlayerProps> = ({
       </div>
       <div className={style.textContainer}>
         <h2>Rahmen</h2>
-        <p>{PLACHOLDERTEXT}</p>
-      </div>{' '}
+        <p>{data.frame}</p>
+      </div>
       <div className={style.distanceHolder}></div>
       <div className={style.textContainer}>
         <h2>Farbe</h2>
-        <p>{PLACHOLDERTEXT}</p>
-      </div>{' '}
+        <p>{data.color}</p>
+      </div>
       <div className={style.distanceHolder}></div>
       <div className={style.textContainer}>
-        <h2>Teile</h2>
-        <p>{PLACHOLDERTEXT}</p>
-      </div>{' '}
+        <h2>Komponenten</h2>
+        <p>{data.components}</p>
+      </div>
       <div className={style.distanceHolder}></div>
       <div className={style.textContainer}>
         <h2>Fitting</h2>
-        <p>{PLACHOLDERTEXT}</p>
+        <p>{data.settings}</p>
       </div>
       <div className={style.distanceHolder}></div>
       <div className={style.textContainer}>
         <h2>Service</h2>
-        <p>{PLACHOLDERTEXT}</p>
+        <p>{data.service}</p>
       </div>
     </div>
   );
