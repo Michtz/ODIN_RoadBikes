@@ -33,7 +33,11 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen = false, onClose }) => {
                 </Link>
               </li>{' '}
               <li className={style.navItem}>
-                <Link additionalAction={onClose} noDecoration href="/bikes">
+                <Link
+                  additionalAction={onClose}
+                  noDecoration
+                  href="/bikes/roadbikes"
+                >
                   Rennräder
                 </Link>
               </li>
