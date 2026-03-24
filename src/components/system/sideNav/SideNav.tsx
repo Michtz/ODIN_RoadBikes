@@ -20,7 +20,9 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen = false, onClose }) => {
       <nav className={`${style.sideNav} ${isOpen ? style.sideNavOpen : ''}`}>
         <div className={style.sideNavContent}>
           <div className={style.navSection}>
-            <OdinLogo width={250} height={30} />
+            <Link href={'/'}>
+              <OdinLogo width={250} height={30} />
+            </Link>
             <ul className={style.navList}>
               <li className={style.navItem}>
                 <Link additionalAction={onClose} noDecoration href="/">
