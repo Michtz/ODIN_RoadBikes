@@ -40,6 +40,10 @@ const ResponsiveAppBar = () => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    if (window.innerWidth < 768) {
+      window.scrollTo({ top: 150, behavior: 'smooth' });
+    }
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -56,7 +60,7 @@ const ResponsiveAppBar = () => {
       <div
         className={`${style.loadingOverlay} ${!isLoading ? style.hidden : ''}`}
       >
-        <Link href={'/'}>
+        <Link noDecoration href={'/'}>
           <OdinLogo width={300} className={style.loadingLogo} />
         </Link>
         <LoadingSpinner color={'white'} />
@@ -74,7 +78,7 @@ const ResponsiveAppBar = () => {
           <span
             className={`${style.logo} ${!isLoading ? style.logoSmall : ''}`}
           >
-            <Link href={'/'}>
+            <Link noDecoration href={'/'}>
               <OdinLogo className={style.headerLogo} />
             </Link>
           </span>
