@@ -56,7 +56,9 @@ const ResponsiveAppBar = () => {
       <div
         className={`${style.loadingOverlay} ${!isLoading ? style.hidden : ''}`}
       >
-        <OdinLogo width={300} href={'/'} className={style.loadingLogo} />
+        <Link href={'/'}>
+          <OdinLogo width={300} className={style.loadingLogo} />
+        </Link>
         <LoadingSpinner color={'white'} />
       </div>
 
@@ -72,7 +74,9 @@ const ResponsiveAppBar = () => {
           <span
             className={`${style.logo} ${!isLoading ? style.logoSmall : ''}`}
           >
-            <OdinLogo className={style.headerLogo} href={'/'} />
+            <Link href={'/'}>
+              <OdinLogo className={style.headerLogo} />
+            </Link>
           </span>
           <ul className={style.navItemContainer}>
             <li className={style.navItem}>

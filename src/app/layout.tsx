@@ -4,6 +4,7 @@ import { ClientProviders } from '@/providers/ClientProviders';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
 import { Syncopate, Montserrat } from 'next/font/google';
+import ServiceWorkerRegistration from '@/components/system/ServiceWorkerRegistration';
 
 import 'material-icons/iconfont/material-icons.css';
 import 'material-icons/iconfont/outlined.css';
@@ -57,12 +58,14 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: '#000000', // Using $color-bg-primary (#000) from _variables.scss
 };
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="de" className={` ${syncopate.variable} ${montserrat.variable}`}>
       <body>
+        <ServiceWorkerRegistration />
         <ClientProviders>
           <Header />
           <main>{children}</main>
