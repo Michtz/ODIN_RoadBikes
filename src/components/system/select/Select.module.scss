@@ -48,7 +48,7 @@
   font-size: 16px;
   font-weight: 500;
   display: flex;
-  font-family: $font-family-second;
+  font-family: $font-family-big;
   color: $color-primary;
   align-items: center;
   gap: 4px;
@@ -139,9 +139,10 @@
   padding: 12px 16px;
   border: none;
   background: transparent;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.5;
   color: $color-primary-900;
+  font-family: $font-family-second;
   outline: none;
   width: 100%;
   appearance: none; /* Remove default arrow */
