@@ -23,7 +23,7 @@ export const GeometryTable: React.FC<GeometryTableProps> = ({ data }) => {
           height={900}
           priority
           quality={90}
-          sizes="(max-width: 1200px) 100vw, 1200px"
+          sizes="(max-width: 468px) 468px,(max-width: 768px) 768px, (max-width: 1200px) 1200px"
         />
       </div>
 
