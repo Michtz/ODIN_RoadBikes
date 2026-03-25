@@ -72,6 +72,7 @@ const CategoriesContainer: FC = () => {
   return (
     <Container padding={false} backgroundColor flow={'column'}>
       <ScrollHeroVideo
+        footerText={'categories'}
         videoSrc="https://res.cloudinary.com/de2rhuwpw/video/upload/v1774111637/output_smooth_odin_drive_right_n39hub.webm"
         botsOnlyText={LOREM_IPSUM_SHORT_TEXT}
       />

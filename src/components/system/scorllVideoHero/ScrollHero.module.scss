@@ -105,6 +105,45 @@
   }
 }
 
+.placefiler {
+  position: sticky;
+  top: 100px;
+  height: 100vh;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: -100vh;
+  pointer-events: none;
+  z-index: 10;
+
+  &.invisible {
+    animation: zoomOut 1s forwards;
+  }
+  &.visible {
+    animation: zoomIn 1s forwards;
+  }
+
+  @keyframes zoomOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      transform: scale(0.8);
+    }
+  }
+}
+
 .srOnly {
   position: absolute;
   width: 1px;
