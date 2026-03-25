@@ -3,17 +3,20 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import OdinLogo from '@/components/icons/OdinLogo';
 import style from './ScrollHero.module.scss';
+import { Title } from '@/components/system/containers/Containers';
 
 interface ScrollHeroProps {
   videoSrc: string;
   showImageOverlay?: boolean;
   botsOnlyText: string;
+  footerText: 'home' | 'categories';
 }
 
 const ScrollHeroVideo: FC<ScrollHeroProps> = ({
   videoSrc,
   showImageOverlay: showImageOverlayProp,
   botsOnlyText,
+  footerText,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -131,6 +134,25 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
             <span className={style.srOnly}>{botsOnlyText}</span>
           </h1>
         </div>
+      </div>
+      <div
+        className={`${style.placefiler} ${showLogo ? style.invisible : style.visible}`}
+      >
+        {footerText === 'home' ? (
+          <Title size={'big'}>
+            Made
+            <br />
+            for <br />
+            you
+          </Title>
+        ) : (
+          <Title size={'big'}>
+            The
+            <br />
+            Road <br />
+            is yours
+          </Title>
+        )}
       </div>
     </div>
   );

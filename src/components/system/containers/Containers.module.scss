@@ -158,6 +158,89 @@
       padding: 0 2rem;
     }
   }
+
+  &[data-size='big'] {
+    font-size: 76px;
+    line-height: 68px;
+
+    //font-family: 'Erica One', sans-serif !important;
+    font-weight: 400;
+    font-style: normal;
+
+    margin-top: 40px;
+
+    //  Bangers: CSS class
+    //
+    //  .bangers-regular {
+    //font-family: 'Bangers', system-ui;
+    //    font-weight: 400;
+    //    font-style: normal;
+    //  }
+    //  Jaro: CSS class for a variable style
+    //
+    //    // <uniquifier>: Use a unique and descriptive class name
+    //
+    //  .jaro-<uniquifier> {
+    //font-family: 'Jaro', sans-serif;
+    //    font-optical-sizing: auto;
+    //    font-weight: 400;
+    //    font-style: normal;
+    //  }
+    //  Zilla Slab Highlight: CSS classes
+    //
+    //.zilla-slab-highlight-regular {
+    //font-family: 'Zilla Slab Highlight', serif;
+    //  font-weight: 400;
+    //  font-style: normal;
+    //}
+    //
+    //  .zilla-slab-highlight-bold {
+    //font-family: 'Zilla Slab Highlight', serif;
+    //    font-weight: 700;
+    //    font-style: normal;
+    //  }
+    //  Rubik Doodle Triangles: CSS class
+    //
+    //.rubik-doodle-triangles-regular {
+    //  font-family: 'Rubik Doodle Triangles', system-ui;
+    //  //  font-weight: 400;
+    //  //  font-style: normal;
+    //  //}
+    //
+    //
+    //  .bungee-regular {
+    font-family: 'Bungee', sans-serif;
+    //    font-weight: 400;
+    //    font-style: normal;
+    //  }
+    //  Sixtyfour: CSS class for a variable style
+    //
+    //    // <uniquifier>: Use a unique and descriptive class name
+    //
+    //  .sixtyfour-<uniquifier> {
+    //    font-family: "Sixtyfour", sans-serif;
+    //    font-optical-sizing: auto;
+    //    font-weight: 400;
+    //    font-style: normal;
+    //    font-variation-settings:
+    //      "BLED" 0,
+    //      "SCAN" 0;
+    //  }
+    //  Ultra: CSS class
+    //
+    //  .ultra-regular {
+    //    font-family: "Ultra", serif;
+    //    font-weight: 400;
+    //    font-style: normal;
+    //  }
+    //  Alfa Slab One: CSS class
+    //
+    //.alfa-slab-one-regular {
+    //  font-family: "Alfa Slab One", serif;
+    //  font-weight: 400;
+    //  font-style: normal;
+    //}
+  }
 }
 
 .horizontalScrollContainer {

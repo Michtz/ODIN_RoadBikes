@@ -40,9 +40,7 @@ const ResponsiveAppBar = () => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    if (window.innerWidth < 768) {
-      window.scrollTo({ top: 150, behavior: 'smooth' });
-    }
+
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);

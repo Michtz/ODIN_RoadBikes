@@ -42,7 +42,7 @@ interface ContainerProps extends PropsWithChildren {
   transparent?: boolean;
   backgroundColor?: boolean | 'white';
   marginTop?: boolean;
-  size?: 'small' | 'normal';
+  size?: 'small' | 'normal' | 'big';
 }
 
 export const Container: FC<ContainerProps> = ({
