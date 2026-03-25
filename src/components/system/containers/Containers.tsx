@@ -158,7 +158,7 @@ export const ImageContainer: FC<ImageContainerProps> = ({
             width={1600}
             height={1600}
             quality={90}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+            sizes="(max-width: 468px) 468px,(max-width: 768px) 768px, (max-width: 1200px) 1200px"
             priority={priority}
           />
         )}
@@ -171,7 +171,7 @@ export const ImageContainer: FC<ImageContainerProps> = ({
           width={1600}
           height={1600}
           quality={90}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
+          sizes="(max-width: 468px) 468px,(max-width: 768px) 768px, (max-width: 1200px) 1200px"
           priority={priority}
         />
       </div>
