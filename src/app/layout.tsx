@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import { ClientProviders } from '@/providers/ClientProviders';
 import Header from '@/components/header/Header';
 import Footer from '@/components/footer/Footer';
-import { Syncopate, Montserrat } from 'next/font/google';
+import { Syncopate, Montserrat, Bungee } from 'next/font/google';
 import ServiceWorkerRegistration from '@/components/system/ServiceWorkerRegistration';
 
 import 'material-icons/iconfont/material-icons.css';
@@ -15,6 +15,12 @@ const syncopate = Syncopate({
   weight: ['400', '700'],
   subsets: ['latin'],
   variable: '--font-syncopate',
+  display: 'swap',
+});
+const bungee = Bungee({
+  weight: ['400'],
+  subsets: ['latin'],
+  variable: '--font-bungee',
   display: 'swap',
 });
 
@@ -63,7 +69,10 @@ export const viewport: Viewport = {
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <html lang="de" className={` ${syncopate.variable} ${montserrat.variable}`}>
+    <html
+      lang="de"
+      className={` ${syncopate.variable} ${montserrat.variable} ${bungee.variable}`}
+    >
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" />
       </head>

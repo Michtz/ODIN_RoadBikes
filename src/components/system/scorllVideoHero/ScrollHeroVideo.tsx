@@ -1,3 +1,8 @@
+// 1. Neuen State 'videoHeight' hinzufügen.
+// 2. Funktion 'updateVideoHeight' erstellen, um die Höhe aus der 'videoRef' auszulesen.
+// 3. Die Höhe beim Laden (onLoadedMetadata) und bei Fensteränderungen (resize) aktualisieren.
+// 4. Den ermittelten Wert im style-Attribut anwenden.
+
 'use client';
 
 import React, { FC, useEffect, useRef, useState } from 'react';
@@ -23,6 +28,7 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
   const [showLogo, setShowLogo] = useState<boolean>(false);
   const [showImageOverlayInternal, setShowImageOverlayInternal] =
     useState<boolean>(false);
+  const [videoHeight, setVideoHeight] = useState<number>(0);
   const isTicking = useRef(false);
 
   const showImageOverlay =
@@ -30,14 +36,18 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
       ? showImageOverlayProp
       : showImageOverlayInternal;
 
+  const updateVideoHeight = () => {
+    if (videoRef.current) {
+      setVideoHeight(videoRef.current.clientHeight);
+    }
+  };
+
   const updateVideoPosition = () => {
     if (!containerRef.current || !videoRef.current) return;
 
     const container = containerRef.current;
     const video = videoRef.current;
-
     const containerTop = container.getBoundingClientRect().top;
-
     const animationDistance = window.innerHeight / 3;
     let progress = -containerTop / animationDistance;
 
@@ -65,15 +75,16 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      // "Prime" the video for mobile devices to allow seeking
       video
         .play()
         .then(() => {
           video.pause();
           updateVideoPosition();
+          updateVideoHeight();
         })
         .catch(() => {
           updateVideoPosition();
+          updateVideoHeight();
         });
     }
 
@@ -87,14 +98,20 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
       }
     };
 
+    const handleResize = () => {
+      updateVideoPosition();
+      updateVideoHeight();
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', updateVideoPosition);
+    window.addEventListener('resize', handleResize);
+
+    updateVideoHeight();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', updateVideoPosition);
+      window.removeEventListener('resize', handleResize);
     };
-    // eslint-disable-next-line  react-hooks/exhaustive-deps
   }, [showLogo, showImageOverlay, showImageOverlayProp]);
 
   const isVisible = showLogo && !showImageOverlay;
@@ -122,7 +139,10 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
           playsInline
           autoPlay
           preload="auto"
-          onLoadedMetadata={updateVideoPosition}
+          onLoadedMetadata={() => {
+            updateVideoPosition();
+            updateVideoHeight();
+          }}
         >
           <source src={getSource(videoSrc, 'webm')} type="video/webm" />
           <source src={getSource(videoSrc, 'mp4')} type="video/mp4" />
@@ -138,6 +158,10 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
       <div
         className={`${style.placefiler} ${showLogo ? style.invisible : style.visible} `}
         data-position={footerText}
+<<<<<<< dev
+        style={{ top: `${videoHeight}px` }}
+=======
+>>>>>>> master
       >
         {footerText === 'home' ? (
           <Title size={'big'}>
