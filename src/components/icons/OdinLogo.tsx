@@ -1,14 +1,16 @@
-import { FC } from 'react';
+'use client';
+import React, { useId } from 'react';
 import { SvgIconProps } from '@/types/common';
 
-const OdinLogo: FC<SvgIconProps> = ({
+const OdinLogo: React.FC<SvgIconProps> = ({
   width = 2655,
   height = 1357,
   color = '#D0D0D0',
   className,
   onClick,
 }) => {
-  const clipPathId = `logo_clip`;
+  const uniqueId = useId();
+  const clipPathId = `logo_clip_${uniqueId}`;
 
   return (
     <svg
