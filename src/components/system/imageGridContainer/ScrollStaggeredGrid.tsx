@@ -109,7 +109,7 @@ const Row: FC<RowProps> = ({ images, transform, isMobile, rowIndex }) => {
             height={1200}
             quality={90}
             priority={rowIndex === 0 && i === 0}
-            sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
+            sizes="(max-width: 450px) 240px, (max-width: 700px) 250px, (max-width: 1000px) 340px, 400px"
             style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
           />
         );
