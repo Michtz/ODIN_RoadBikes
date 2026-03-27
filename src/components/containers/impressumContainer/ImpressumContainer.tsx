@@ -1,13 +1,11 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import style from './ImpressumContainer.module.scss';
 import { Container, Title } from '@/components/system/containers/Containers';
 
-interface ImpressumContainerProps {}
-
-const ImpressumContainer: FC<ImpressumContainerProps> = () => {
+const ImpressumContainer: FC = () => {
   return (
     <Container flow={'column'}>
-      <div style={{ height: '200px' }}></div>
+      <div style={{ height: '100px' }}></div>
       <Title>Impressum</Title>
 
       <div className={style.section}>
@@ -22,7 +20,7 @@ const ImpressumContainer: FC<ImpressumContainerProps> = () => {
       </div>
 
       <div className={style.section}>
-        <h2>Vertretungsberechtigte Personen</h2>
+        <h2>Vertretungs Berechtigte Personen</h2>
         <p>Angela Ackermann, Geschäftsführung</p>
       </div>
 
@@ -36,7 +34,7 @@ const ImpressumContainer: FC<ImpressumContainerProps> = () => {
       </div>
 
       <div className={style.section}>
-        <h2>Handelsregistereintrag</h2>
+        <h2>Handelsregister Eintrag</h2>
         <p>
           Eingetragener Firmenname: BIKESCHMIEDE GmbH
           <br />

@@ -3,13 +3,11 @@ import { Accordion } from '@/components/system/accordion/Accordion';
 import style from './LegalContainer.module.scss';
 import { Container } from '@/components/system/containers/Containers';
 
-interface LegalContainerProps {}
-
-const LegalContainer: FC<LegalContainerProps> = () => {
+const LegalContainer: FC = () => {
   return (
     <Container flow={'column'}>
-      <div style={{ height: '200px' }}></div>
-      <h1 className={style.title}>AGB & Rechtliches</h1>
+      <div style={{ height: '100px' }}></div>
+      <h1 className={style.title}>AGB</h1>
 
       <div className={style.introSection}>
         <p>
@@ -21,7 +19,7 @@ const LegalContainer: FC<LegalContainerProps> = () => {
         </p>
       </div>
 
-      <Accordion title="§ 1 Geltungsbereich" defaultOpen={true}>
+      <Accordion title="Geltungsbereich">
         <p>
           1. Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB“) regeln
           sämtliche Rechtsbeziehungen zwischen
@@ -44,7 +42,7 @@ const LegalContainer: FC<LegalContainerProps> = () => {
         </p>
       </Accordion>
 
-      <Accordion title="§ 2 Vertragsschluss">
+      <Accordion title="Vertragsschluss">
         <p>
           1. Die Präsentation von Waren und Dienstleistungen stellt kein
           rechtlich bindendes Angebot dar.
@@ -64,7 +62,7 @@ const LegalContainer: FC<LegalContainerProps> = () => {
         </p>
       </Accordion>
 
-      <Accordion title="§ 3 Preise und Zahlungsbedingungen">
+      <Accordion title="Preise und Zahlungsbedingungen">
         <p>
           1. Alle Preise verstehen sich in Schweizer Franken (CHF) inklusive der
           gesetzlichen Mehrwertsteuer, sofern nicht anders angegeben.
@@ -79,7 +77,7 @@ const LegalContainer: FC<LegalContainerProps> = () => {
         </p>
       </Accordion>
 
-      <Accordion title="§ 4 Eigentumsvorbehalt">
+      <Accordion title="Eigentumsvorbehalt">
         <p>
           1. Die Ware bleibt bis zur vollständigen Bezahlung Eigentum der
           BIKESCHMIEDE GmbH.
@@ -90,7 +88,7 @@ const LegalContainer: FC<LegalContainerProps> = () => {
         </p>
       </Accordion>
 
-      <Accordion title="§ 5 Gewährleistung (Sachmängel)">
+      <Accordion title="Gewährleistung (Sachmängel)">
         <p>
           1. Es gelten die gesetzlichen Bestimmungen des Schweizerischen
           Obligationenrechts (Art. 197 ff. OR), soweit nachfolgend nichts
@@ -114,7 +112,7 @@ const LegalContainer: FC<LegalContainerProps> = () => {
         </p>
       </Accordion>
 
-      <Accordion title="§ 6 Werkstattleistungen">
+      <Accordion title="Werkstattleistungen">
         <p>
           1. Werkstattleistungen werden nach anerkannten technischen Standards
           und mit branchenüblicher Sorgfalt erbracht.
@@ -135,7 +133,7 @@ const LegalContainer: FC<LegalContainerProps> = () => {
         </p>
       </Accordion>
 
-      <Accordion title="§ 7 Bikefitting">
+      <Accordion title="Bikefitting">
         <p>
           1. Bikefitting ist eine individuelle ergonomische Beratungs- und
           Anpassungsleistung.
@@ -164,7 +162,7 @@ const LegalContainer: FC<LegalContainerProps> = () => {
         </p>
       </Accordion>
 
-      <Accordion title="§ 8 Haftung">
+      <Accordion title="Haftung">
         <p>
           1. Die BIKESCHMIEDE GmbH haftet für Schäden, die durch vorsätzliches
           oder grobfahrlässiges Verhalten verursacht wurden.
@@ -188,7 +186,7 @@ const LegalContainer: FC<LegalContainerProps> = () => {
         </p>
       </Accordion>
 
-      <Accordion title="§ 9 Änderungen an E-Bikes / Tuning">
+      <Accordion title="Änderungen an E-Bikes / Tuning">
         <p>
           1. Veränderungen am Antriebssystem können zum Erlöschen von
           Garantieansprüchen sowie zur Unzulässigkeit im öffentlichen
@@ -200,7 +198,7 @@ const LegalContainer: FC<LegalContainerProps> = () => {
         </p>
       </Accordion>
 
-      <Accordion title="§ 10 Datenschutz">
+      <Accordion title="Datenschutz">
         <p>
           Personendaten werden unter Einhaltung der Bestimmungen des Schweizer
           Datenschutzgesetzes (DSG) bearbeitet. Einzelheiten ergeben sich aus
@@ -208,7 +206,7 @@ const LegalContainer: FC<LegalContainerProps> = () => {
         </p>
       </Accordion>
 
-      <Accordion title="§ 11 Gerichtsstand und anwendbares Recht">
+      <Accordion title="Gerichtsstand und anwendbares Recht">
         <p>
           1. Es gilt ausschliesslich Schweizer Recht unter Ausschluss des
           UN-Kaufrechts (CISG).
