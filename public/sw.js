@@ -1,7 +1,7 @@
 const CACHE_NAME = 'odinbikes-cache-v1';
 const CLOUDINARY_CACHE_NAME = 'odinbikes-cloudinary-v1';
 const CLOUDINARY_ORIGIN = 'https://res.cloudinary.com';
-const ASSETS_TO_CACHE = ['/', '/manifest.webmanifest', '/favicon.ico', '/icon'];
+const ASSETS_TO_CACHE = ['/', '/manifest.webmanifest', '/favicon.ico'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -17,7 +17,9 @@ self.addEventListener('activate', (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames
-          .filter((name) => name !== CACHE_NAME && name !== CLOUDINARY_CACHE_NAME)
+          .filter(
+            (name) => name !== CACHE_NAME && name !== CLOUDINARY_CACHE_NAME,
+          )
           .map((name) => caches.delete(name)),
       );
     }),
