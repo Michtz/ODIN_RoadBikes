@@ -158,10 +158,7 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
       <div
         className={`${style.placefiler} ${showLogo ? style.invisible : style.visible} `}
         data-position={footerText}
-<<<<<<< dev
         style={{ top: `${videoHeight}px` }}
-=======
->>>>>>> master
       >
         {footerText === 'home' ? (
           <Title size={'big'}>
