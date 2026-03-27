@@ -1,5 +1,4 @@
-'use client';
-import React, { FC, useId } from 'react';
+import { FC } from 'react';
 import { SvgIconProps } from '@/types/common';
 
 const OdinLogo: FC<SvgIconProps> = ({
@@ -9,8 +8,6 @@ const OdinLogo: FC<SvgIconProps> = ({
   className,
   onClick,
 }) => {
-  const clipPathId = `logo_clip`;
-
   return (
     <svg
       onClick={onClick}
@@ -22,7 +19,7 @@ const OdinLogo: FC<SvgIconProps> = ({
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* Clipped Group (Middle Section) */}
-      <g clipPath={`url(#${clipPathId})`}>
+      <g>
         <path
           stroke={color}
           strokeWidth="50"
@@ -68,7 +65,7 @@ const OdinLogo: FC<SvgIconProps> = ({
       />
 
       <defs>
-        <clipPath id={clipPathId}>
+        <clipPath>
           <path fill={color} d="M1109 99h582v777h-582z" />
         </clipPath>
       </defs>
