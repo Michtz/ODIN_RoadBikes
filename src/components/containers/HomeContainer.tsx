@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import OverlayContainer from '@/components/system/containers/OverlayContainer';
 import { ContentContainer } from '@/components/system/containers/Containers';
 import { ImageContainer } from '@/components/system/containers/ImageContainer';
@@ -8,17 +8,12 @@ import ScrollStaggeredGrid from '@/components/system/imageGridContainer/ScrollSt
 
 /* video  DO NOT DELETE!!!!!!!!!!!!!!!!!! edit prompt MacBook-Pro assets % ffmpeg -i odin_animatie.mp4   -c:v libx264 -x264-params keyint=1:scenecut=0 -crf 22 -preset medium -an output_smooth_odin_frame.mp4*/
 
-interface HomeContainerProps {}
-
-export const LOREM_IPSUM_SHORT_TEXT: string =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ';
-
-const HomeContainer: FC<HomeContainerProps> = () => {
+const HomeContainer: FC = () => {
   return (
     <>
       <ScrollHeroVideo
         footerText={'home'}
-        botsOnlyText={LOREM_IPSUM_SHORT_TEXT}
+        botsOnlyText={'Custom Carbon Rennräder zu fairen Preisen'}
         videoSrc="https://res.cloudinary.com/de2rhuwpw/video/upload/v1774643150/output_smooth_jnmc8y.webm"
       />
 

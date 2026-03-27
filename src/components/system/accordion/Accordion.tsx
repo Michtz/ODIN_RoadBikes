@@ -21,14 +21,16 @@ export const Accordion: FC<AccordionProps> = ({
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (defaultOpen) {
-      setHeight(`${contentRef.current?.scrollHeight}px`);
+    if (defaultOpen && contentRef.current?.scrollHeight) {
+      setHeight(`${contentRef.current?.scrollHeight + 20}px`);
     }
   }, [defaultOpen]);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
-    setHeight(isOpen ? '0px' : `${contentRef.current?.scrollHeight}px`);
+    if (contentRef.current?.scrollHeight) {
+      setHeight(isOpen ? '0px' : `${contentRef.current?.scrollHeight + 20}px`);
+    }
   };
 
   return (
@@ -40,7 +42,6 @@ export const Accordion: FC<AccordionProps> = ({
         onClick={toggleAccordion}
         aria-expanded={isOpen}
       >
-        <span className={style.title}>{title}</span>
         <span className={style.icon}>
           <svg
             width="24"
@@ -55,6 +56,7 @@ export const Accordion: FC<AccordionProps> = ({
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
         </span>
+        <span className={style.title}>{title}</span>
       </button>
 
       <div
