@@ -46,7 +46,7 @@
         background-color: rgba(255, 255, 255, 0.1);
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 968px) {
         display: flex;
       }
     }
@@ -59,7 +59,7 @@
       list-style: none;
       gap: 2rem;
 
-      @media (max-width: 768px) {
+      @media (max-width: 968px) {
         display: none;
       }
 
