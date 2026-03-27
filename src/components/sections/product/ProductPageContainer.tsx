@@ -1,19 +1,17 @@
 'use client';
 import React, { FC } from 'react';
 
-import OverlayContainer, {
+import OverlayContainer from '@/components/system/containers/OverlayContainer';
+import {
   ContentContainer,
   Title,
 } from '@/components/system/containers/Containers';
 import MidScrollVideoPlayer from '@/components/system/videoPlayer/MidScrollVideoPlayer';
 import StickyImageContainer from '@/components/system/stickyImage/StickyImageContainer';
 import ScrollStaggeredGrid from '@/components/system/imageGridContainer/ScrollStaggeredGrid';
-import Calculator from '@/components/system/calculator/Calculator';
+import Calculator from '@/components/system/calculator/CalculatorClient';
 import GeometryTable from '@/components/sections/product/geometryTable/GeometryTable';
 import { GeometryData } from '@/data/gravity_data';
-
-export const PLACHOLDERTEXT: string = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-      labore et dolore magna aliqua. Ut enim ad minim veniam, quis.`;
 
 interface ProductPageContainerProps {
   view: string;

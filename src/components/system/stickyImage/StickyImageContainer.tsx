@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import style from '@/components/system/stickyImage/StickyImageContainer.module.scss';
-import { cloudinaryLoader } from '@/components/system/containers/Containers';
+import { cloudinaryLoader } from '@/components/system/containers/ImageContainer';
 
 interface ScrollHeroProps {
   image: string;
@@ -22,7 +22,7 @@ export const StickyImageContainer: FC<ScrollHeroProps> = ({ image, title }) => {
           fill
           priority
           quality={90}
-          sizes="(max-width: 468px) 468px,max-width: 768px) 768px, (max-width: 1200px) 1200px"
+          sizes="(max-width: 468px) 468px, (max-width: 768px) 768px, (max-width: 1200px) 1200px, 100vw"
         />
         <div className={style.overlayContent}>
           <h1 className={`${style.logoFade} ${style.visible}`}>{title}</h1>
