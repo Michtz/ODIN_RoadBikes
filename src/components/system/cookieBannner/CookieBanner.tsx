@@ -39,10 +39,6 @@ const CookieBanner: React.FC = () => {
     >
       <div className={styles.container}>
         <div className={styles.content}>
-          <div className={styles.iconWrapper}>
-            <MaterialIcon icon={'cookie'} color={'white'} />
-          </div>
-
           <div className={styles.textContent}>
             <h3 className={styles.title}>Cookie Einstellungen</h3>
             <p id="cookie-description" className={styles.description}>
