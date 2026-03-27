@@ -96,6 +96,13 @@
   @media (max-width: 630px) {
     height: 200px;
   }
+
+  @media (max-width: 470px) {
+    height: 150px;
+  }
+  @media (max-width: 399px) {
+    height: 100px;
+  }
 }
 .textContainer {
   width: 50%;
