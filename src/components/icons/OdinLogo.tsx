@@ -9,8 +9,7 @@ const OdinLogo: FC<SvgIconProps> = ({
   className,
   onClick,
 }) => {
-  const uniqueId = useId();
-  const clipPathId = `logo_clip_${uniqueId}`;
+  const clipPathId = `logo_clip`;
 
   return (
     <svg
