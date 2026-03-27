@@ -35,7 +35,15 @@
       cursor: not-allowed;
     }
   }
+
+  &.isOpen {
+    .selectWrapper {
+      border-color: $color-primary-300;
+    }
+  }
 }
+
+// ── Label ─────────────────────────────────────────────────────────────────────
 
 .labelContainer {
   display: flex;
@@ -58,6 +66,8 @@
   color: $color-red-600;
   font-weight: 600;
 }
+
+// ── Tooltip ───────────────────────────────────────────────────────────────────
 
 .tooltipContainer {
   position: relative;
@@ -82,7 +92,7 @@
   transform: translateX(-50%) translateY(-4px);
   background: $color-bg-primary;
   border: 1px solid $color-white;
-  border-radius: 0px;
+  border-radius: 0;
   padding: 12px;
   box-shadow: $shadow-dropdown;
   opacity: 0;
@@ -117,22 +127,24 @@
   color: $color-primary;
 }
 
+// ── Wrapper ───────────────────────────────────────────────────────────────────
+
 .selectWrapper {
   position: relative;
   display: flex;
   align-items: center;
   background: $color-bg-primary;
   border: 1px solid $color-primary-200;
-  border-radius: 0px;
+  border-radius: 0;
   transition: all 0.2s ease;
+  cursor: pointer;
 
   &:hover:not(.readOnly) {
     border-color: $color-primary-300;
   }
-  &:focus {
-    border-color: $color-primary-300;
-  }
 }
+
+// ── Native <select> ───────────────────────────────────────────────────────────
 
 .select {
   flex: 1;
@@ -142,10 +154,10 @@
   font-size: 13px;
   line-height: 1.5;
   color: $color-primary-900;
-  font-family: $font-family-second;
+  font-family: $font-family-big;
   outline: none;
   width: 100%;
-  appearance: none; /* Remove default arrow */
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
@@ -172,6 +184,28 @@
   }
 }
 
+// ── Custom label (non-Apple) ──────────────────────────────────────────────────
+
+.customSelectLabel {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: $color-primary-900;
+  font-family: $font-family-big;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  user-select: none;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+// ── Chevron icon ──────────────────────────────────────────────────────────────
+
 .startIcon {
   position: absolute;
   left: 12px;
@@ -191,6 +225,66 @@
 .endIcon {
   color: $color-primary-700;
   pointer-events: none;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.rotated {
+    transform: rotate(180deg);
+  }
+}
+
+// ── Custom dropdown ───────────────────────────────────────────────────────────
+
+.customDropdown {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: -1px; // align to wrapper border
+  right: -1px;
+  background: $color-bg-primary;
+  border: 1px solid $color-primary-300;
+  box-shadow: $shadow-dropdown;
+  z-index: 9999;
+  max-height: 260px;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: $color-primary-200 transparent;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $color-primary-200;
+    border-radius: 2px;
+  }
+}
+
+.customOption {
+  padding: 10px 16px;
+  font-size: 13px;
+  font-family: $font-family-big;
+  color: $color-primary;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+
+  &:hover:not(.isDisabled) {
+    background-color: $color-bg-hover;
+  }
+
+  &.isSelected {
+    background-color: $color-primary-100;
+    font-weight: 600;
+  }
+
+  &.isDisabled {
+    color: $color-disabled;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &.placeholder {
+    color: $color-primary-400;
+    font-style: italic;
+  }
 }
 
 .helperText {

@@ -112,9 +112,10 @@ const getRelativeOptions = (key: SelectFields): CalculatorOption[] => {
 
   return options.map((opt) => {
     const diff = opt.price - minPrice;
+    console.log(diff);
     return {
       ...opt,
-      label: `${opt.label} ${diff > 0 && `+${diff} Chf.`}`,
+      label: `${opt.label} ${diff > 0 ? `+${diff} Chf.` : ''}`,
     };
   });
 };
@@ -154,7 +155,7 @@ export const Calculator: React.FC = () => {
     };
   }, [isModalOpen]);
 
-  const onSubmit = async (data: CalculatorFormValues) => {
+  const onSubmit = async () => {
     setLoading(true);
     setIsModalOpen(true);
     setLoading(false);
@@ -186,15 +187,15 @@ Kunden-Email: ${formValues.email || ''}
             label="Rahmen-Type:"
             options={getRelativeOptions('frame')}
             placeholder="Bitte wählen..."
-            fullWidth
             required
+            value={formValues.frame || ''}
             {...register('frame')}
           />
           <Select
             label="Schalt-Gruppe:"
             options={getRelativeOptions('gruppe')}
             placeholder="Bitte wählen..."
-            fullWidth
+            value={formValues.gruppe || ''}
             required
             {...register('gruppe')}
           />
@@ -202,7 +203,7 @@ Kunden-Email: ${formValues.email || ''}
             label="Laufräder:"
             options={getRelativeOptions('laufrader')}
             placeholder="Bitte wählen..."
-            fullWidth
+            value={formValues.laufrader || ''}
             required
             {...register('laufrader')}
           />
@@ -212,7 +213,7 @@ Kunden-Email: ${formValues.email || ''}
             label="Reifen:"
             options={getRelativeOptions('reifen')}
             placeholder="Bitte wählen..."
-            fullWidth
+            value={formValues.reifen || ''}
             required
             {...register('reifen')}
           />
@@ -220,8 +221,8 @@ Kunden-Email: ${formValues.email || ''}
             label="Tretlager:"
             options={getRelativeOptions('tretlager')}
             placeholder="Bitte wählen..."
-            fullWidth
             required
+            value={formValues.tretlager || ''}
             {...register('tretlager')}
           />
         </FormRow>
@@ -230,16 +231,16 @@ Kunden-Email: ${formValues.email || ''}
             label="Lenkerband:"
             options={getRelativeOptions('lenkerband')}
             placeholder="Bitte wählen..."
-            fullWidth
             required
+            value={formValues.lenkerband || ''}
             {...register('lenkerband')}
           />
           <Select
             label="Sattel"
             options={getRelativeOptions('sattel')}
             placeholder="Bitte wählen..."
-            fullWidth
             required
+            value={formValues.sattel || ''}
             {...register('sattel')}
           />
         </FormRow>
@@ -270,10 +271,9 @@ Kunden-Email: ${formValues.email || ''}
         </div>
         <FormRow direction="column" gap="medium">
           <Input
-            label="E-Mail Adresse"
+            title="E-Mail Adresse"
             type="email"
             placeholder="ihre.email@beispiel.com"
-            fullWidth
             required
             helperText="Wir senden Ihnen die Konfiguration an diese Adresse."
             {...register('email')}

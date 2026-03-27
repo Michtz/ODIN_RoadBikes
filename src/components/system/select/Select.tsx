@@ -1,5 +1,5 @@
 'use client';
-import React, { forwardRef, useState, useEffect, useRef } from 'react';
+import { forwardRef, useState, useEffect, useRef, useCallback } from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 import style from './Select.module.scss';
 import MaterialIcon from '@/components/system/materialIcon/MaterialIcon';
@@ -55,20 +55,18 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     },
     ref,
   ) => {
-    const [isFocused, setIsFocused] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
-    const [isApple, setIsApple] = useState(true); // Default to true to avoid hydration mismatch
+    const [isFocused, setIsFocused] = useState<boolean>(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+    const [isApple, setIsApple] = useState<boolean>(true);
+    const [internalValue, setInternalValue] = useState<string>('');
     const containerRef = useRef<HTMLDivElement>(null);
     const selectRef = useRef<HTMLSelectElement | null>(null);
 
     useEffect(() => {
-      // Detection for Apple devices (iOS, macOS, iPadOS)
-      const platform = navigator.userAgent.toLowerCase();
-      const isApplePlatform = /iphone|ipad|ipod|macintosh/.test(platform);
-      setIsApple(isApplePlatform);
+      const platform: string = navigator.userAgent.toLowerCase();
+      setIsApple(/iphone|ipad|ipod|macintosh/.test(platform));
 
-      // Close dropdown on outside click
-      const handleClickOutside = (event: MouseEvent) => {
+      const handleClickOutside = (event: MouseEvent): void => {
         if (
           containerRef.current &&
           !containerRef.current.contains(event.target as Node)
@@ -82,33 +80,63 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-    const handleFocus = (e: React.FocusEvent<HTMLSelectElement>) => {
+    useEffect(() => {
+      const incoming: string | undefined =
+        props.value !== undefined
+          ? String(props.value)
+          : props.defaultValue !== undefined
+            ? String(props.defaultValue)
+            : undefined;
+
+      if (incoming !== undefined && incoming !== internalValue) {
+        setInternalValue(incoming);
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [props.value, props.defaultValue]);
+
+    const handleFocus = (e: any): void => {
       setIsFocused(true);
       props.onFocus?.(e);
     };
 
-    const handleBlur = (e: React.FocusEvent<HTMLSelectElement>) => {
+    const handleBlur = (e: any): void => {
       setIsFocused(false);
       props.onBlur?.(e);
     };
 
-    const toggleDropdown = (e: React.MouseEvent) => {
+    const toggleDropdown = (e: any): void => {
       if (isApple || props.disabled || readOnly) return;
       e.preventDefault();
-      setIsOpen(!isOpen);
+      setIsOpen((prev) => !prev);
     };
 
-    const handleOptionClick = (val: string | number) => {
-      if (selectRef.current) {
-        // Trigger native change for react-hook-form
-        selectRef.current.value = String(val);
-        const event = new Event('change', { bubbles: true });
-        selectRef.current.dispatchEvent(event);
-      }
-      setIsOpen(false);
-    };
+    const handleOptionClick = useCallback(
+      (e: React.MouseEvent, val: string | number): void => {
+        e.stopPropagation();
 
-    const selectClasses = [
+        if (!selectRef.current) return;
+        setInternalValue(String(val));
+        setIsOpen(false);
+
+        const nativeValueSetter: ((v: string) => void) | undefined =
+          Object.getOwnPropertyDescriptor(
+            HTMLSelectElement.prototype,
+            'value',
+          )?.set;
+        nativeValueSetter?.call(selectRef.current, String(val));
+        selectRef.current.dispatchEvent(new Event('change', { bubbles: true }));
+      },
+      [],
+    );
+
+    const selectedOption: SelectOption | undefined = options.find(
+      (opt) => String(opt.value) === internalValue,
+    );
+    const displayLabel: string = selectedOption
+      ? selectedOption.label
+      : (placeholder ?? '');
+
+    const selectClasses: string = [
       style.select,
       error && style.error,
       fullWidth && style.fullWidth,
@@ -120,7 +148,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
       .filter(Boolean)
       .join(' ');
 
-    const containerClasses = [
+    const containerClasses: string = [
       style.selectContainer,
       fullWidth && style.fullWidth,
       error && style.error,
@@ -130,12 +158,6 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     ]
       .filter(Boolean)
       .join(' ');
-
-    const currentValue = props.value || props.defaultValue || '';
-    const selectedOption = options.find(
-      (opt) => String(opt.value) === String(currentValue),
-    );
-    const displayLabel = selectedOption ? selectedOption.label : placeholder;
 
     return (
       <div
@@ -178,12 +200,11 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             />
           )}
 
-          {/* Hidden/Native Select */}
           <select
             ref={(node) => {
               selectRef.current = node;
               if (typeof ref === 'function') ref(node);
-              else if (ref) (ref as any).current = node;
+              else if (ref) ref.current = node;
             }}
             className={selectClasses}
             onFocus={handleFocus}
@@ -191,7 +212,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             disabled={props.disabled || readOnly}
             aria-invalid={error}
             aria-describedby={
-              helperText ? `${props.id || 'select'}-helper` : undefined
+              helperText ? `${props.id ?? 'select'}-helper` : undefined
             }
             style={
               !isApple
@@ -217,7 +238,6 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             ))}
           </select>
 
-          {/* Custom Label UI for Non-Apple */}
           {!isApple && (
             <div className={style.customSelectLabel}>{displayLabel}</div>
           )}
@@ -232,13 +252,12 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
             )}
           </div>
 
-          {/* Custom Dropdown Menu */}
           {!isApple && isOpen && (
             <div className={style.customDropdown}>
               {placeholder && (
                 <div
                   className={`${style.customOption} ${style.placeholder}`}
-                  onClick={() => handleOptionClick('')}
+                  onClick={(e) => handleOptionClick(e, '')}
                 >
                   {placeholder}
                 </div>
@@ -246,9 +265,17 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
               {options.map((option) => (
                 <div
                   key={option.value}
-                  className={`${style.customOption} ${String(currentValue) === String(option.value) ? style.isSelected : ''} ${option.disabled ? style.isDisabled : ''}`}
-                  onClick={() =>
-                    !option.disabled && handleOptionClick(option.value)
+                  className={[
+                    style.customOption,
+                    internalValue === String(option.value)
+                      ? style.isSelected
+                      : '',
+                    option.disabled ? style.isDisabled : '',
+                  ]
+                    .filter(Boolean)
+                    .join(' ')}
+                  onClick={(e) =>
+                    !option.disabled && handleOptionClick(e, option.value)
                   }
                 >
                   {option.label}
@@ -260,7 +287,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
 
         {helperText && (
           <div
-            id={`${props.id || 'select'}-helper`}
+            id={`${props.id ?? 'select'}-helper`}
             className={`${style.helperText} ${error ? style.errorText : ''}`}
           >
             {helperText}
