@@ -31,9 +31,9 @@ const SideNav: React.FC<SideNavProps> = ({ isOpen = false, onClose }) => {
               </li>
               <li className={style.navItem}>
                 <Link additionalAction={onClose} noDecoration href="/about">
-                  Über uns
+                  Über ODIN
                 </Link>
-              </li>{' '}
+              </li>
               <li className={style.navItem}>
                 <Link
                   additionalAction={onClose}

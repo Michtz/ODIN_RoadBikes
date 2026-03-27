@@ -47,7 +47,7 @@ const CookieBanner: React.FC = () => {
             <h3 className={styles.title}>Cookie Einstellungen</h3>
             <p id="cookie-description" className={styles.description}>
               Wir nutzen Cookies, um Ihr Erlebnis auf unserer Website zu
-              verbessern.
+              verbessern und Sammeln keine Daten über Sie.
             </p>
             <button
               className={styles.learnMore}
