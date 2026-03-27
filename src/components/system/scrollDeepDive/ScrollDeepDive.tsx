@@ -6,7 +6,7 @@ import style from '@/components/system/scrollDeepDive/ScrollDeepDive.module.scss
 import Button from '@/components/system/button/Button';
 import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';
 import { useRouter } from 'next/navigation';
-import { cloudinaryLoader } from '@/components/system/containers/Containers';
+import { cloudinaryLoader } from '@/components/system/containers/ImageContainer';
 
 interface ScrollDeepDiveBikeProps {
   imageSrc: StaticImageData | string;

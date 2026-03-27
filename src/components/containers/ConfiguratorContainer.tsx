@@ -7,10 +7,8 @@ import Button from '@/components/system/button/Button';
 import { dummyBikeData } from '@/data/ConfiguratorData';
 import { Accordion } from '@/components/system/accordion/Accordion';
 import BikeConfigurator from '@/components/sections/configurator/BikeConfigurator';
-import {
-  cloudinaryLoader,
-  Container,
-} from '@/components/system/containers/Containers';
+import { Container } from '@/components/system/containers/Containers';
+import { cloudinaryLoader } from '@/components/system/containers/ImageContainer';
 
 interface ConfiguratorOption {
   id: string;
