@@ -112,7 +112,6 @@ const getRelativeOptions = (key: SelectFields): CalculatorOption[] => {
 
   return options.map((opt) => {
     const diff = opt.price - minPrice;
-    console.log(diff);
     return {
       ...opt,
       label: `${opt.label} ${diff > 0 ? `+${diff} Chf.` : ''}`,
