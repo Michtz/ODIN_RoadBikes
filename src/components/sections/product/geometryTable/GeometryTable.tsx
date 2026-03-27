@@ -4,7 +4,7 @@ import React from 'react';
 import style from './GeometryTable.module.scss';
 import { GeometryData } from '@/data/gravity_data';
 import Image from 'next/image';
-import { cloudinaryLoader } from '@/components/system/containers/Containers';
+import { cloudinaryLoader } from '@/components/system/containers/ImageContainer';
 
 interface GeometryTableProps {
   data: GeometryData;

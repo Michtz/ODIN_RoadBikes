@@ -58,12 +58,15 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#000000', // Using $color-bg-primary (#000) from _variables.scss
+  themeColor: '#000000',
 };
 
 const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="de" className={` ${syncopate.variable} ${montserrat.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+      </head>
       <body>
         <ServiceWorkerRegistration />
         <ClientProviders>

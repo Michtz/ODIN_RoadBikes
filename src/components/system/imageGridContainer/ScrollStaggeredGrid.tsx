@@ -9,11 +9,6 @@ interface ScrollStaggeredGridProps {
   imagesArray: (StaticImageData | string)[];
 }
 
-interface RowProps {
-  images: string[] | StaticImageData[];
-  transform?: any;
-}
-
 const ScrollStaggeredGrid: FC<ScrollStaggeredGridProps> = ({ imagesArray }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
@@ -71,6 +66,7 @@ const ScrollStaggeredGrid: FC<ScrollStaggeredGridProps> = ({ imagesArray }) => {
             <Row
               images={images}
               key={index}
+              rowIndex={index}
               isMobile={isMobile}
               transform={{
                 transform: `translate3d(0, ${progress * multipliers[index]}px, 0)`,
@@ -91,9 +87,10 @@ interface RowProps {
   images: string[] | StaticImageData[];
   transform?: any;
   isMobile: boolean;
+  rowIndex: number;
 }
 
-const Row: FC<RowProps> = ({ images, transform, isMobile }) => {
+const Row: FC<RowProps> = ({ images, transform, isMobile, rowIndex }) => {
   return (
     <div
       className={style.row}
@@ -111,7 +108,7 @@ const Row: FC<RowProps> = ({ images, transform, isMobile }) => {
             width={800}
             height={1200}
             quality={90}
-            loading="eager"
+            priority={rowIndex === 0 && i === 0}
             sizes="(max-width: 450px) 450px, (max-width: 700px) 700px, (max-width: 1000px) 1000px, 1600px"
             style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
           />

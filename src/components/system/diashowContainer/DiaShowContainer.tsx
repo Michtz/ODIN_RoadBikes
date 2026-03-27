@@ -3,7 +3,7 @@
 import { FC, useState, useEffect } from 'react';
 import Image from 'next/image';
 import style from './DiaShowContainer.module.scss';
-import { cloudinaryLoader } from '@/components/system/containers/Containers';
+import { cloudinaryLoader } from '@/components/system/containers/ImageContainer';
 
 interface DiaShowContainerProps {
   /**

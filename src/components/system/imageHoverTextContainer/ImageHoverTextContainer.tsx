@@ -4,7 +4,7 @@ import React, { FC, useState } from 'react';
 import style from './ImageHoverTextContainer.module.scss';
 import Image, { StaticImageData } from 'next/image';
 import { useRouter } from 'next/navigation';
-import { cloudinaryLoader } from '@/components/system/containers/Containers';
+import { cloudinaryLoader } from '@/components/system/containers/ImageContainer';
 
 export type ImageHoverTextContainerItem = {
   id: number;
