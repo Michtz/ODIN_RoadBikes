@@ -112,7 +112,6 @@
 .learnMore {
   background: none;
   border: none;
-  color: #d4b896;
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
@@ -124,12 +123,10 @@
   gap: 4px;
 
   &:hover {
-    color: #c4a876;
     transform: translateX(2px);
   }
 
   &:focus {
-    outline: 2px solid #d4b896;
     outline-offset: 2px;
     border-radius: 2px;
   }

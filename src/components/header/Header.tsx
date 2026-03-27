@@ -41,7 +41,6 @@ const ResponsiveAppBar = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -85,7 +84,7 @@ const ResponsiveAppBar = () => {
               <Link href={'/bikes/roadbikes'}>Rennräder</Link>
             </li>
             <li className={style.navItem}>
-              <Link href={'/bikes/about'}>Über Odin</Link>
+              <Link href={'/about'}>Über Odin</Link>
             </li>
 
             <li className={style.navItem}>
