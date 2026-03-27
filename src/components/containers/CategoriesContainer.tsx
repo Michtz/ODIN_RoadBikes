@@ -1,15 +1,16 @@
 'use client';
 import React, { FC } from 'react';
-import OverlayContainer, {
+import OverlayContainer from '@/components/system/containers/OverlayContainer';
+import {
   Container,
   ContentContainer,
-  ImageContainer,
   Title,
 } from '@/components/system/containers/Containers';
+import { ImageContainer } from '@/components/system/containers/ImageContainer';
 import ImageHoverTextContainer from '@/components/system/imageHoverTextContainer/ImageHoverTextContainer';
 import ScrollHeroVideo from '@/components/system/scorllVideoHero/ScrollHeroVideo';
 import { LOREM_IPSUM_SHORT_TEXT } from '@/components/containers/HomeContainer';
-import Calculator from '@/components/system/calculator/Calculator';
+import Calculator from '@/components/system/calculator/CalculatorClient';
 import ScrollStaggeredGrid from '@/components/system/imageGridContainer/ScrollStaggeredGrid';
 
 const CategoriesContainer: FC = () => {

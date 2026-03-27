@@ -1,5 +1,5 @@
 'use client';
-import React, { useId } from 'react';
+import React, { FC, useId } from 'react';
 import { SvgIconProps } from '@/types/common';
 
 const OdinLogo: FC<SvgIconProps> = ({

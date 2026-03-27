@@ -1,10 +1,9 @@
 import React, { FC } from 'react';
-import OverlayContainer, {
-  ContentContainer,
-  ImageContainer,
-} from '@/components/system/containers/Containers';
+import OverlayContainer from '@/components/system/containers/OverlayContainer';
+import { ContentContainer } from '@/components/system/containers/Containers';
+import { ImageContainer } from '@/components/system/containers/ImageContainer';
 import ScrollHeroVideo from '@/components/system/scorllVideoHero/ScrollHeroVideo';
-import Calculator from '@/components/system/calculator/Calculator';
+import Calculator from '@/components/system/calculator/CalculatorClient';
 import ScrollStaggeredGrid from '@/components/system/imageGridContainer/ScrollStaggeredGrid';
 
 /* video  DO NOT DELETE!!!!!!!!!!!!!!!!!! edit prompt MacBook-Pro assets % ffmpeg -i odin_animatie.mp4   -c:v libx264 -x264-params keyint=1:scenecut=0 -crf 22 -preset medium -an output_smooth_odin_frame.mp4*/

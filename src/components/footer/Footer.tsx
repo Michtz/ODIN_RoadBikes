@@ -1,5 +1,3 @@
-'use client';
-
 import React, { FC } from 'react';
 import style from './Footer.module.scss';
 import Link from '@/components/system/link/Link';

@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
-import OverlayContainer, {
-  ContentContainer,
-  ImageContainer,
-} from '@/components/system/containers/Containers';
+import OverlayContainer from '@/components/system/containers/OverlayContainer';
+import { ContentContainer } from '@/components/system/containers/Containers';
+import { ImageContainer } from '@/components/system/containers/ImageContainer';
 import ScrollStaggeredGrid from '@/components/system/imageGridContainer/ScrollStaggeredGrid';
 
 const AboutUsContainer: FC = () => {

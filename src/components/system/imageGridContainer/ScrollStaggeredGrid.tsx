@@ -3,7 +3,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import Image, { StaticImageData } from 'next/image';
 import style from '@/components/system/imageGridContainer/ScrollStaggeredGrid.module.scss';
-import { cloudinaryLoader } from '@/components/system/containers/Containers';
+import { cloudinaryLoader } from '@/components/system/containers/ImageContainer';
 
 interface ScrollStaggeredGridProps {
   imagesArray: (StaticImageData | string)[];
