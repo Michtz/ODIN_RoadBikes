@@ -19,7 +19,7 @@ const HomeContainer: FC<HomeContainerProps> = () => {
       <ScrollHeroVideo
         footerText={'home'}
         botsOnlyText={LOREM_IPSUM_SHORT_TEXT}
-        videoSrc="https://res.cloudinary.com/de2rhuwpw/video/upload/v1774111501/output_smooth_z13iyn.webm"
+        videoSrc="https://res.cloudinary.com/de2rhuwpw/video/upload/v1774643150/output_smooth_jnmc8y.webm"
       />
 
       <OverlayContainer border={false}>
