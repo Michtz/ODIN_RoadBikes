@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import { useCookie } from '@/hooks/CookieHook';
 import styles from '@/components/system/cookieBannner/CookieBanner.module.scss';
 import Button from '@/components/system/button/Button';
-import MaterialIcon from '@/components/system/materialIcon/MaterialIcon';
 
 const CookieBanner: React.FC = () => {
   const { showBanner, acceptCookies } = useCookie();
