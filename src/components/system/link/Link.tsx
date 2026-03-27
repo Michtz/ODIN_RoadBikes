@@ -48,13 +48,14 @@ const Link: React.FC<LinkProps> = ({
     }
   }, [prefetch, href, external, router]);
 
-  const handleClick = async (event: React.MouseEvent<HTMLElement>) => {
+  const handleClick = async (
+    event: React.MouseEvent<HTMLElement>,
+  ): Promise<void> => {
     if (disabled) return;
     if (onClick) {
       onClick(event);
       return;
     }
-
     if (href && !external) {
       event.preventDefault();
       router.push(href);
@@ -71,12 +72,12 @@ const Link: React.FC<LinkProps> = ({
   );
 
   const sharedProps = {
-    className,
+    className: className || undefined,
     onClick: handleClick,
-    'data-disabled': disabled,
-    'data-fullwidth': fullWidth,
-    'data-weight': weight,
-    'data-active': active,
+    'data-disabled': disabled ? true : undefined,
+    'data-fullwidth': fullWidth ? true : undefined,
+    'data-weight': weight !== 'normal' ? weight : undefined,
+    'data-active': active ? true : undefined,
   };
 
   // Button mode
@@ -86,10 +87,10 @@ const Link: React.FC<LinkProps> = ({
         {...sharedProps}
         role="button"
         tabIndex={disabled ? -1 : 0}
-        onKeyDown={(e) => {
+        onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
           if ((e.key === 'Enter' || e.key === ' ') && !disabled) {
             e.preventDefault();
-            handleClick(e as any);
+            handleClick(e as unknown as React.MouseEvent<HTMLElement>);
           }
         }}
       >
@@ -97,16 +98,11 @@ const Link: React.FC<LinkProps> = ({
       </span>
     );
   }
+
   // External link
   if (external) {
     return (
-      <a
-        {...sharedProps}
-        className={className}
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a {...sharedProps} href={href} target="_blank" rel="noopener noreferrer">
         {content}
       </a>
     );
@@ -117,8 +113,11 @@ const Link: React.FC<LinkProps> = ({
     <a
       {...sharedProps}
       href={disabled ? '' : href}
-      data-styling={styling}
-      onClick={additionalAction}
+      data-styling={styling ? true : undefined}
+      onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (additionalAction) additionalAction();
+        handleClick(e);
+      }}
     >
       {content}
     </a>
