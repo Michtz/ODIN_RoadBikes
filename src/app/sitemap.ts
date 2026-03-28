@@ -4,15 +4,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://odinbikes.ch';
   const lastModified = new Date();
 
-  const categories = ['roadbikes', 'gravelbikes'];
-  const models = ['flow', 'gravity', 'reaction', 'slide'];
+  const models = ['gravity', 'slide'];
 
-  const bikePages = categories.flatMap((cat) => [
-    `/bikes/${cat}`,
-    ...models.map((model) => `/bikes/${cat}/${model}`),
-  ]);
+  const bikePages = [
+    '/bikes/roadbikes',
+    ...models.map((model) => `/bikes/roadbikes/${model}`),
+  ];
 
-  const staticPages = ['', '/configurator', '/parts', ...bikePages];
+  const staticPages = ['', '/about', '/contact', '/configurator', ...bikePages];
 
   return staticPages.map((route) => ({
     url: `${baseUrl}${route}`,

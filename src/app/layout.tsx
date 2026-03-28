@@ -37,13 +37,22 @@ export const metadata: Metadata = {
     default: 'OdinBikes.ch | Individuelle Custom Rennräder & Gravelbikes',
   },
   description:
-    'Entdecke die Welt von OdinBikes. Custom High-Performance Rennräder und Gravelbikes, individuell konfigurierbar für dein perfektes Fahrerlebnis.',
+    'OdinBikes aus Horw bei Luzern – Custom Carbon Rennräder zu fairen Preisen. Ihr Design, Ihre Komponenten, auf Ihren Körperbau zugeschnitten. Gravity & Slide Modelle individuell konfigurierbar.',
   keywords: [
     'Rennrad',
     'Gravelbike',
     'Fahrrad Konfigurator',
     'OdinBikes',
     'Custom Bikes',
+    'Carbon Rennrad',
+    'Rennrad Schweiz',
+    'Custom Rennrad',
+    'Rennrad Luzern',
+    'Bikefitting',
+    'handgefertigte Laufradsätze',
+    'Rennrad konfigurieren',
+    'Gravity Rennrad',
+    'Slide Rennrad',
   ],
   authors: [{ name: 'OdinBikes' }],
   robots: 'index, follow',
@@ -55,9 +64,26 @@ export const metadata: Metadata = {
     locale: 'de_CH',
     url: 'https://odinbikes.ch',
     siteName: 'OdinBikes',
-    title: 'OdinBikes.ch | High-End Rennräder & Gravelbikes',
+    title: 'OdinBikes.ch | Custom Carbon Rennräder aus der Schweiz',
     description:
-      'High-Performance Rennräder und Gravelbikes, individuell konfigurierbar.',
+      'Custom Carbon Rennräder aus Horw bei Luzern. Ihr Design, Ihre Komponenten, auf Ihren Körper zugeschnitten – zu einem fairen Preis.',
+    images: [
+      {
+        url: 'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097102/025_full_bike_white_sdr_original_ztglp5.avif',
+        width: 1200,
+        height: 630,
+        alt: 'OdinBikes – Custom Carbon Rennrad aus der Schweiz',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'OdinBikes.ch | Custom Carbon Rennräder aus der Schweiz',
+    description:
+      'Custom Carbon Rennräder aus Horw bei Luzern. Individuell konfigurierbar für dein perfektes Fahrerlebnis.',
+    images: [
+      'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097102/025_full_bike_white_sdr_original_ztglp5.avif',
+    ],
   },
 };
 
@@ -75,6 +101,47 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
     >
       <head>
         <link rel="preconnect" href="https://res.cloudinary.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'OdinBikes',
+              url: 'https://odinbikes.ch',
+              logo: 'https://odinbikes.ch/icon',
+              description:
+                'Custom Carbon Rennräder aus Horw bei Luzern – Ihr Design, Ihre Komponenten, auf Ihren Körperbau zugeschnitten.',
+              address: {
+                '@type': 'PostalAddress',
+                addressLocality: 'Horw',
+                addressRegion: 'Luzern',
+                addressCountry: 'CH',
+              },
+              offers: {
+                '@type': 'AggregateOffer',
+                priceCurrency: 'CHF',
+                offerCount: '2',
+                offers: [
+                  {
+                    '@type': 'Offer',
+                    name: 'Gravity Rennrad',
+                    url: 'https://odinbikes.ch/bikes/roadbikes/gravity',
+                    description:
+                      'Leichter Rahmen mit kletterfreundlicher Geometrie – das Bergziegen-Modell von OdinBikes.',
+                  },
+                  {
+                    '@type': 'Offer',
+                    name: 'Slide Rennrad',
+                    url: 'https://odinbikes.ch/bikes/roadbikes/slide',
+                    description:
+                      'Allrounder-Rennrad mit alltagsfreundlicher Geometrie, individuell konfigurierbar ab CHF 2950.',
+                  },
+                ],
+              },
+            }),
+          }}
+        />
       </head>
       <body>
         <ServiceWorkerRegistration />

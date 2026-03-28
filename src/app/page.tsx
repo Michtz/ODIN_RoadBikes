@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import HomeContainer from '@/components/containers/HomeContainer';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'Custom Carbon Rennräder aus der Schweiz',
   description:
-    'OdinBikes - Individuelle Rennräder und Gravelbikes aus der Schweiz.',
+    'Custom Carbon Rennräder zu fairen Preisen – Ihr Design, Ihre Komponenten, auf Ihren Körperbau zugeschnitten. Unbegrenzte Möglichkeiten für beste Ergonomie, Aerodynamik und maximalen Fahrspass.',
 };
 
 export default function Home() {

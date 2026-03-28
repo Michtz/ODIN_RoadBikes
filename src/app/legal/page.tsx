@@ -2,9 +2,8 @@ import { Metadata } from 'next';
 import LegalContainer from '@/components/containers/legalContainer/LegalContainer';
 
 export const metadata: Metadata = {
-  title: 'Datenschutz - Odin',
-  description:
-    'OdinBikes - Individuelle Rennräder und Gravelbikes aus der Schweiz.',
+  title: 'Datenschutz',
+  robots: 'noindex, nofollow',
 };
 
 export default function LegalPage() {

@@ -2,8 +2,12 @@ import { Metadata } from 'next';
 import ContactContainer from '@/components/containers/ContactContainer';
 
 export const metadata: Metadata = {
-  title: 'Kontakt - ODIN Roadbikes',
-  description: 'OdinBikes Kontakt - Individuelle Rennräder aus der Schweiz.',
+  title: 'Kontakt',
+  description:
+    'Kontaktieren Sie OdinBikes in Horw bei Luzern – für Fragen zu Custom Rennrädern, Bikefitting oder Ihrer individuellen Konfiguration.',
+  alternates: {
+    canonical: 'https://odinbikes.ch/contact',
+  },
 };
 
 export default function ContactPage() {

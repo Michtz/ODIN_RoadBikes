@@ -88,7 +88,7 @@ const MidScrollVideoPlayer: FC<MidScrollVideoPlayerProps> = ({
       </div>
       <div className={style.distanceHolder}></div>
       <div className={style.textContainer}>
-        <h2>Komponenten</h2>
+        <h2>Teile</h2>
         <p>{data.components}</p>
       </div>
       <div className={style.distanceHolder}></div>
