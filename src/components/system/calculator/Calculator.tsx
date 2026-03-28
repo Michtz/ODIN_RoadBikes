@@ -179,7 +179,7 @@ Kunden-Email: ${formValues.email || ''}
       <FormContainer onSubmitAction={handleSubmit(onSubmit)} className="">
         <FormTitle
           title="Konfigurator"
-          description="Konfigurieren Sie Ihr Traumrad und erhalten Sie das Angebot per E-Mail oder buchen Sie einen Termin für die Beratung."
+          description="Konfigurieren Sie Ihr Traumrad und erhalten Sie das Angebot per E-Mail und buchen Sie einen Termin für die Beratung."
         />
         <FormRow direction="column" gap="medium">
           <Select
@@ -259,7 +259,7 @@ Kunden-Email: ${formValues.email || ''}
               <li className={style.summaryItem} key={opt}>
                 <p>{opt}: </p>
                 <p>{selectedOption?.label} &nbsp;</p>
-                <p>+ {diffPrice} Chf.</p>
+                {diffPrice === 0 ? <p>incl.</p> : <p>+ {diffPrice} Chf.</p>}
               </li>
             );
           })}

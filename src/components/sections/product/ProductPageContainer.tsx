@@ -50,7 +50,7 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({
         <GeometryTable data={data} />
       </OverlayContainer>
 
-      <OverlayContainer border={false} key={4}>
+      <OverlayContainer border={false} key={5}>
         <ScrollStaggeredGrid
           imagesArray={[
             'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097119/014_bike_frame_grey_sdr_original_xu99rb.avif',
@@ -70,7 +70,7 @@ const ProductPageContainer: FC<ProductPageContainerProps> = ({
           ]}
         />
       </OverlayContainer>
-      <OverlayContainer border={false}>
+      <OverlayContainer border={false} key={6}>
         <Calculator />
       </OverlayContainer>
     </>
