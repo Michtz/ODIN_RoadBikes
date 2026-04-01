@@ -99,7 +99,7 @@ export const FormTitle: React.FC<FormTitleProps> = ({
 }): JSX.Element => {
   return (
     <div>
-      <h2>{title}</h2>
+      <h2 className={style.formTitle}>{title}</h2>
       {description && <p>{description}</p>}
     </div>
   );
