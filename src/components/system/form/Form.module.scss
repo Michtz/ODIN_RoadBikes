@@ -45,3 +45,12 @@
     }
   }
 }
+
+.formTitle {
+  @media (max-width: 580px) {
+    font-size: 42px;
+  }
+  @media (max-width: 460px) {
+    font-size: 32px;
+  }
+}

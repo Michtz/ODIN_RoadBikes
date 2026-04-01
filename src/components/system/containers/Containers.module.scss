@@ -16,6 +16,10 @@
   align-items: center;
   overflow: visible;
 
+  &[data-fullwidth='true'] {
+    max-width: 100vw;
+  }
+
   .hr {
     height: 1px;
     width: 80%;
