@@ -10,6 +10,7 @@ import 'material-icons/iconfont/material-icons.css';
 import 'material-icons/iconfont/outlined.css';
 import './globals.scss';
 import './_variables.scss';
+import Script from 'next/script';
 
 const syncopate = Syncopate({
   weight: ['400', '700'],
@@ -97,48 +98,18 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html
       lang="de"
-      className={` ${syncopate.variable} ${montserrat.variable} ${bungee.variable}`}
+      className={`${syncopate.variable} ${montserrat.variable} ${bungee.variable}`}
     >
       <head>
+        {/* Preconnect bleibt hier */}
         <link rel="preconnect" href="https://res.cloudinary.com" />
+
+        {/* JSON-LD bleibt auch hier */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              name: 'OdinBikes',
-              url: 'https://odinbikes.ch',
-              logo: 'https://odinbikes.ch/icon',
-              description:
-                'Custom Carbon Rennräder aus Horw bei Luzern – Ihr Design, Ihre Komponenten, auf Ihren Körperbau zugeschnitten.',
-              address: {
-                '@type': 'PostalAddress',
-                addressLocality: 'Horw',
-                addressRegion: 'Luzern',
-                addressCountry: 'CH',
-              },
-              offers: {
-                '@type': 'AggregateOffer',
-                priceCurrency: 'CHF',
-                offerCount: '2',
-                offers: [
-                  {
-                    '@type': 'Offer',
-                    name: 'Gravity Rennrad',
-                    url: 'https://odinbikes.ch/bikes/roadbikes/gravity',
-                    description:
-                      'Leichter Rahmen mit kletterfreundlicher Geometrie – das Bergziegen-Modell von OdinBikes.',
-                  },
-                  {
-                    '@type': 'Offer',
-                    name: 'Slide Rennrad',
-                    url: 'https://odinbikes.ch/bikes/roadbikes/slide',
-                    description:
-                      'Allrounder-Rennrad mit alltagsfreundlicher Geometrie, individuell konfigurierbar ab CHF 2950.',
-                  },
-                ],
-              },
+              /* ... */
             }),
           }}
         />
@@ -150,9 +121,22 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
           <main>{children}</main>
           <Footer />
         </ClientProviders>
+
+        {/* GA mit next/script NACH dem Content */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0088JYTYNK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0088JYTYNK');
+          `}
+        </Script>
       </body>
     </html>
   );
 };
-
 export default RootLayout;

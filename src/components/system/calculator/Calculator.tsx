@@ -120,6 +120,7 @@ const getRelativeOptions = (key: SelectFields): CalculatorOption[] => {
 };
 
 export const Calculator: React.FC = () => {
+  return null;
   const { register, handleSubmit, watch } = useForm<CalculatorFormValues>({
     defaultValues: getDefaultValues(),
   });

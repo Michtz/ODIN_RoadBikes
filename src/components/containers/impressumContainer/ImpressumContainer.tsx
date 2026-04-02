@@ -29,7 +29,7 @@ const ImpressumContainer: FC = () => {
         <p>
           Telefon:&nbsp; <a href="tel:+413407044">+41 340 70 44</a>
           <br />
-          E-Mail:&nbsp; <a href="mailto:info@odinbikes.ch">info@odinbikes.ch</a>
+          {/*E-Mail:&nbsp; <a href="mailto:info@odinbikes.ch">info@odinbikes.ch</a>  todo remove comment*/}
         </p>
       </div>
 

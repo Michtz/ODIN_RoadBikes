@@ -87,11 +87,11 @@ const ResponsiveAppBar = () => {
               <Link href={'/about'}>Über Odin</Link>
             </li>
 
-            <li className={style.navItem}>
-              <Link onClick={() => setIsModalOpen(true)}>
-                Besprechung Buchen
-              </Link>
-            </li>
+            {/*<li className={style.navItem}>*/}
+            {/*  <Link onClick={() => setIsModalOpen(true)}>*/}
+            {/*    Besprechung Buchen*/}
+            {/*  </Link>*/}
+            {/*</li>*/}
             {/*<li className={style.navItem}>*/}
             {/*  <Link href={'/configurator'}>Configurator</Link>*/}
             {/*</li>*/}
@@ -111,8 +111,9 @@ const ResponsiveAppBar = () => {
       </header>
 
       <SideNav isOpen={isSideNavOpen} onClose={() => setIsSideNavOpen(false)} />
+      {/*todo: remove hardcoded false when calendar ready*/}
       <BookingModal
-        isOpen={isModalOpen}
+        isOpen={false}
         onClose={() => setIsModalOpen(false)}
         calLink="michael-venetz-mer2x6"
       />
