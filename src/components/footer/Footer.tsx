@@ -47,21 +47,21 @@ const Footer: FC = () => {
             {/* Semantic address block using <address> element */}
             <address className={style.addressBlock}>
               <ul className={style.linkList}>
-                <li className={style.contactListItem}>
-                  <MaterialIcon
-                    icon="mail"
-                    iconSize="small"
-                    aria-hidden="true"
-                  />
-                  <span className={style.contactContent}>
-                    <a
-                      href="mailto:info@odinbikes.ch"
-                      rel="noopener noreferrer"
-                    >
-                      info@odinbikes.ch
-                    </a>
-                  </span>
-                </li>
+                {/*<li className={style.contactListItem}>*/}
+                {/*  <MaterialIcon*/}
+                {/*    icon="mail"*/}
+                {/*    iconSize="small"*/}
+                {/*    aria-hidden="true"*/}
+                {/*  />*/}
+                {/*  <span className={style.contactContent}>*/}
+                {/*    <a*/}
+                {/*      href="mailto:info@odinbikes.ch"*/}
+                {/*      rel="noopener noreferrer"*/}
+                {/*    >*/}
+                {/*      info@odinbikes.ch*/}
+                {/*    </a>*/}
+                {/*  </span>*/}
+                {/*</li>*/}
                 <li className={style.contactListItem}>
                   <MaterialIcon
                     icon="phone"
