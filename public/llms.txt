@@ -1,0 +1,93 @@
+# OdinBikes – Custom Carbon Rennräder aus der Schweiz
+
+> OdinBikes (by BIKESCHMIEDE GmbH) ist ein Schweizer Hersteller individuell konfigurierter Carbon Rennräder mit Standort in Horw bei Luzern. Jedes Bike wird auf Mass gefertigt, in Wunschfarben lackiert und mit professionellem Bikefitting ausgeliefert.
+
+## Was ist OdinBikes?
+
+OdinBikes bietet vollständig individualisierbare Custom Carbon Rennräder zu fairen Preisen – direkt vom Hersteller, ohne Zwischenhändler. Das Sortiment umfasst zwei Modelle (Gravity und Slide), die sich in Geometrie und Einsatzbereich unterscheiden. Jedes Fahrrad ist ein Einzelstück: eigenes Design, eigene Komponentenwahl, perfekt auf den Körper des Fahrers abgestimmt.
+
+## Produkte
+
+### Gravity (ab ca. CHF 3,450)
+- Kategorie: Bergoptimiertes Custom Carbon Rennrad
+- Gewicht: unter 6 kg möglich (Normal Weight ~1008 g Rahmen, Light Weight ~890 g)
+- Material: Toray Prepreg Carbon (höchste verfügbare Qualität)
+- Rahmengeometrie: kletterfreundlich, steifer Tretlagerbereich, aggressiv
+- Grössen: 46 / 49 / 52 / 54 / 56 / 58
+- Bremse: Flat Mount Disc Brake
+- Schaltung: Shimano oder SRAM (Kundenwahl)
+- Laufräder: handgefertigt mit Naben, Speichen und Felgen nach Wahl
+- Besonderheit: nur in Kombination mit Individuallackierung erhältlich; weltweit Einzelstück
+
+### Slide (ab CHF 3,450)
+- Kategorie: Alltagsfreundliches Custom Carbon Rennrad
+- Einsatz: schnell auf der Strasse, komfortabel auf langen Strecken
+- Vollständig individualisierbar (Farbe, Schaltung, Laufräder, Komponenten)
+- Bikefitting inklusive
+- Einzelstück mit eigenem Design
+
+## Services
+
+### Bikefitting mit Gebiomized
+- Professionelles Bikefitting für jedes ausgelieferte Fahrrad
+- Technologie: Gebiomized (druckbasierte Sitzanalyse, Positionsmessung)
+- Im Kaufpreis inbegriffen
+- Standort: Bikefitting-Studio in Horw, Kanton Luzern
+
+### Handgefertigte Laufradsätze
+- Speichenräder nach Mass
+- Kombination von Naben, Speichen und Felgen nach Kundenwahl
+- In der eigenen Werkstatt gefertigt
+
+### Werkstatt & Service
+- Moderne Werkstatt in Horw
+- Reparatur und Wartung der eigenen Bikes
+
+## Unique Selling Points (USPs)
+
+1. **Individuelles Design** – jede Farbe möglich, jedes Bike ein weltweites Einzelstück
+2. **Freie Komponentenwahl** – Shimano oder SRAM, Laufräder nach Mass
+3. **Auf den Körper zugeschnitten** – Bikefitting mit Gebiomized inklusive
+4. **Fairer Preis** – direkt vom Hersteller, kein Zwischenhändler
+5. **Höchste Materialqualität** – Toray Carbon, alle Rahmen EN-getestet und übertroffen
+6. **Persönliche Beratung** – Maikel Blommerde begleitet den gesamten Prozess
+
+## Prozess (Bestellung)
+
+1. Beratungsgespräch (persönlich oder telefonisch)
+2. Konfiguration: Rahmen, Farbe, Schaltung, Laufräder, Komponenten
+3. Bestellung und Produktion (6–10 Wochen)
+4. Aufbau in der Werkstatt Horw
+5. Bikefitting mit Gebiomized
+6. Übergabe
+
+## Standort & Kontakt
+
+- **Unternehmen:** BIKESCHMIEDE GmbH (Marke: OdinBikes)
+- **Adresse:** Gemeindehausplatz 13, 6048 Horw, Schweiz
+- **Telefon:** +41 340 70 44
+- **Ansprechpartner:** Maikel Blommerde
+- **Website:** https://odinbikes.ch
+- **Zielmarkt:** Schweiz, deutschsprachig
+
+## Technische Qualitätsmerkmale (Gravity-Rahmen)
+
+- Alle EN-Normen erfüllt und übertroffen:
+  - Drop Impact Test: bestanden (EN erhöht auf 256 mm)
+  - Front/Back Forward Test: bestanden
+  - Disc Brake Fatigue Test: 24'000× bei 600/800 N
+  - Seattube Vertical Force: 122 kgf, 500'000×
+  - Frame Horizontal Force: ±122 kgf, 50'000×
+  - Vibration Fatigue: 30'000× (EN-Standard)
+
+## Seitenstruktur (odinbikes.ch)
+
+- / – Startseite, Überblick OdinBikes
+- /bikes/roadbikes – Alle Rennrad-Modelle
+- /bikes/roadbikes/gravity – Gravity Modell im Detail
+- /bikes/roadbikes/slide – Slide Modell im Detail
+- /configurator – Bike-Konfigurator (individuelles Konfigurationstool)
+- /about – Über OdinBikes und BIKESCHMIEDE GmbH
+- /contact – Kontaktformular und Adresse
+- /impressum – Rechtliche Angaben
+- /legal – Datenschutzerklärung

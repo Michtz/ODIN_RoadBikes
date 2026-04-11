@@ -28,7 +28,7 @@ const CategoriesContainer: FC = () => {
         'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774096126/slide_frame_Black_1600px_k7dktj.png',
       alt: 'Odin Bike',
       title: 'Slide',
-      text: 'Das Slide ist ein preisgünstiger Allrounder ab 2950 Franken. Etwas Aero, gepaart mit komfortabler Geometrie und 32 mm Reifenfreiheit, macht es zum perfekten Rennrad für lange Touren.',
+      text: 'Das Slide ist ein preisgünstiger Allrounder ab 3,450 Franken. Etwas Aero, gepaart mit komfortabler Geometrie und 32 mm Reifenfreiheit, macht es zum perfekten Rennrad für lange Touren.',
       url: '/bikes/roadbikes/slide',
     },
   ];
@@ -49,7 +49,7 @@ const CategoriesContainer: FC = () => {
         'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774101848/odin_bike_full_red_slide_ie1zpo.png',
       alt: 'Odin Bike',
       title: 'Slide',
-      text: 'Das Slide ist ein preisgünstiger Allrounder ab 2950 Franken. Etwas Aero, gepaart mit komfortabler Geometrie und 32 mm Reifenfreiheit, macht es zum perfekten Rennrad für lange Touren.',
+      text: 'Das Slide ist ein preisgünstiger Allrounder ab 3,450 Franken. Etwas Aero, gepaart mit komfortabler Geometrie und 32 mm Reifenfreiheit, macht es zum perfekten Rennrad für lange Touren.',
       url: '/bikes/roadbikes/slide',
     },
   ];

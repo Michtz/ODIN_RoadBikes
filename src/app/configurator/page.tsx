@@ -1,12 +1,16 @@
 import { Metadata } from 'next';
+import HomeContainer from '@/components/containers/HomeContainer';
 
 export const metadata: Metadata = {
-  title: 'Bike Konfigurator',
+  title: 'Rennrad Konfigurator – Dein OdinBike individuell gestalten',
   description:
-    'Stelle dir dein individuelles OdinBike zusammen. Wähle Rahmen, Schaltung, Laufräder und mehr.',
+    'Konfiguriere dein Custom Carbon Rennrad online: Rahmen, Farbe, Schaltgruppe (Shimano/SRAM), Laufräder und Komponenten nach Wahl. Gravity ab CHF 3,450, Slide ab CHF 3,450 – inkl. Bikefitting.',
+  alternates: {
+    canonical: 'https://odinbikes.ch/configurator',
+  },
 };
 
 export default function ConfiguratorPage() {
-  return <></>;
+  return <HomeContainer />;
   // return <ConfiguratorContainer />;
 }
