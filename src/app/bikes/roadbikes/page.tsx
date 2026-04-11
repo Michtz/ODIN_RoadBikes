@@ -4,7 +4,7 @@ import CategoriesContainer from '@/components/containers/CategoriesContainer';
 export const metadata: Metadata = {
   title: 'Custom Carbon Rennräder – Gravity & Slide Modelle',
   description:
-    'Entdecken Sie die OdinBikes Rennrad-Modelle: Gravity (ab CHF 3,450, Bergoptimiert) und Slide (ab CHF 3,450, Alltagsgeometrie). Beide vollständig individualisierbar – Design, Komponenten, Bikefitting inklusive.',
+    'Entdecken Sie die OdinBikes Rennrad-Modelle: Gravity (ab CHF 3450, Bergoptimiert) und Slide (ab CHF 3150, Alltagsgeometrie). Beide vollständig individualisierbar – Design, Komponenten, Bikefitting inklusive.',
   alternates: {
     canonical: 'https://odinbikes.ch/bikes/roadbikes',
   },
