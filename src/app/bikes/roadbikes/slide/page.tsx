@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import ProductContainer from '@/components/containers/ProductContainer';
 
 export const metadata: Metadata = {
-  title: 'Rennrad Slide',
+  title: 'Slide – Carbon Rennrad mit Alltagsgeometrie ab CHF 3,450',
   description:
-    'Das Slide – die Rennmaschine mit alltagsfreundlicher Geometrie. Schnell auf der Strasse, komfortabel auf langen Strecken, individuell konfigurierbar ab CHF 2950.',
+    'Das OdinBike Slide: Carbon Rennrad mit alltagsfreundlicher Geometrie – schnell auf der Strasse, komfortabel auf langen Strecken. Individuelles Design, freie Komponentenwahl, professionelles Bikefitting inklusive.',
   alternates: {
     canonical: 'https://odinbikes.ch/bikes/roadbikes/slide',
   },

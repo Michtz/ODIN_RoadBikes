@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import AboutUsContainer from '@/components/containers/AboutUsContainer';
 
 export const metadata: Metadata = {
-  title: 'Über uns',
+  title: 'Über OdinBikes – Custom Rennräder aus Horw, Luzern',
   description:
-    'OdinBikes wurde in Horw bei Luzern gegründet – aus dem Wunsch heraus, individuelle Rennräder zu fairen Preisen anzubieten. Ihr Design, Ihre Komponenten, perfekt auf Ihren Körper zugeschnitten.',
+    'OdinBikes by BIKESCHMIEDE GmbH – entstanden aus der Leidenschaft für individuelle Rennräder zu fairen Preisen. Unser Team in Horw begleitet Sie von der Konfiguration über den Rahmenaufbau bis zum professionellen Bikefitting.',
   alternates: {
     canonical: 'https://odinbikes.ch/about',
   },
