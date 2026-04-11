@@ -105,7 +105,7 @@ const mainJsonLd = [
     name: 'OdinBikes',
     legalName: 'BIKESCHMIEDE GmbH',
     description:
-      'Individuell konfigurierbare Custom Carbon Rennräder aus Horw bei Luzern. Gravity ab CHF 3,450, Slide ab CHF 3,450. Professionelles Bikefitting mit Gebiomized, handgefertigte Laufradsätze.',
+      'Individuell konfigurierbare Custom Carbon Rennräder aus Horw bei Luzern. Gravity ab CHF 3450, Slide ab CHF 3150. Professionelles Bikefitting mit Gebiomized, handgefertigte Laufradsätze.',
     url: 'https://odinbikes.ch',
     logo: {
       '@type': 'ImageObject',
@@ -133,7 +133,7 @@ const mainJsonLd = [
       addressCountry: 'CH',
     },
     areaServed: { '@type': 'Country', name: 'Switzerland' },
-    priceRange: 'CHF 3,450 – CHF 10000+',
+    priceRange: 'CHF 3450 – CHF 10000+',
     currenciesAccepted: 'CHF',
     paymentAccepted: 'Cash, Credit Card, Bank Transfer',
   },
@@ -187,6 +187,15 @@ const mainJsonLd = [
       availability: 'https://schema.org/InStock',
       url: 'https://odinbikes.ch/bikes/roadbikes/gravity',
       seller: { '@id': 'https://odinbikes.ch/#organization' },
+      hasMerchantReturnPolicy: {
+        '@type': 'MerchantReturnPolicy',
+        '@id': 'https://odinbikes.ch/#returnpolicy',
+        applicableCountry: 'CH',
+        // Individuell gefertigte Bikes sind nach OR Art. 40a ff. vom Rückgaberecht ausgenommen.
+        // Falls du dennoch Kulanz-Rücknahmen anbietest, passe die Kategorie an.
+        returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+        merchantReturnLink: 'https://odinbikes.ch/contact',
+      },
       shippingDetails: {
         '@type': 'OfferShippingDetails',
         shippingDestination: {
@@ -211,7 +220,7 @@ const mainJsonLd = [
     '@id': 'https://odinbikes.ch/bikes/roadbikes/slide#product',
     name: 'OdinBikes Slide',
     description:
-      'Das Slide ist das alltagsfreundliche Custom Carbon Rennrad von OdinBikes – schnell auf der Strasse, komfortabel auf langen Strecken. Individuell konfigurierbar ab CHF 3,450 inklusive Bikefitting und eigenem Design.',
+      'Das Slide ist das alltagsfreundliche Custom Carbon Rennrad von OdinBikes – schnell auf der Strasse, komfortabel auf langen Strecken. Individuell konfigurierbar ab CHF 3150 inklusive Bikefitting und eigenem Design.',
     url: 'https://odinbikes.ch/bikes/roadbikes/slide',
     image:
       'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097102/025_full_bike_white_sdr_original_ztglp5.avif',
@@ -226,17 +235,18 @@ const mainJsonLd = [
     offers: {
       '@type': 'Offer',
       priceCurrency: 'CHF',
-      price: '3,450',
+      price: '3150',
       priceSpecification: {
         '@type': 'PriceSpecification',
-        price: '3,450',
+        price: '3150',
         priceCurrency: 'CHF',
-        minPrice: '3,450',
+        minPrice: '3150',
         valueAddedTaxIncluded: true,
       },
       availability: 'https://schema.org/InStock',
       url: 'https://odinbikes.ch/bikes/roadbikes/slide',
       seller: { '@id': 'https://odinbikes.ch/#organization' },
+      hasMerchantReturnPolicy: { '@id': 'https://odinbikes.ch/#returnpolicy' },
       shippingDetails: {
         '@type': 'OfferShippingDetails',
         shippingDestination: {
@@ -327,7 +337,7 @@ const faqJsonLd = {
       name: 'Was kostet ein Custom Carbon Rennrad von OdinBikes?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Das Slide-Modell startet ab CHF 3,150, das Gravity-Modell ab ca. CHF 3,450. Der Endpreis hängt von der gewählten Schaltgruppe, den Laufrädern und weiteren Komponenten ab. OdinBikes bietet bewusst faire Preise – direkt und ohne Zwischenhändler.',
+        text: 'Das Slide-Modell startet ab CHF 3,150, das Gravity-Modell ab ca. CHF 3450. Der Endpreis hängt von der gewählten Schaltgruppe, den Laufrädern und weiteren Komponenten ab. OdinBikes bietet bewusst faire Preise – direkt und ohne Zwischenhändler.',
       },
     },
     {
