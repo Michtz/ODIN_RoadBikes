@@ -1,11 +1,11 @@
-import React from 'react';
+import { FC } from 'react';
 import { SvgIconProps } from '@/types/common';
 
 interface HamburgerIconProps extends SvgIconProps {
   isOpen?: boolean;
 }
 
-const HamburgerIcon: React.FC<HamburgerIconProps> = ({
+const HamburgerIcon: FC<HamburgerIconProps> = ({
   width = 24,
   height = 24,
   color = '#686868',

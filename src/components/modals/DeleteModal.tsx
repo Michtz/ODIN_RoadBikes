@@ -1,12 +1,12 @@
 'use client';
-import React, { useEffect } from 'react';
+import { FC, MouseEvent as ReactMouseEvent, ReactNode, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import style from '@/styles/old/system/Modal.module.scss';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  children: React.ReactNode;
+  children: ReactNode;
   size?: 'small' | 'medium' | 'large';
   closeOnOverlayClick?: boolean;
   closeOnEscape?: boolean;
@@ -14,7 +14,7 @@ interface ModalProps {
   title?: string;
 }
 
-export const Modal: React.FC<ModalProps> = ({
+export const Modal: FC<ModalProps> = ({
   isOpen,
   onClose,
   children,
@@ -51,7 +51,7 @@ export const Modal: React.FC<ModalProps> = ({
     };
   }, [isOpen]);
 
-  const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleOverlayClick = (e: ReactMouseEvent<HTMLDivElement>) => {
     if (closeOnOverlayClick && e.target === e.currentTarget) {
       onClose();
     }

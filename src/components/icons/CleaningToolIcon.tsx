@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { SvgIconProps } from '@/types/common';
 
-const CleaningToolIcon: React.FC<SvgIconProps> = ({
+const CleaningToolIcon: FC<SvgIconProps> = ({
   width = 45,
   height = 45,
   color = '#686868',

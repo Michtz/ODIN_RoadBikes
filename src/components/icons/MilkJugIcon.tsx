@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { SvgIconProps } from '@/types/common';
 
-const MilkJugIcon: React.FC<SvgIconProps> = ({
+const MilkJugIcon: FC<SvgIconProps> = ({
   width = 45,
   height = 45,
   color = '#4C4B4B',

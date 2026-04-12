@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { SvgIconProps } from '@/types/common';
 
-const TranslateIcon: React.FC<SvgIconProps> = ({
+const TranslateIcon: FC<SvgIconProps> = ({
   width = 25,
   height = 25,
   color = '#686868',

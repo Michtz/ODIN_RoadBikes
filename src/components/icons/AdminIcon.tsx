@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { SvgIconProps } from '@/types/common';
 
-const AdminIcon: React.FC<SvgIconProps> = ({
+const AdminIcon: FC<SvgIconProps> = ({
   width = 24,
   height = 24,
   color = '#686868',

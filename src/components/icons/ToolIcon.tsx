@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { SvgIconProps } from '@/types/common';
 
-const ToolIcon: React.FC<SvgIconProps> = ({
+const ToolIcon: FC<SvgIconProps> = ({
   width = 45,
   height = 45,
   color = '#4C4B4B',

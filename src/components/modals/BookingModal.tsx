@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import { FC, useEffect } from 'react';
 import Cal, { getCalApi } from '@calcom/embed-react';
 import style from './BookingModal.module.scss';
 
@@ -11,7 +11,7 @@ interface BookingModalProps {
   notes?: string;
 }
 
-export const BookingModal: React.FC<BookingModalProps> = ({
+export const BookingModal: FC<BookingModalProps> = ({
   isOpen,
   onClose,
   calLink,

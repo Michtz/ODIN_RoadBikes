@@ -6,7 +6,7 @@
 
 'use client';
 
-import React from 'react';
+import { FC } from 'react';
 import style from './FrameDetails.module.scss';
 import { FrameData } from '@/data/gravity_data';
 
@@ -14,7 +14,7 @@ interface FrameDetailsProps {
   data: FrameData;
 }
 
-export const FrameDetails: React.FC<FrameDetailsProps> = ({ data }) => {
+export const FrameDetails: FC<FrameDetailsProps> = ({ data }) => {
   return (
     <div className={style.container}>
       <div className={style.tableWrapper}>
