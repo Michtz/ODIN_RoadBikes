@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { SvgIconProps } from '@/types/common';
 
-const ProfileIcon: React.FC<SvgIconProps> = ({
+const ProfileIcon: FC<SvgIconProps> = ({
   width = 28,
   height = 28,
   color = '#686868',

@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { SvgIconProps } from '@/types/common';
 
-const Logo: React.FC<SvgIconProps> = ({
+const Logo: FC<SvgIconProps> = ({
   width = 414,
   height = 181,
   color = '#686868',

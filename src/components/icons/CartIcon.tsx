@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { SvgIconProps } from '@/types/common';
 
-const CartIcon: React.FC<SvgIconProps> = ({
+const CartIcon: FC<SvgIconProps> = ({
   width = 28,
   height = 28,
   color = '#686868',

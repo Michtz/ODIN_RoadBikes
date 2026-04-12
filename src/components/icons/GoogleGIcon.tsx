@@ -1,7 +1,7 @@
-import React from 'react';
+import { FC } from 'react';
 import { SvgIconProps } from '@/types/common';
 
-const GoogleGIcon: React.FC<SvgIconProps> = ({
+const GoogleGIcon: FC<SvgIconProps> = ({
   width = 24,
   height = 24,
   color = '#000000',

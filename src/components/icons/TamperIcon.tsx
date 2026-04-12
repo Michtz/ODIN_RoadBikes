@@ -1,7 +1,7 @@
 import { SvgIconProps } from '@/types/common';
-import React from 'react';
+import { FC } from 'react';
 
-const TamperIcon: React.FC<SvgIconProps> = ({
+const TamperIcon: FC<SvgIconProps> = ({
   width = 45,
   height = 45,
   color = '#4C4B4B',

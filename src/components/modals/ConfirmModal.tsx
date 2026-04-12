@@ -1,12 +1,12 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import { FC, ReactNode, useEffect, useRef } from 'react';
 import Button, { ButtonContainer } from '@/components/system/button/Button';
 import MaterialIcon from '@/components/system/materialIcon/MaterialIcon';
 import style from '@/styles/old/modals/ConfirmModal.module.scss';
 import { useModalContent } from '@/hooks/ModalProvide';
 
 interface ConfirmModalProps {
-  description: React.ReactNode;
+  description: ReactNode;
   confirmText?: string;
   cancelText?: string;
   variant?: 'primary' | 'error' | 'warning';
@@ -14,7 +14,7 @@ interface ConfirmModalProps {
   destructive?: boolean;
 }
 
-const ConfirmModal: React.FC<ConfirmModalProps> = ({
+const ConfirmModal: FC<ConfirmModalProps> = ({
   description,
   confirmText,
   cancelText,
@@ -119,7 +119,7 @@ export default ConfirmModal;
 // Helper function to create confirm modals easily
 export const createConfirmModal = (
   title: string,
-  description: React.ReactNode,
+  description: ReactNode,
   options?: {
     confirmText?: string;
     cancelText?: string;
