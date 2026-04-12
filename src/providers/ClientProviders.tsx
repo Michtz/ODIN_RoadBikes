@@ -6,6 +6,8 @@ import { CookieProvider } from '@/hooks/CookieHook';
 import { FeedbackProvider } from '@/hooks/FeedbackHook';
 import { SideCartProvider } from '@/hooks/SideCartHook';
 import Feedback from '@/components/system/feedback/Feedback';
+import CookieBanner from '@/components/system/cookieBannner/CookieBanner';
+import GoogleAnalytics from '@/components/system/GoogleAnalytics';
 import { BookingModalProvider } from '@/providers/BookingModalProvider';
 import { SideNavProvider } from '@/hooks/SideNavHook';
 
@@ -25,7 +27,8 @@ export const ClientProviders: React.FC<ClientProvidersProps> = ({
               <SideNavProvider>
                 {children}
                 <Feedback />
-                {/*<CookieBanner />*/}
+                <CookieBanner />
+                <GoogleAnalytics />
               </SideNavProvider>
             </BookingModalProvider>
           </SideCartProvider>

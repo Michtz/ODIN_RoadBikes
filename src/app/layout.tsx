@@ -10,7 +10,6 @@ import 'material-icons/iconfont/material-icons.css';
 import 'material-icons/iconfont/outlined.css';
 import './globals.scss';
 import './_variables.scss';
-import Script from 'next/script';
 
 const syncopate = Syncopate({
   weight: ['400', '700'],
@@ -421,19 +420,6 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
           <Footer />
         </ClientProviders>
 
-        {/* GA mit next/script NACH dem Content */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-0088JYTYNK"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-0088JYTYNK');
-          `}
-        </Script>
       </body>
     </html>
   );
