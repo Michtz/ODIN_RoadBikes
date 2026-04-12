@@ -201,8 +201,95 @@ const LegalContainer: FC = () => {
       <Accordion title="Datenschutz">
         <p>
           Personendaten werden unter Einhaltung der Bestimmungen des Schweizer
-          Datenschutzgesetzes (DSG) bearbeitet. Einzelheiten ergeben sich aus
-          der separaten Datenschutzerklärung der BIKESCHMIEDE GmbH.
+          Datenschutzgesetzes (DSG) bearbeitet. Die BIKESCHMIEDE GmbH erhebt nur
+          jene Daten, die zur Erfüllung ihrer Dienstleistungen erforderlich
+          sind. Nachfolgend werden die eingesetzten Dienste mit Datenschutzbezug
+          erläutert.
+        </p>
+      </Accordion>
+
+      <Accordion title="Webanalyse – Google Analytics">
+        <p>
+          Diese Website verwendet Google Analytics, einen Webanalysedienst der
+          Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
+          (nachfolgend «Google»).
+        </p>
+        <p>
+          <strong>Zweck:</strong> Google Analytics wird eingesetzt, um die
+          Nutzung der Website statistisch auszuwerten (z.&nbsp;B. Seitenaufrufe,
+          Verweildauer, Herkunft der Besucher). Diese Informationen helfen uns,
+          das Angebot kontinuierlich zu verbessern.
+        </p>
+        <p>
+          <strong>Rechtsgrundlage:</strong> Die Aktivierung von Google Analytics
+          erfolgt.
+        </p>
+        <p>
+          <strong>Erhobene Daten:</strong>
+          Google Analytics kann unter anderem folgende Informationen an
+          Google-Server in den USA übertragen:
+        </p>
+        <ul>
+          <li>Gekürzte IP-Adresse (IP-Anonymisierung ist aktiviert)</li>
+          <li>Aufgerufene Seiten und Verweildauer</li>
+          <li>Ungefährer Standort (Land/Region)</li>
+          <li>Browser- und Gerätetyp</li>
+          <li>Referrer-URL (Herkunftsseite)</li>
+        </ul>
+        <p>
+          <strong>IP-Anonymisierung:</strong> Die IP-Adresse wird vor der
+          Übertragung an Google innerhalb der EU/des EWR anonymisiert
+          («anonymize_ip»). Eine vollständige IP-Adresse wird nicht an
+          Google-Server in den USA übermittelt.
+        </p>
+        <p>
+          <strong>Datenübermittlung in die USA:</strong> Google LLC ist nach dem
+          EU-U.S. Data Privacy Framework zertifiziert, was eine rechtmässige
+          Datenübermittlung in die USA ermöglicht.
+        </p>
+        <p>
+          <strong>Widerspruch / Einwilligung widerrufen:</strong> Die
+          Einwilligung kann jederzeit widerrufen werden, indem Cookies im
+          Browser gelöscht werden. Zusätzlich kann die Datenerfassung durch
+          Google Analytics durch das Browser-Add-on unter{' '}
+          <a
+            href="https://tools.google.com/dlpage/gaoptout"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            tools.google.com/dlpage/gaoptout
+          </a>{' '}
+          dauerhaft deaktiviert werden.
+        </p>
+        <p>
+          Weitere Informationen zum Datenschutz bei Google finden Sie unter{' '}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            policies.google.com/privacy
+          </a>
+          .
+        </p>
+      </Accordion>
+
+      <Accordion title="Cookies">
+        <p>
+          Diese Website verwendet Cookies. Dabei handelt es sich um kleine
+          Textdateien, die im Browser gespeichert werden.
+        </p>
+        <p>
+          <strong>Technisch notwendige Cookies:</strong> Ein Cookie
+          («cookie-consent») speichert Ihre Einwilligung zur Nutzung von
+          Analyse-Cookies. Dieses Cookie ist für den Betrieb der Website
+          erforderlich und wird ohne gesonderte Einwilligung gesetzt
+          (Gültigkeitsdauer: 365 Tage).
+        </p>
+        <p>
+          Cookies können jederzeit in den Browsereinstellungen gelöscht oder
+          deaktiviert werden. Bitte beachten Sie, dass die Deaktivierung
+          bestimmter Cookies die Funktionalität der Website einschränken kann.
         </p>
       </Accordion>
 

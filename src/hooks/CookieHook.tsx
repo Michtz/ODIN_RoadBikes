@@ -11,6 +11,7 @@ import Cookies from 'js-cookie';
 
 interface CookieContextType {
   showBanner: boolean;
+  hasConsent: boolean;
   acceptCookies: () => void;
 }
 
@@ -20,26 +21,29 @@ export const CookieProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [showBanner, setShowBanner] = useState(false);
+  const [hasConsent, setHasConsent] = useState(true);
 
   useEffect(() => {
-    // only client side because user has no choice ( there are no optional cookies ony functional ;) )
     const consent = Cookies.get('cookie-consent');
-    if (!consent) {
+    if (consent) {
+      setHasConsent(true);
+    } else {
       setShowBanner(true);
     }
   }, []);
 
   const acceptCookies = () => {
     Cookies.set('cookie-consent', 'accepted-cookies', {
-      expires: 10,
+      expires: 365,
       path: '/',
       sameSite: 'strict',
     });
+    setHasConsent(true);
     setShowBanner(false);
   };
 
   return (
-    <CookieContext.Provider value={{ showBanner, acceptCookies }}>
+    <CookieContext.Provider value={{ showBanner, hasConsent, acceptCookies }}>
       {children}
     </CookieContext.Provider>
   );
