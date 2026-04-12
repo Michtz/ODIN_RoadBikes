@@ -28,7 +28,7 @@ export const CookieProvider: React.FC<{ children: ReactNode }> = ({
     if (consent) {
       setHasConsent(true);
     } else {
-      setShowBanner(true);
+      setShowBanner(false);
     }
   }, []);
 
