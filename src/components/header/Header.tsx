@@ -3,21 +3,18 @@ import React, { useEffect, useState, useRef } from 'react';
 import style from './Header.module.scss';
 import Link from '@/components/system/link/Link';
 import HamburgerIcon from '@/components/icons/HamburgerIcon';
-import SideNav from '@/components/system/sideNav/SideNav';
 import LoadingSpinner from '@/components/system/loader/LoadingSpinner';
-import dynamic from 'next/dynamic';
 import OdinLogo from '@/components/icons/OdinLogo';
-const BookingModal = dynamic(() => import('@/components/modals/BookingModal'), {
-  ssr: false,
-});
+import { useBookingModal } from '@/providers/BookingModalProvider';
+import { useSideNav } from '@/hooks/SideNavHook';
 
 const ResponsiveAppBar = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isSticky, setIsSticky] = useState(false);
   const lastScrollY = useRef(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSideNavOpen, setIsSideNavOpen] = useState(false);
+  const { openBookingModal } = useBookingModal();
+  const { toggleSideNav, isOpen } = useSideNav();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,9 +85,7 @@ const ResponsiveAppBar = () => {
             </li>
 
             <li className={style.navItem}>
-              <Link onClick={() => setIsModalOpen(true)}>
-                Besprechung Buchen
-              </Link>
+              <Link onClick={() => openBookingModal()}>Besprechung Buchen</Link>
             </li>
             {/*<li className={style.navItem}>*/}
             {/*  <Link href={'/configurator'}>Configurator</Link>*/}
@@ -101,22 +96,14 @@ const ResponsiveAppBar = () => {
           </ul>
           <div className={style.hamburgerMenu}>
             <HamburgerIcon
-              isOpen={isSideNavOpen}
-              onClick={() => setIsSideNavOpen(!isSideNavOpen)}
+              isOpen={isOpen}
+              onClick={toggleSideNav}
               width={24}
               height={24}
             />
           </div>
         </div>
       </header>
-
-      <SideNav isOpen={isSideNavOpen} onClose={() => setIsSideNavOpen(false)} />
-      {/*todo: remove hardcoded false when calendar ready*/}
-      <BookingModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        calLink="odin-roadbikes-mer2x6"
-      />
     </>
   );
 };
