@@ -289,7 +289,7 @@ Kunden-Email: ${formValues.email || ''}
       <BookingModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        calLink="michael-venetz-mer2x6"
+        calLink="odin-roadbikes-mer2x6"
         notes={bookingDataString}
       />
     </div>
