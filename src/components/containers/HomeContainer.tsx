@@ -2,7 +2,7 @@ import { FC } from 'react';
 import OverlayContainer from '@/components/system/containers/OverlayContainer';
 import { ContentContainer } from '@/components/system/containers/Containers';
 import { ImageContainer } from '@/components/system/containers/ImageContainer';
-import ScrollHeroVideo from '@/components/system/scorllVideoHero/ScrollHeroVideo';
+import ScrollHeroVideo from '@/components/system/scrollVideoHero/ScrollHeroVideo';
 import Calculator from '@/components/system/calculator/CalculatorClient';
 import ScrollStaggeredGrid from '@/components/system/imageGridContainer/ScrollStaggeredGrid';
 
@@ -64,7 +64,7 @@ const HomeContainer: FC = () => {
         <OverlayContainer key={5}>
           <ContentContainer
             title="Slide"
-            text="Die Rennmaschine, so sieht sie in jedem Fall aus. Der Vorteil dieses Rahmens gegenüber vielen anderen Marken von Rennrädern ist, dass die Geometrie freundlicher ist als bei anderen. Der Vorteil ist, dass Sie ein schönes Rennrad haben, das sich auch gut klettern lässt. Aus unserer Erfahrung mit Bikefitting wissen wir, dass die meisten"
+            text="Die Rennmaschine, so sieht sie in jedem Fall aus. Der Vorteil dieses Rahmens gegenüber vielen anderen Marken von Rennrädern ist, dass die Geometrie freundlicher ist als bei anderen. Der Vorteil ist, dass Sie ein schönes Rennrad haben, das sich auch gut klettern lässt."
             buttonText={'Zum Slide'}
             buttonSide={'right'}
             containerPlacement={'fullWith'}

@@ -1,7 +1,7 @@
 'use client';
 
-import { FC, useEffect } from 'react';
-import Cal, { getCalApi } from '@calcom/embed-react';
+import { FC } from 'react';
+import Cal from '@calcom/embed-react';
 import style from './BookingModal.module.scss';
 
 interface BookingModalProps {
@@ -17,23 +17,7 @@ export const BookingModal: FC<BookingModalProps> = ({
   calLink,
   notes,
 }) => {
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-      (async function () {
-        const cal = await getCalApi();
-        cal('ui', { theme: 'dark' });
-      })();
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
-
   if (!isOpen) return null;
-
   return (
     <div className={style.modalOverlay} onClick={onClose}>
       <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>

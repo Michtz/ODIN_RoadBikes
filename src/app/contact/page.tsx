@@ -2,9 +2,9 @@ import { Metadata } from 'next';
 import ContactContainer from '@/components/containers/ContactContainer';
 
 export const metadata: Metadata = {
-  title: 'Kontakt & Beratung – OdinBikes, Horw bei Luzern',
+  title: 'Kontakt & Beratung – OdinBikes Luzern (Horw) Schweiz',
   description:
-    'Nehmen Sie Kontakt mit OdinBikes auf – für eine persönliche Beratung zu Ihrem Custom Rennrad, Bikefitting-Termin oder Ihrer individuellen Konfiguration. Gemeindehausplatz 13, 6048 Horw.',
+    'Kontakt aufnehmen mit OdinBikes Luzern – persönliche Beratung, Bikefitting-Termin oder individuelle Konfiguration. Wir sind in Horw, direkt bei Luzern: Gemeindehausplatz 13, 6048 Horw.',
   alternates: {
     canonical: 'https://odinbikes.ch/contact',
   },
