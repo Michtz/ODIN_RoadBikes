@@ -6,13 +6,15 @@ import {
   Title,
 } from '@/components/system/containers/Containers';
 import { ImageContainer } from '@/components/system/containers/ImageContainer';
-import ImageHoverTextContainer from '@/components/system/imageHoverTextContainer/ImageHoverTextContainer';
-import ScrollHeroVideo from '@/components/system/scorllVideoHero/ScrollHeroVideo';
+import ImageHoverTextContainer, {
+  ImageHoverTextContainerItem,
+} from '@/components/system/imageHoverTextContainer/ImageHoverTextContainer';
+import ScrollHeroVideo from '@/components/system/scrollVideoHero/ScrollHeroVideo';
 import Calculator from '@/components/system/calculator/CalculatorClient';
 import ScrollStaggeredGrid from '@/components/system/imageGridContainer/ScrollStaggeredGrid';
 
 const CategoriesContainer: FC = () => {
-  const items: any[] = [
+  const items: ImageHoverTextContainerItem[] = [
     {
       id: 1,
       image:
@@ -33,7 +35,7 @@ const CategoriesContainer: FC = () => {
     },
   ];
 
-  const items2: any[] = [
+  const items2: ImageHoverTextContainerItem[] = [
     {
       id: 1,
       image:

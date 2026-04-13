@@ -1,8 +1,3 @@
-// 1. Neuen State 'videoHeight' hinzufügen.
-// 2. Funktion 'updateVideoHeight' erstellen, um die Höhe aus der 'videoRef' auszulesen.
-// 3. Die Höhe beim Laden (onLoadedMetadata) und bei Fensteränderungen (resize) aktualisieren.
-// 4. Den ermittelten Wert im style-Attribut anwenden.
-
 'use client';
 
 import React, { FC, useEffect, useRef, useState } from 'react';
@@ -30,6 +25,11 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
     useState<boolean>(false);
   const [videoHeight, setVideoHeight] = useState<number>(0);
   const isTicking = useRef(false);
+
+  // Refs that mirror the state values above so the scroll handler can read
+  // the latest values without being recreated on every state change.
+  const showLogoRef = useRef(false);
+  const showImageOverlayInternalRef = useRef(false);
 
   const showImageOverlay =
     showImageOverlayProp !== undefined
@@ -62,12 +62,14 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
     }
 
     const shouldShowLogo = progress > 0.5;
-    if (showLogo !== shouldShowLogo) {
+    if (showLogoRef.current !== shouldShowLogo) {
+      showLogoRef.current = shouldShowLogo;
       setShowLogo(shouldShowLogo);
     }
 
     const isCovering = containerTop <= -container.scrollHeight;
-    if (showImageOverlayInternal !== isCovering) {
+    if (showImageOverlayInternalRef.current !== isCovering) {
+      showImageOverlayInternalRef.current = isCovering;
       setShowImageOverlayInternal(isCovering);
     }
   };
@@ -112,7 +114,8 @@ const ScrollHeroVideo: FC<ScrollHeroProps> = ({
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleResize);
     };
-  }, [showLogo, showImageOverlay, showImageOverlayProp]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Registers once on mount. State comparisons use refs to stay current.
 
   const isVisible = showLogo && !showImageOverlay;
 
