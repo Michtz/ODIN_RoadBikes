@@ -33,26 +33,35 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | OdinBikes',
-    default: 'OdinBikes.ch | Individuelle Custom Rennräder & Gravelbikes',
+    template: '%s | OdinBikes Luzern Schweiz',
+    default: 'OdinBikes – Custom Carbon Rennräder | Luzern (Horw)',
   },
   description:
-    'OdinBikes aus Horw bei Luzern – Custom Carbon Rennräder zu fairen Preisen. Ihr Design, Ihre Komponenten, auf Ihren Körperbau zugeschnitten. Gravity & Slide Modelle individuell konfigurierbar.',
+    'Custom Carbon Rennräder in Luzern – OdinBikes, direkt in Horw bei Luzern. Ihr Design, Ihre Komponenten, auf Ihren Körperbau zugeschnitten. Gravity & Slide individuell konfigurierbar. Bikefitting inklusive.',
   keywords: [
+    'Rennrad Luzern',
+    'Custom Rennrad Luzern',
+    'Carbon Rennrad Luzern',
+    'Bikefitting Luzern',
+    'Fahrrad Luzern',
+    'Rennrad kaufen Luzern',
+    'Custom Bike Luzern',
+    'Fahrradgeschäft Luzern',
+    'Rennrad Region Luzern',
+    'Horw Luzern Fahrrad',
+    'OdinBikes',
     'Rennrad',
     'Gravelbike',
-    'Fahrrad Konfigurator',
-    'OdinBikes',
     'Custom Bikes',
     'Carbon Rennrad',
     'Rennrad Schweiz',
     'Custom Rennrad',
-    'Rennrad Luzern',
     'Bikefitting',
     'handgefertigte Laufradsätze',
     'Rennrad konfigurieren',
     'Gravity Rennrad',
     'Slide Rennrad',
+    'Fahrrad Konfigurator',
   ],
   authors: [{ name: 'OdinBikes' }],
   robots: 'index, follow',
@@ -64,23 +73,23 @@ export const metadata: Metadata = {
     locale: 'de_CH',
     url: 'https://odinbikes.ch',
     siteName: 'OdinBikes',
-    title: 'OdinBikes.ch | Custom Carbon Rennräder aus der Schweiz',
+    title: 'OdinBikes – Custom Carbon Rennräder | Luzern',
     description:
-      'Custom Carbon Rennräder aus Horw bei Luzern. Ihr Design, Ihre Komponenten, auf Ihren Körper zugeschnitten – zu einem fairen Preis.',
+      'Custom Carbon Rennräder in Luzern – Atelier in Horw. Ihr Design, Ihre Komponenten, auf Ihren Körper zugeschnitten. Bikefitting inklusive, zu einem fairen Preis.',
     images: [
       {
         url: 'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097102/025_full_bike_white_sdr_original_ztglp5.avif',
         width: 1200,
         height: 630,
-        alt: 'OdinBikes – Custom Carbon Rennrad aus der Schweiz',
+        alt: 'OdinBikes – Custom Carbon Rennrad, Luzern',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OdinBikes.ch | Custom Carbon Rennräder aus der Schweiz',
+    title: 'OdinBikes – Custom Carbon Rennräder | Luzern',
     description:
-      'Custom Carbon Rennräder aus Horw bei Luzern. Individuell konfigurierbar für dein perfektes Fahrerlebnis.',
+      'Custom Carbon Rennräder in Luzern (Horw). Individuell konfigurierbar – Bikefitting inklusive.',
     images: [
       'https://res.cloudinary.com/de2rhuwpw/image/upload/v1774097102/025_full_bike_white_sdr_original_ztglp5.avif',
     ],
@@ -104,7 +113,7 @@ const mainJsonLd = [
     name: 'OdinBikes',
     legalName: 'BIKESCHMIEDE GmbH',
     description:
-      'Individuell konfigurierbare Custom Carbon Rennräder aus Horw bei Luzern. Gravity ab CHF 3450, Slide ab CHF 3150. Professionelles Bikefitting mit Gebiomized, handgefertigte Laufradsätze.',
+      'Custom Carbon Rennräder in Luzern – Atelier in Horw, direkt bei Luzern. Gravity ab CHF 3450, Slide ab CHF 3150. Professionelles Bikefitting mit Gebiomized, handgefertigte Laufradsätze.',
     url: 'https://odinbikes.ch',
     logo: {
       '@type': 'ImageObject',
@@ -131,7 +140,12 @@ const mainJsonLd = [
       addressRegion: 'Luzern',
       addressCountry: 'CH',
     },
-    areaServed: { '@type': 'Country', name: 'Switzerland' },
+    areaServed: [
+      { '@type': 'City', name: 'Luzern' },
+      { '@type': 'City', name: 'Horw' },
+      { '@type': 'AdministrativeArea', name: 'Kanton Luzern' },
+      { '@type': 'Country', name: 'Switzerland' },
+    ],
     priceRange: 'CHF 3450 – CHF 10000+',
     currenciesAccepted: 'CHF',
     paymentAccepted: 'Cash, Credit Card, Bank Transfer',
@@ -175,12 +189,12 @@ const mainJsonLd = [
     offers: {
       '@type': 'Offer',
       priceCurrency: 'CHF',
-      price: '4500',
+      price: '3450',
       priceSpecification: {
         '@type': 'PriceSpecification',
-        price: '4500',
+        price: '3450',
         priceCurrency: 'CHF',
-        minPrice: '4500',
+        minPrice: '3450',
         valueAddedTaxIncluded: true,
       },
       availability: 'https://schema.org/InStock',
@@ -352,7 +366,7 @@ const faqJsonLd = {
       name: 'Wie funktioniert das Bikefitting bei OdinBikes?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Jedes OdinBike wird nach dem Aufbau in unserem Bikefitting-Studio in Horw professionell auf den Fahrer abgestimmt. Wir arbeiten mit der Gebiomized-Technologie, die eine druckbasierte Sitzanalyse und präzise Positionsmessung ermöglicht. Das Bikefitting ist im Kaufpreis inbegriffen.',
+        text: 'Jedes OdinBike wird nach dem Aufbau in unserem Bikefitting-Studio in Horw bei Luzern professionell auf den Fahrer abgestimmt. Wir arbeiten mit der Gebiomized-Technologie, die eine druckbasierte Sitzanalyse und präzise Positionsmessung ermöglicht. Das Bikefitting ist im Kaufpreis inbegriffen.',
       },
     },
     {
@@ -384,7 +398,7 @@ const faqJsonLd = {
       name: 'Gibt es eine Garantie auf das Rennrad?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja. Der Carbonrahmen ist geprüft und übertrifft die EN-Norm in sämtlichen Belastungstests (Drop Impact, Fatigue, Headtube Strength etc.). Auf Rahmen und Komponenten gilt die gesetzliche Gewährleistung gemäss Schweizer Recht. Bei Defekten steht unsere Werkstatt in Horw für Reparatur und Service zur Verfügung.',
+        text: 'Ja. Der Carbonrahmen ist geprüft und übertrifft die EN-Norm in sämtlichen Belastungstests (Drop Impact, Fatigue, Headtube Strength etc.). Auf Rahmen und Komponenten gilt die gesetzliche Gewährleistung gemäss Schweizer Recht. Bei Defekten steht unsere Werkstatt in Horw bei Luzern für Reparatur und Service zur Verfügung.',
       },
     },
   ],
@@ -419,7 +433,6 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
           <main>{children}</main>
           <Footer />
         </ClientProviders>
-
       </body>
     </html>
   );

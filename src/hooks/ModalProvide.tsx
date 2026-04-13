@@ -7,7 +7,7 @@ import React, {
   useState,
 } from 'react';
 import { v4 } from 'uuid';
-import Modal from '@/components/modals/DeleteModal';
+import Modal from '@/components/modals/Modal';
 
 /*
  * this hook is used to handle modal locig
