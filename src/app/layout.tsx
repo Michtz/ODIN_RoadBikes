@@ -413,6 +413,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
       <head>
         {/* Preconnect bleibt hier */}
         <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
 
         {/* Structured Data – Organisation, LocalBusiness, WebSite, Produkte, BreadcrumbList */}
         <script
